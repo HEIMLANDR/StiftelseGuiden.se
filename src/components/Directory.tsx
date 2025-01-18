@@ -1,35 +1,68 @@
-import React from 'react';
-import { Search } from 'lucide-react';
+import { useState } from 'react';
+import foundations from '../data/foundations.json';
 
-export function Directory() {
+interface Foundation {
+  name: string;
+  description: string;
+  purpose?: string;
+  website?: string;
+}
+
+export default function Directory() {
+  const [searchTerm, setSearchTerm] = useState('');
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'.split('');
-  
+  const [selectedLetter, setSelectedLetter] = useState('A');
+
+  const filteredFoundations = foundations.filter(foundation => 
+    foundation.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (selectedLetter === '' || foundation.name.toUpperCase().startsWith(selectedLetter))
+  );
+
   return (
-    <div id="stiftelsekatalog" className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 mt-12">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-white">Stiftelsekatalog A-Ö</h2>
-        <a
-          href="https://www.sokastiftelsemedel.se/sok-stiftelser"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-all"
-        >
-          <Search className="w-4 h-4" />
-          <span>Sök Stiftelser</span>
-        </a>
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Sök stiftelse..."
+          className="w-full p-2 border rounded"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
-      
-      <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-10 gap-2">
+
+      <div className="flex flex-wrap gap-2 mb-6">
         {alphabet.map((letter) => (
-          <a
+          <button
             key={letter}
-            href={`https://www.sokastiftelsemedel.se/stiftelser/${letter.toLowerCase()}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center p-4 bg-white/5 hover:bg-white/20 rounded-lg text-white font-semibold transition-all"
+            className={`px-3 py-1 rounded ${
+              selectedLetter === letter ? 'bg-blue-500 text-white' : 'bg-gray-200'
+            }`}
+            onClick={() => setSelectedLetter(letter)}
           >
             {letter}
-          </a>
+          </button>
+        ))}
+      </div>
+
+      <div className="grid gap-4">
+        {filteredFoundations.map((foundation, index) => (
+          <div key={index} className="border p-4 rounded shadow">
+            <h3 className="font-bold">{foundation.name}</h3>
+            <p className="text-gray-600">{foundation.description}</p>
+            {foundation.purpose && (
+              <p className="text-sm mt-2">Syfte: {foundation.purpose}</p>
+            )}
+            {foundation.website && (
+              <a
+                href={foundation.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline text-sm mt-2 block"
+              >
+                Besök webbplats
+              </a>
+            )}
+          </div>
         ))}
       </div>
     </div>
