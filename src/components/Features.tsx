@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../node_modules/react';
 import { Search, FileText, Settings, HelpCircle } from 'lucide-react';
 
 export function Features() {

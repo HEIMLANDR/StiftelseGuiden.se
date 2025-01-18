@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from '../../node_modules/react';
 import { Send, Bot, User, Sparkles, Shield, Lock, Trash2, ExternalLink, Briefcase, FileText } from 'lucide-react';
 
 interface Message {
