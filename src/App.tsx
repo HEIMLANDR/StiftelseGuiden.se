@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { ChatInterface } from './components/ChatInterface';
-import { Directory } from './components/Directory';
+import Directory from './components/Directory';
 import { Footer } from './components/Footer';
 
 function App() {
