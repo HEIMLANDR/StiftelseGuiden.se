@@ -13,7 +13,7 @@ export default function DokumentPage() {
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 py-16 text-white">
         <div className="container-padded max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6">Dokument & Mallar</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white">Dokument & Mallar</h1>
             <p className="text-xl max-w-3xl mx-auto mb-8">
               Här hittar du alla dokument, mallar och checklistor du behöver för att starta, driva och ansöka om medel från stiftelser.
             </p>
