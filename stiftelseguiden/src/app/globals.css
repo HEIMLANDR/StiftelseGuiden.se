@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f9fafb;  /* Light gray background */
+    --foreground: #0062D6;  /* Primary 700 color - updated */
+  }
+  
+  /* Better typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    color: #003785; /* primary-900 - updated */
+    font-weight: 500;
+    letter-spacing: -0.025em;
+  }
+  
+  h1 {
+    font-size: 1.875rem; /* text-3xl */
+  }
+  
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.25rem; /* text-4xl */
+    }
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* text-2xl */
+  }
+  
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 1.875rem; /* text-3xl */
+    }
+  }
+  
+  h3 {
+    font-size: 1.25rem; /* text-xl */
+  }
+  
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 1.5rem; /* text-2xl */
+    }
+  }
+  
+  p {
+    line-height: 1.6;
+    color: #004CAD; /* primary-800 - updated for better readability */
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f3f4f6; /* gray-100 */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #84C1FF; /* primary-300 - updated */
+    border-radius: 9999px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5AACFF; /* primary-400 - updated */
+    transition: background-color 0.2s;
+  }
+}
+
+@layer components {
+  /* Card component base styles */
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+    padding: 1.5rem;
+    transition: all 0.2s;
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-color: #D6EBFF; /* primary-100 - updated */
+  }
+
+  /* Button styles */
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: #0A7AFF; /* primary-600 - updated */
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0062D6; /* primary-700 - updated */
+  }
+  
+  .btn-secondary {
+    background-color: #f3f4f6; /* gray-100 */
+    color: #0062D6; /* primary-700 - updated */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #e5e7eb; /* gray-200 */
+  }
+  
+  .btn-accent {
+    background-color: #0DBE9A; /* accent-500 */
+    color: white;
+  }
+  
+  .btn-accent:hover {
+    background-color: #0A9E81; /* accent-600 */
+  }
+  
+  /* Container with responsive padding */
+  .container-padded {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .container-padded {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  
+  /* Page section styles */
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  
+  .section-sm {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-sm {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
+  .section-lg {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-lg {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+}
+
+/* Utility classes */
+/* Background patterns */
+.bg-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Typography helpers */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Enhanced animations */
+/* Fade animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale animations */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Animation classes */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-grow {
+  transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.03);
+}
+
+/* Staggered animations for children */
+.stagger-children > * {
+  opacity: 0;
+}
+
+.stagger-children > *:nth-child(1) { animation: fadeInUp 0.5s ease-out 0.1s forwards; }
+.stagger-children > *:nth-child(2) { animation: fadeInUp 0.5s ease-out 0.2s forwards; }
+.stagger-children > *:nth-child(3) { animation: fadeInUp 0.5s ease-out 0.3s forwards; }
+.stagger-children > *:nth-child(4) { animation: fadeInUp 0.5s ease-out 0.4s forwards; }
+.stagger-children > *:nth-child(5) { animation: fadeInUp 0.5s ease-out 0.5s forwards; }
+.stagger-children > *:nth-child(6) { animation: fadeInUp 0.5s ease-out 0.6s forwards; }
+
+/* Page transition classes */
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
