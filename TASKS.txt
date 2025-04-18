@@ -1,0 +1,100 @@
+# StiftelseGuiden.se Development Tasks
+
+## Setup & Configuration
+- [x] Initialize Next.js project with TypeScript
+- [x] Configure Tailwind CSS
+- [x] Set up project structure
+- [x] Configure site meta information in layout.tsx
+
+## Core Pages Development
+- [x] Create homepage (page.tsx)
+  - [x] Design hero section with main value proposition
+  - [x] Add foundation definition and types sections
+  - [x] Implement CTA sections pointing to sokastiftelsemedel.se
+  - [x] Create footer with site navigation
+
+- [x] Create "Starta Stiftelse" page
+  - [x] Develop step-by-step guide layout
+  - [x] Add content about foundation creation requirements
+  - [x] Include information about foundation charter document
+  - [x] Add section about capital requirements
+
+- [x] Create "Driva Stiftelse" page
+  - [x] Add board work section with responsibilities
+  - [x] Develop capital management sections
+  - [x] Create sections on annual reporting
+  - [x] Add information about fund distribution
+
+- [x] Create "Juridik" page
+  - [x] Add section on Swedish foundation law (Stiftelselagen)
+  - [x] Create content about supervision and control
+  - [x] Add information about tax legislation
+  - [x] Include charter amendment information
+
+- [x] Create "Kontakt" page
+  - [x] Build contact form
+  - [x] Add contact information
+  - [x] Include FAQ section
+  - [x] Add prominent CTA to sokastiftelsemedel.se
+
+## Navigation & UI Components
+- [x] Create site header with navigation
+- [x] Implement breadcrumb navigation
+- [x] Design consistent CTA components
+- [x] Create mobile navigation
+
+## SEO & Optimization
+- [x] Configure page metadata with Swedish keywords
+- [x] Create semantic HTML structure
+- [x] Implement internal linking strategy
+- [x] Ensure mobile responsiveness
+- [x] Test cross-page navigation
+
+## Technical Improvements
+- [x] Fix package version compatibility issues
+- [x] Update Next.js configuration
+- [x] Resolve client/server component conflicts
+- [x] Simplify complex styling for better performance
+- [x] Implement proper font configuration
+
+## Current Work in Progress
+- [x] Expand content on each page with more detailed information
+  - [x] Add real-world examples to "Starta Stiftelse" page
+  - [x] Enhance legal information on "Juridik" page
+  - [x] Add success stories to "Driva Stiftelse" page
+  - [x] Expand FAQ section on "Kontakt" page
+- [x] Add images and illustrations
+  - [x] Create custom icons for foundation types
+  - [ ] Add diagrams explaining legal processes
+  - [ ] Include photos of example foundations
+  - [ ] Design infographics for key statistics
+- [x] Implement page transitions
+  - [x] Add smooth fade transitions between pages
+  - [x] Implement scroll animations for content sections
+  - [x] Create hover effects for interactive elements
+- [x] Develop search functionality for content
+  - [x] Implement search bar in header
+  - [x] Add search functionality to mobile menu
+  - [x] Create mock search results with categories
+- [x] Create interactive tools for users
+  - [x] Build foundation type comparison tool
+  - [x] Develop capital calculator for foundations
+  - [x] Create dedicated tools page
+
+## Interactive Tools (Next Phase)
+- [ ] Create foundation type comparison tool
+  - [ ] Design interactive comparison interface
+  - [ ] Implement filtering by foundation characteristics
+  - [ ] Add detailed comparison view
+- [ ] Add capital calculator for foundations
+  - [ ] Create calculator interface
+  - [ ] Implement calculation logic
+  - [ ] Add visualization of results
+- [ ] Develop foundation case studies section
+  - [ ] Design case study template
+  - [ ] Create filtering system by industry/purpose
+  - [ ] Add detailed analysis for each case
+- [ ] Create downloadable templates for foundation documents
+  - [ ] Design document templates
+  - [ ] Create customization interface
+  - [ ] Implement PDF generation
