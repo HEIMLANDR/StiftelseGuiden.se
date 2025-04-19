@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklista för ansökningsprocessen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5282;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #4299e1;
+        }
+        .checklist {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .checklist li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4299e1;
+            border-radius: 3px;
+        }
+        .tip {
+            background-color: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .warning {
+            background-color: #fffaf0;
+            border-left: 4px solid #ed8936;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #718096;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #e2e8f0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+        }
+        .timeline {
+            position: relative;
+            margin: 30px 0;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #4299e1;
+        }
+        .timeline-item {
+            margin-left: 30px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4299e1;
+        }
+        .timeline-date {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .section {
+                border: 1px solid #e2e8f0;
+                padding: 15px;
+                background: none;
+            }
+            .checklist li:before {
+                border: 1px solid #000;
+            }
+            .tip, .warning {
+                border: 1px solid #e2e8f0;
+                padding: 10px;
+                background: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Checklista för ansökningsprocessen</h1>
+    
+    <div class="section">
+        <h2>Innan du börjar</h2>
+        <ul class="checklist">
+            <li>Kontrollera att stiftelsens ändamål överensstämmer med ditt projekt eller behov</li>
+            <li>Verifiera att du tillhör stiftelsens målgrupp (t.ex. ålder, geografisk hemvist, utbildning)</li>
+            <li>Kontrollera ansökningsperioder och deadlines</li>
+            <li>Läs igenom stiftelsens riktlinjer och krav för ansökan</li>
+            <li>Undersök om stiftelsen har specifika prioriteringsområden för innevarande år</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>Tips:</strong> Många stiftelser har specifika ansökningsperioder. Planera din ansökan i god tid för att undvika stress och misstag.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Förberedelse av ansökan</h2>
+        <ul class="checklist">
+            <li>Ladda ner rätt ansökningsblankett från stiftelsens hemsida</li>
+            <li>Samla in alla nödvändiga personuppgifter (personnummer, kontaktuppgifter, etc.)</li>
+            <li>Förbered en tydlig och koncis projektbeskrivning</li>
+            <li>Upprätta en detaljerad budget för projektet</li>
+            <li>Samla in nödvändiga intyg och bilagor (t.ex. CV, studieintyg, rekommendationsbrev)</li>
+            <li>Förbered bankuppgifter för eventuell utbetalning</li>
+        </ul>
+        
+        <div class="warning">
+            <strong>Viktigt!</strong> Kontrollera att alla uppgifter är korrekta och aktuella. Felaktiga uppgifter kan leda till att ansökan avslås.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Vanliga bilagor</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Typ av ansökan</th>
+                    <th>Nödvändiga bilagor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Forskningsprojekt</td>
+                    <td>
+                        <ul>
+                            <li>Projektbeskrivning (max 5 sidor)</li>
+                            <li>CV för samtliga forskare</li>
+                            <li>Publikationslista</li>
+                            <li>Detaljerad budget</li>
+                            <li>Etiskt tillstånd (om tillämpligt)</li>
+                            <li>Intyg från prefekt/motsvarande</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Stipendium för studier</td>
+                    <td>
+                        <ul>
+                            <li>Personligt brev</li>
+                            <li>CV</li>
+                            <li>Studieintyg/betyg</li>
+                            <li>Antagningsbesked (om tillämpligt)</li>
+                            <li>Budget för studieperioden</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Organisationsprojekt</td>
+                    <td>
+                        <ul>
+                            <li>Projektbeskrivning</li>
+                            <li>Organisationens stadgar</li>
+                            <li>Senaste årsredovisning</li>
+                            <li>Verksamhetsplan</li>
+                            <li>Detaljerad projektbudget</li>
+                            <li>Intyg om organisationsnummer</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="section">
+        <h2>Ifyllnad av ansökan</h2>
+        <ul class="checklist">
+            <li>Fyll i alla obligatoriska fält i ansökningsblanketten</li>
+            <li>Var koncis och tydlig i din beskrivning</li>
+            <li>Anpassa språket efter stiftelsens inriktning och målgrupp</li>
+            <li>Specificera exakt belopp som söks</li>
+            <li>Motivera tydligt hur medlen kommer att användas</li>
+            <li>Förklara hur projektet överensstämmer med stiftelsens ändamål</li>
+            <li>Beskriv förväntade resultat och effekter</li>
+            <li>Kontrollera stavning och grammatik</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>Tips:</strong> Använd ett klart och tydligt språk. Undvik facktermer om det inte är nödvändigt. Tänk på att den som läser din ansökan kanske inte är expert inom ditt område.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Innan inlämning</h2>
+        <ul class="checklist">
+            <li>Dubbelkolla att alla uppgifter är korrekta</li>
+            <li>Kontrollera att alla nödvändiga bilagor är bifogade</li>
+            <li>Verifiera att ansökan är undertecknad (om fysisk ansökan)</li>
+            <li>Ta en kopia av hela ansökan för eget bruk</li>
+            <li>Kontrollera att filformat och filstorlekar följer stiftelsens krav (om digital ansökan)</li>
+        </ul>
+        
+        <div class="warning">
+            <strong>Viktigt!</strong> Ofullständiga ansökningar behandlas oftast inte. Se till att alla delar är kompletta innan inlämning.
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Inlämning och uppföljning</h2>
+        <ul class="checklist">
+            <li>Lämna in ansökan i god tid före deadline</li>
+            <li>Spara bekräftelse på inlämnad ansökan (kvitto, e-postbekräftelse, etc.)</li>
+            <li>Notera när besked förväntas komma</li>
+            <li>Förbered dig på eventuella kompletteringar</li>
+            <li>Planera för redovisning om ansökan beviljas</li>
+        </ul>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Före inlämning</div>
+                <div class="timeline-content">Förbered alla dokument och kontrollera att allt är korrekt</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Inlämning</div>
+                <div class="timeline-content">Skicka in ansökan och spara bekräftelse</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1-2 veckor efter inlämning</div>
+                <div class="timeline-content">Var beredd på eventuella frågor eller begäran om komplettering</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Enligt stiftelsens tidsplan</div>
+                <div class="timeline-content">Besked om beviljande eller avslag</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Efter beviljande</div>
+                <div class="timeline-content">Utbetalning av medel och planering för redovisning</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Om ansökan beviljas</h2>
+        <ul class="checklist">
+            <li>Bekräfta mottagande av besked enligt stiftelsens instruktioner</li>
+            <li>Kontrollera villkor för utbetalning och användning av medel</li>
+            <li>Notera deadlines för eventuell redovisning</li>
+            <li>Dokumentera hur medlen används för senare redovisning</li>
+            <li>Följ stiftelsens riktlinjer för omnämnande i publikationer, etc.</li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>Om ansökan avslås</h2>
+        <ul class="checklist">
+            <li>Begär feedback om möjligt</li>
+            <li>Utvärdera ansökan och identifiera förbättringsområden</li>
+            <li>Undersök alternativa finansieringskällor</li>
+            <li>Planera för eventuell ny ansökan vid nästa ansökningsperiod</li>
+        </ul>
+        
+        <div class="tip">
+            <strong>Tips:</strong> Ett avslag behöver inte betyda att projektet inte är intressant. Det kan bero på hög konkurrens, formella brister i ansökan, eller att projektet inte helt passar stiftelsens nuvarande prioriteringar.
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Denna checklista är framtagen för att hjälpa dig genom ansökningsprocessen. Anpassa den efter den specifika stiftelse du söker medel från.</p>
+        <p>© StiftelseGuiden.se 2024 | Version 1.3 | Senast uppdaterad: 2024-03-20</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansökan om stipendium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5282;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f8fafc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .required:after {
+            content: " *";
+            color: #e53e3e;
+        }
+        .hint {
+            font-size: 0.8em;
+            color: #718096;
+            margin-top: 2px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        .signature-area {
+            margin-top: 30px;
+            border-top: 1px solid #cbd5e0;
+            padding-top: 20px;
+        }
+        .signature-line {
+            display: inline-block;
+            width: 250px;
+            border-bottom: 1px solid #000;
+            margin-right: 20px;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .form-section {
+                border: none;
+                padding: 10px 0;
+                background: none;
+            }
+            input, textarea, select {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ansökan om stipendium</h1>
+    
+    <div class="form-section">
+        <h2>1. Personuppgifter</h2>
+        
+        <div class="form-group">
+            <label for="name" class="required">Namn</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="personal-number" class="required">Personnummer (ÅÅÅÅMMDD-XXXX)</label>
+            <input type="text" id="personal-number" name="personal-number" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="address" class="required">Adress</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="postal-code" class="required">Postnummer</label>
+            <input type="text" id="postal-code" name="postal-code" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="city" class="required">Ort</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone" class="required">Telefon</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="required">E-post</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>2. Utbildning</h2>
+        
+        <div class="form-group">
+            <label for="current-education" class="required">Nuvarande utbildning/lärosäte</label>
+            <input type="text" id="current-education" name="current-education" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="education-level" class="required">Utbildningsnivå</label>
+            <select id="education-level" name="education-level" required>
+                <option value="">Välj utbildningsnivå</option>
+                <option value="high-school">Gymnasium</option>
+                <option value="bachelor">Kandidatnivå</option>
+                <option value="master">Masternivå</option>
+                <option value="phd">Doktorandnivå</option>
+                <option value="other">Annan</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="study-period" class="required">Studieperiod</label>
+            <input type="text" id="study-period" name="study-period" required>
+            <div class="hint">Ange start- och slutdatum för dina studier (t.ex. HT2023-VT2025)</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="previous-education">Tidigare utbildning</label>
+            <textarea id="previous-education" name="previous-education"></textarea>
+            <div class="hint">Ange tidigare utbildningar, examina och lärosäten</div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>3. Stipendium</h2>
+        
+        <div class="form-group">
+            <label for="stipendium-purpose" class="required">Ändamål med stipendiet</label>
+            <select id="stipendium-purpose" name="stipendium-purpose" required>
+                <option value="">Välj ändamål</option>
+                <option value="studies">Studier</option>
+                <option value="research">Forskning</option>
+                <option value="project">Projekt</option>
+                <option value="travel">Studieresa</option>
+                <option value="other">Annat</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="amount" class="required">Sökt belopp (SEK)</label>
+            <input type="text" id="amount" name="amount" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description" class="required">Beskrivning av ändamålet</label>
+            <textarea id="description" name="description" required></textarea>
+            <div class="hint">Beskriv tydligt vad stipendiet ska användas till och hur det överensstämmer med stiftelsens ändamål</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="motivation" class="required">Motivering till ansökan</label>
+            <textarea id="motivation" name="motivation" required></textarea>
+            <div class="hint">Beskriv varför just du bör tilldelas stipendiet</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="timeframe" class="required">Tidsram</label>
+            <input type="text" id="timeframe" name="timeframe" required>
+            <div class="hint">Ange när stipendiet ska användas (t.ex. HT2024)</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="other-funding">Har du sökt/erhållit stipendier från andra stiftelser?</label>
+            <select id="other-funding" name="other-funding">
+                <option value="no">Nej</option>
+                <option value="applied">Ja, ansökt men ej erhållit</option>
+                <option value="received">Ja, erhållit</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="other-funding-details">Om ja, ange stiftelse och belopp</label>
+            <textarea id="other-funding-details" name="other-funding-details"></textarea>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>4. Bankuppgifter</h2>
+        
+        <div class="form-group">
+            <label for="bank" class="required">Bank</label>
+            <input type="text" id="bank" name="bank" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="clearing" class="required">Clearingnummer</label>
+            <input type="text" id="clearing" name="clearing" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account" class="required">Kontonummer</label>
+            <input type="text" id="account" name="account" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account-holder" class="required">Kontoinnehavare</label>
+            <input type="text" id="account-holder" name="account-holder" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>5. Bilagor</h2>
+        <p>Följande bilagor ska bifogas ansökan:</p>
+        <ul>
+            <li>CV/Meritförteckning</li>
+            <li>Personligt brev</li>
+            <li>Studieintyg/betyg</li>
+            <li>Antagningsbesked (om tillämpligt)</li>
+            <li>Rekommendationsbrev (om tillämpligt)</li>
+            <li>Budget för studieperioden (om tillämpligt)</li>
+            <li>Övriga relevanta dokument</li>
+        </ul>
+    </div>
+    
+    <div class="form-section">
+        <h2>6. Försäkran</h2>
+        <p>Jag försäkrar att de uppgifter som lämnats i denna ansökan är korrekta och fullständiga. Jag förbinder mig att använda eventuellt beviljat stipendium i enlighet med ansökan och att inkomma med redovisning enligt stiftelsens anvisningar.</p>
+        
+        <div class="signature-area">
+            <div>
+                <span class="signature-line"></span>
+                <div>Underskrift</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Namnförtydligande</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Ort och datum</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Denna blankett ska skickas till stiftelsens adress tillsammans med alla relevanta bilagor.</p>
+        <p>Ofullständiga ansökningar behandlas ej. Alla fält markerade med * är obligatoriska.</p>
+        <p>© StiftelseGuiden.se 2024 | Version 1.1 | Senast uppdaterad: 2024-02-20</p>
+    </div>
+</body>
+</html>

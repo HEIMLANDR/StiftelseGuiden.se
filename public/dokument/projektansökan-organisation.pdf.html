@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektansökan för organisationer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5282;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f8fafc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .required:after {
+            content: " *";
+            color: #e53e3e;
+        }
+        .hint {
+            font-size: 0.8em;
+            color: #718096;
+            margin-top: 2px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        .signature-area {
+            margin-top: 30px;
+            border-top: 1px solid #cbd5e0;
+            padding-top: 20px;
+        }
+        .signature-line {
+            display: inline-block;
+            width: 250px;
+            border-bottom: 1px solid #000;
+            margin-right: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #cbd5e0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .form-section {
+                border: none;
+                padding: 10px 0;
+                background: none;
+            }
+            input, textarea, select {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Projektansökan för organisationer</h1>
+    
+    <div class="form-section">
+        <h2>1. Organisationsuppgifter</h2>
+        
+        <div class="form-group">
+            <label for="org-name" class="required">Organisationens namn</label>
+            <input type="text" id="org-name" name="org-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-number" class="required">Organisationsnummer</label>
+            <input type="text" id="org-number" name="org-number" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-type" class="required">Organisationsform</label>
+            <select id="org-type" name="org-type" required>
+                <option value="">Välj organisationsform</option>
+                <option value="ideell">Ideell förening</option>
+                <option value="stiftelse">Stiftelse</option>
+                <option value="ekonomisk">Ekonomisk förening</option>
+                <option value="aktiebolag">Aktiebolag (svb)</option>
+                <option value="trossamfund">Trossamfund</option>
+                <option value="other">Annan</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-address" class="required">Adress</label>
+            <input type="text" id="org-address" name="org-address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-postal-code" class="required">Postnummer</label>
+            <input type="text" id="org-postal-code" name="org-postal-code" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-city" class="required">Ort</label>
+            <input type="text" id="org-city" name="org-city" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="org-website">Webbplats</label>
+            <input type="text" id="org-website" name="org-website">
+        </div>
+        
+        <div class="form-group">
+            <label for="org-purpose" class="required">Organisationens syfte/ändamål</label>
+            <textarea id="org-purpose" name="org-purpose" required></textarea>
+            <div class="hint">Beskriv kortfattat organisationens huvudsakliga syfte och verksamhet</div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>2. Kontaktperson</h2>
+        
+        <div class="form-group">
+            <label for="contact-name" class="required">Namn</label>
+            <input type="text" id="contact-name" name="contact-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-title" class="required">Befattning</label>
+            <input type="text" id="contact-title" name="contact-title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-phone" class="required">Telefon</label>
+            <input type="tel" id="contact-phone" name="contact-phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-email" class="required">E-post</label>
+            <input type="email" id="contact-email" name="contact-email" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>3. Projektinformation</h2>
+        
+        <div class="form-group">
+            <label for="project-name" class="required">Projektets namn</label>
+            <input type="text" id="project-name" name="project-name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-category" class="required">Projektkategori</label>
+            <select id="project-category" name="project-category" required>
+                <option value="">Välj kategori</option>
+                <option value="education">Utbildning</option>
+                <option value="culture">Kultur</option>
+                <option value="environment">Miljö</option>
+                <option value="health">Hälsa</option>
+                <option value="social">Social verksamhet</option>
+                <option value="research">Forskning</option>
+                <option value="other">Annan</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-timeframe" class="required">Projektperiod</label>
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="start-date" style="font-weight: normal;">Startdatum</label>
+                    <input type="text" id="start-date" name="start-date" required>
+                </div>
+                <div style="flex: 1;">
+                    <label for="end-date" style="font-weight: normal;">Slutdatum</label>
+                    <input type="text" id="end-date" name="end-date" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-summary" class="required">Sammanfattning av projektet (max 300 ord)</label>
+            <textarea id="project-summary" name="project-summary" required></textarea>
+            <div class="hint">Beskriv kortfattat projektets syfte, mål, målgrupp och genomförande</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-goals" class="required">Projektets mål</label>
+            <textarea id="project-goals" name="project-goals" required></textarea>
+            <div class="hint">Beskriv projektets konkreta och mätbara mål</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-target-group" class="required">Målgrupp</label>
+            <textarea id="project-target-group" name="project-target-group" required></textarea>
+            <div class="hint">Beskriv vilka som är projektets primära och sekundära målgrupper</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-activities" class="required">Planerade aktiviteter</label>
+            <textarea id="project-activities" name="project-activities" required></textarea>
+            <div class="hint">Beskriv de huvudsakliga aktiviteterna som planeras inom projektet</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-expected-results" class="required">Förväntade resultat</label>
+            <textarea id="project-expected-results" name="project-expected-results" required></textarea>
+            <div class="hint">Beskriv vilka resultat och effekter som förväntas av projektet</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-evaluation" class="required">Uppföljning och utvärdering</label>
+            <textarea id="project-evaluation" name="project-evaluation" required></textarea>
+            <div class="hint">Beskriv hur projektet kommer att följas upp och utvärderas</div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>4. Budget</h2>
+        
+        <div class="form-group">
+            <label for="amount" class="required">Sökt belopp (SEK)</label>
+            <input type="text" id="amount" name="amount" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="total-budget" class="required">Total projektbudget (SEK)</label>
+            <input type="text" id="total-budget" name="total-budget" required>
+        </div>
+        
+        <table>
+            <tr>
+                <th colspan="2">Kostnader</th>
+            </tr>
+            <tr>
+                <td>Personalkostnader</td>
+                <td><input type="text" name="cost-personnel"></td>
+            </tr>
+            <tr>
+                <td>Materialkostnader</td>
+                <td><input type="text" name="cost-materials"></td>
+            </tr>
+            <tr>
+                <td>Lokalkostnader</td>
+                <td><input type="text" name="cost-premises"></td>
+            </tr>
+            <tr>
+                <td>Resor och transporter</td>
+                <td><input type="text" name="cost-travel"></td>
+            </tr>
+            <tr>
+                <td>Externa tjänster</td>
+                <td><input type="text" name="cost-services"></td>
+            </tr>
+            <tr>
+                <td>Marknadsföring</td>
+                <td><input type="text" name="cost-marketing"></td>
+            </tr>
+            <tr>
+                <td>Administration</td>
+                <td><input type="text" name="cost-admin"></td>
+            </tr>
+            <tr>
+                <td>Övrigt</td>
+                <td><input type="text" name="cost-other"></td>
+            </tr>
+            <tr>
+                <th>Summa kostnader</th>
+                <td><input type="text" name="cost-total"></td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <th colspan="2">Finansiering</th>
+            </tr>
+            <tr>
+                <td>Sökt bidrag från denna stiftelse</td>
+                <td><input type="text" name="funding-this"></td>
+            </tr>
+            <tr>
+                <td>Egen finansiering</td>
+                <td><input type="text" name="funding-own"></td>
+            </tr>
+            <tr>
+                <td>Andra bidragsgivare (specificera nedan)</td>
+                <td><input type="text" name="funding-other"></td>
+            </tr>
+            <tr>
+                <th>Summa finansiering</th>
+                <td><input type="text" name="funding-total"></td>
+            </tr>
+        </table>
+        
+        <div class="form-group">
+            <label for="other-funding">Har ni sökt/erhållit medel från andra finansiärer för detta projekt?</label>
+            <select id="other-funding" name="other-funding">
+                <option value="no">Nej</option>
+                <option value="applied">Ja, ansökt men ej erhållit</option>
+                <option value="received">Ja, erhållit</option>
+                <option value="both">Ja, både erhållit och ansökt</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="other-funding-details">Om ja, ange finansiär och belopp</label>
+            <textarea id="other-funding-details" name="other-funding-details"></textarea>
+        </div>
+        
+        <div class="hint">
+            <p><strong>Notera:</strong> En detaljerad projektbudget ska bifogas ansökan.</p>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>5. Bankuppgifter</h2>
+        
+        <div class="form-group">
+            <label for="bank" class="required">Bank</label>
+            <input type="text" id="bank" name="bank" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="clearing" class="required">Clearingnummer</label>
+            <input type="text" id="clearing" name="clearing" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account" class="required">Kontonummer</label>
+            <input type="text" id="account" name="account" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account-holder" class="required">Kontoinnehavare</label>
+            <input type="text" id="account-holder" name="account-holder" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>6. Bilagor</h2>
+        <p>Följande bilagor ska bifogas ansökan:</p>
+        <ul>
+            <li>Detaljerad projektbeskrivning</li>
+            <li>Detaljerad projektbudget</li>
+            <li>Organisationens stadgar</li>
+            <li>Senaste årsredovisning</li>
+            <li>Verksamhetsplan</li>
+            <li>Intyg om organisationsnummer</li>
+            <li>Övriga relevanta dokument</li>
+        </ul>
+    </div>
+    
+    <div class="form-section">
+        <h2>7. Försäkran</h2>
+        <p>Jag försäkrar att de uppgifter som lämnats i denna ansökan är korrekta och fullständiga. Jag förbinder mig att använda eventuellt beviljade medel i enlighet med ansökan och att inkomma med redovisning enligt stiftelsens anvisningar.</p>
+        
+        <div class="signature-area">
+            <div>
+                <span class="signature-line"></span>
+                <div>Underskrift behörig företrädare</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Namnförtydligande</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Befattning</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Ort och datum</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Denna blankett ska skickas till stiftelsens adress tillsammans med alla relevanta bilagor.</p>
+        <p>Ofullständiga ansökningar behandlas ej. Alla fält markerade med * är obligatoriska.</p>
+        <p>© StiftelseGuiden.se 2024 | Version 1.2 | Senast uppdaterad: 2024-02-25</p>
+    </div>
+</body>
+</html>
