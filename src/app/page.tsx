@@ -333,6 +333,51 @@ God förvaltning kräver både ekonomisk kompetens och förståelse för stiftel
         </div>
       </section>
 
+      {/* Organization Comparison CTA Section */}
+      <section className="py-16 bg-white">
+        <div className="container-padded max-w-5xl">
+          <div className="bg-gradient-to-r from-accent-50 to-accent-100 rounded-xl p-8 shadow-lg relative overflow-hidden">
+            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-accent-200/30 rounded-full"></div>
+            <div className="absolute -left-24 -top-24 w-64 h-64 bg-accent-200/20 rounded-full"></div>
+            
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="md:w-2/3">
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent-800">Ska jag starta stiftelse, förening eller aktiebolag?</h2>
+                  <p className="text-accent-700 mb-6">
+                    Osäker på vilken organisationsform som passar bäst för ditt ändamål? Vårt unika jämförelseverktyg
+                    hjälper dig att förstå skillnaderna mellan stiftelser, föreningar och aktiebolag så att du kan fatta
+                    ett välgrundat beslut.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <a
+                      href="/verktyg#organisationsformer"
+                      className="bg-accent-600 text-white px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-accent-700 transition-colors"
+                    >
+                      Testa vårt jämförelseverktyg
+                      <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div className="md:w-1/3 flex justify-center">
+                  <div className="relative w-48 h-48 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-white rounded-full opacity-20"></div>
+                    <div className="relative z-10 flex flex-col items-center">
+                      <svg className="w-16 h-16 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                      <span className="mt-3 font-semibold text-accent-800">Jämför alternativ</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section - AI-Powered Platform */}
       <section className="section-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden py-20">
         {/* Background decorative elements */}

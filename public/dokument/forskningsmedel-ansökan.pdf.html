@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansökan om forskningsmedel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5282;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5282;
+            margin-top: 30px;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f8fafc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"], 
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .required:after {
+            content: " *";
+            color: #e53e3e;
+        }
+        .hint {
+            font-size: 0.8em;
+            color: #718096;
+            margin-top: 2px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #718096;
+        }
+        .signature-area {
+            margin-top: 30px;
+            border-top: 1px solid #cbd5e0;
+            padding-top: 20px;
+        }
+        .signature-line {
+            display: inline-block;
+            width: 250px;
+            border-bottom: 1px solid #000;
+            margin-right: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #cbd5e0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+        }
+        @media print {
+            body {
+                padding: 0;
+                font-size: 12pt;
+            }
+            .form-section {
+                border: none;
+                padding: 10px 0;
+                background: none;
+            }
+            input, textarea, select {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Ansökan om forskningsmedel</h1>
+    
+    <div class="form-section">
+        <h2>1. Huvudsökande</h2>
+        
+        <div class="form-group">
+            <label for="name" class="required">Namn</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="title" class="required">Akademisk titel</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="institution" class="required">Institution/Avdelning</label>
+            <input type="text" id="institution" name="institution" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="university" class="required">Universitet/Högskola</label>
+            <input type="text" id="university" name="university" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="address" class="required">Adress</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="postal-code" class="required">Postnummer</label>
+            <input type="text" id="postal-code" name="postal-code" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="city" class="required">Ort</label>
+            <input type="text" id="city" name="city" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone" class="required">Telefon</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="required">E-post</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>2. Medsökande</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Namn</th>
+                    <th>Akademisk titel</th>
+                    <th>Institution/Universitet</th>
+                    <th>Roll i projektet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="co-applicant-name-1"></td>
+                    <td><input type="text" name="co-applicant-title-1"></td>
+                    <td><input type="text" name="co-applicant-institution-1"></td>
+                    <td><input type="text" name="co-applicant-role-1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="co-applicant-name-2"></td>
+                    <td><input type="text" name="co-applicant-title-2"></td>
+                    <td><input type="text" name="co-applicant-institution-2"></td>
+                    <td><input type="text" name="co-applicant-role-2"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="co-applicant-name-3"></td>
+                    <td><input type="text" name="co-applicant-title-3"></td>
+                    <td><input type="text" name="co-applicant-institution-3"></td>
+                    <td><input type="text" name="co-applicant-role-3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="hint">Lägg till fler rader vid behov. Bifoga CV för samtliga sökande.</div>
+    </div>
+    
+    <div class="form-section">
+        <h2>3. Forskningsprojekt</h2>
+        
+        <div class="form-group">
+            <label for="project-title" class="required">Projektets titel</label>
+            <input type="text" id="project-title" name="project-title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="research-area" class="required">Forskningsområde</label>
+            <select id="research-area" name="research-area" required>
+                <option value="">Välj forskningsområde</option>
+                <option value="medicine">Medicin</option>
+                <option value="technology">Teknik</option>
+                <option value="natural-science">Naturvetenskap</option>
+                <option value="social-science">Samhällsvetenskap</option>
+                <option value="humanities">Humaniora</option>
+                <option value="education">Utbildningsvetenskap</option>
+                <option value="other">Annat</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-summary" class="required">Sammanfattning av projektet (max 300 ord)</label>
+            <textarea id="project-summary" name="project-summary" required></textarea>
+            <div class="hint">Beskriv kortfattat projektets syfte, metod och förväntade resultat.</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="project-timeframe" class="required">Projektets tidsram</label>
+            <div style="display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label for="start-date" style="font-weight: normal;">Startdatum</label>
+                    <input type="text" id="start-date" name="start-date" required>
+                </div>
+                <div style="flex: 1;">
+                    <label for="end-date" style="font-weight: normal;">Slutdatum</label>
+                    <input type="text" id="end-date" name="end-date" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>4. Budget</h2>
+        
+        <div class="form-group">
+            <label for="amount" class="required">Sökt belopp (SEK)</label>
+            <input type="text" id="amount" name="amount" required>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Kostnadspost</th>
+                    <th>Belopp (SEK)</th>
+                    <th>Motivering</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Löner och arvoden</td>
+                    <td><input type="text" name="budget-salaries"></td>
+                    <td><input type="text" name="budget-salaries-motivation"></td>
+                </tr>
+                <tr>
+                    <td>Utrustning</td>
+                    <td><input type="text" name="budget-equipment"></td>
+                    <td><input type="text" name="budget-equipment-motivation"></td>
+                </tr>
+                <tr>
+                    <td>Material</td>
+                    <td><input type="text" name="budget-materials"></td>
+                    <td><input type="text" name="budget-materials-motivation"></td>
+                </tr>
+                <tr>
+                    <td>Resor</td>
+                    <td><input type="text" name="budget-travel"></td>
+                    <td><input type="text" name="budget-travel-motivation"></td>
+                </tr>
+                <tr>
+                    <td>Publikationer</td>
+                    <td><input type="text" name="budget-publications"></td>
+                    <td><input type="text" name="budget-publications-motivation"></td>
+                </tr>
+                <tr>
+                    <td>Övrigt</td>
+                    <td><input type="text" name="budget-other"></td>
+                    <td><input type="text" name="budget-other-motivation"></td>
+                </tr>
+                <tr>
+                    <td><strong>Totalt</strong></td>
+                    <td><input type="text" name="budget-total"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="hint">Bifoga detaljerad budget som bilaga vid behov.</div>
+    </div>
+    
+    <div class="form-section">
+        <h2>5. Annan finansiering</h2>
+        
+        <div class="form-group">
+            <label for="other-funding" class="required">Har du sökt/erhållit medel från andra finansiärer för detta projekt?</label>
+            <select id="other-funding" name="other-funding" required>
+                <option value="no">Nej</option>
+                <option value="applied">Ja, ansökt men ej erhållit</option>
+                <option value="received">Ja, erhållit</option>
+                <option value="both">Ja, både erhållit och ansökt</option>
+            </select>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Finansiär</th>
+                    <th>Belopp (SEK)</th>
+                    <th>Status (Ansökt/Beviljat)</th>
+                    <th>Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" name="funder-1"></td>
+                    <td><input type="text" name="funder-amount-1"></td>
+                    <td><input type="text" name="funder-status-1"></td>
+                    <td><input type="text" name="funder-period-1"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="funder-2"></td>
+                    <td><input type="text" name="funder-amount-2"></td>
+                    <td><input type="text" name="funder-status-2"></td>
+                    <td><input type="text" name="funder-period-2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="form-section">
+        <h2>6. Bilagor</h2>
+        <p>Följande bilagor ska bifogas ansökan:</p>
+        <ul>
+            <li>Projektbeskrivning (max 5 sidor)</li>
+            <li>CV för samtliga sökande (max 2 sidor per person)</li>
+            <li>Publikationslista för samtliga sökande (max 2 sidor per person)</li>
+            <li>Detaljerad budget</li>
+            <li>Etiskt tillstånd (om tillämpligt)</li>
+            <li>Intyg från prefekt/motsvarande</li>
+        </ul>
+    </div>
+    
+    <div class="form-section">
+        <h2>7. Bankuppgifter</h2>
+        
+        <div class="form-group">
+            <label for="bank" class="required">Bank</label>
+            <input type="text" id="bank" name="bank" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="clearing" class="required">Clearingnummer</label>
+            <input type="text" id="clearing" name="clearing" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account" class="required">Kontonummer</label>
+            <input type="text" id="account" name="account" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="account-holder" class="required">Kontoinnehavare</label>
+            <input type="text" id="account-holder" name="account-holder" required>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>8. Försäkran</h2>
+        <p>Jag försäkrar att de uppgifter som lämnats i denna ansökan är korrekta och fullständiga. Jag förbinder mig att använda eventuellt beviljade medel i enlighet med ansökan och att inkomma med vetenskaplig och ekonomisk redovisning enligt stiftelsens anvisningar.</p>
+        
+        <div class="signature-area">
+            <div>
+                <span class="signature-line"></span>
+                <div>Underskrift huvudsökande</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Namnförtydligande</div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="signature-line"></span>
+                <div>Ort och datum</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Denna blankett ska skickas till stiftelsens adress tillsammans med alla relevanta bilagor.</p>
+        <p>Ofullständiga ansökningar behandlas ej. Alla fält markerade med * är obligatoriska.</p>
+        <p>© StiftelseGuiden.se 2024 | Version 2.1 | Senast uppdaterad: 2024-02-10</p>
+    </div>
+</body>
+</html>

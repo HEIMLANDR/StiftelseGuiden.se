@@ -98,11 +98,12 @@ export default function DokumentPage() {
                       <span className="mr-3">PDF • 2 sidor</span>
                       <span>Senast uppdaterad: 2024-03-15</span>
                     </div>
-                    <a 
-                      href="/dokument/allmän-ansökningsblankett.pdf" 
+                    <a
+                      href="/dokument/allmän-ansökningsblankett.pdf.html"
                       className="inline-flex items-center px-4 py-2 border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="allmän-ansökningsblankett.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -130,11 +131,12 @@ export default function DokumentPage() {
                       <span className="mr-3">PDF • 4 sidor</span>
                       <span>Senast uppdaterad: 2024-02-10</span>
                     </div>
-                    <a 
-                      href="/dokument/forskningsmedel-ansökan.pdf" 
+                    <a
+                      href="/dokument/forskningsmedel-ansökan.pdf.html"
                       className="inline-flex items-center px-4 py-2 border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="forskningsmedel-ansökan.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -171,11 +173,12 @@ export default function DokumentPage() {
                       <span className="mr-3">DOCX • 8 sidor</span>
                       <span>Senast uppdaterad: 2024-02-15</span>
                     </div>
-                    <a 
-                      href="/dokument/mall-stadgar-allmännyttig.docx" 
+                    <a
+                      href="/dokument/mall-stadgar-allmännyttig.docx.html"
                       className="inline-flex items-center px-4 py-2 border border-accent-600 text-accent-600 rounded-md hover:bg-accent-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="mall-stadgar-allmännyttig.docx"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -203,11 +206,12 @@ export default function DokumentPage() {
                       <span className="mr-3">PDF • 2 sidor</span>
                       <span>Senast uppdaterad: 2024-03-20</span>
                     </div>
-                    <a 
-                      href="/dokument/checklista-ansökan.pdf" 
+                    <a
+                      href="/dokument/checklista-ansökan.pdf.html"
                       className="inline-flex items-center px-4 py-2 border border-accent-600 text-accent-600 rounded-md hover:bg-accent-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="checklista-ansökan.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -244,11 +248,12 @@ export default function DokumentPage() {
                       <span className="mr-3">PDF • 32 sidor</span>
                       <span>Senast uppdaterad: 2023-07-01</span>
                     </div>
-                    <a 
-                      href="/dokument/stiftelselagen.pdf" 
+                    <a
+                      href="/dokument/stiftelselagen.pdf.html"
                       className="inline-flex items-center px-4 py-2 border border-secondary-600 text-secondary-600 rounded-md hover:bg-secondary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="stiftelselagen.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -276,11 +281,12 @@ export default function DokumentPage() {
                       <span className="mr-3">PDF • 12 sidor</span>
                       <span>Senast uppdaterad: 2023-07-01</span>
                     </div>
-                    <a 
-                      href="/dokument/stiftelseförordningen.pdf" 
+                    <a
+                      href="/dokument/stiftelseförordningen.pdf.html"
                       className="inline-flex items-center px-4 py-2 border border-secondary-600 text-secondary-600 rounded-md hover:bg-secondary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
+                      download="stiftelseförordningen.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
