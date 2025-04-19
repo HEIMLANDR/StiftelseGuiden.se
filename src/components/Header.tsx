@@ -1,48 +1,106 @@
-import React from 'react';
-import { Bot } from 'lucide-react';
+"use client";
 
-export function Header() {
-  const scrollToDirectory = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const directory = document.querySelector('#stiftelsekatalog');
-    if (directory) {
-      directory.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+import { useState } from 'react';
+import Link from 'next/link';
+import SearchBar from './SearchBar';
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="py-6">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <div className="flex items-center space-x-3">
-            <Bot className="w-8 h-8 text-white" />
-            <div>
-              <h1 className="text-2xl font-bold text-white">StiftelseGuiden.se</h1>
-              <p className="text-white/80 text-sm">Sveriges mest omfattande AI-verktyg för Stiftelser</p>
-            </div>
-          </div>
+    <header className="bg-primary-600 text-white shadow-md relative z-20">
+      <div className="container mx-auto py-4 px-4 md:px-6">
+        <div className="flex justify-between items-center">
+          <Link
+            href="/"
+            className="text-2xl font-bold tracking-tight hover:text-white/90 transition-colors flex items-center"
+          >
+            <span className="border-b-2 border-accent-400">
+              StiftelseGuiden
+            </span>
+            <span className="text-accent-300 ml-1">.se</span>
+          </Link>
+          
           <div className="flex items-center space-x-4">
-            <a 
-              href="https://heimlandr.io" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white text-sm transition-colors"
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-1">
+              {[
+                { text: 'Hem', href: '/' },
+                { text: 'Starta stiftelse', href: '/starta-stiftelse' },
+                { text: 'Driva stiftelse', href: '/driva-stiftelse' },
+                { text: 'Juridik', href: '/juridik' },
+                { text: 'Dokument', href: '/dokument' },
+                { text: 'Verktyg', href: '/verktyg' },
+                { text: 'Kontakt', href: '/kontakt' },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="px-4 py-2 rounded-md text-white hover:text-white hover:bg-primary-500 transition-all duration-200"
+                >
+                  {item.text}
+                </Link>
+              ))}
+            </nav>
+            
+            {/* Search Bar */}
+            <SearchBar />
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden flex items-center text-white focus:outline-none"
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
-              Created by HEIMLANDR.IO
-            </a>
-            <button 
-              onClick={scrollToDirectory}
-              className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-sm transition-all"
-            >
-              Sök Stiftelser
+              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
+                {mobileMenuOpen ? (
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+                  />
+                ) : (
+                  <path
+                    fillRule="evenodd"
+                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                  />
+                )}
+              </svg>
             </button>
           </div>
         </div>
-        <div className="mt-4 text-center space-y-2">
-          <p className="text-white/90 text-lg">För Individer, Organisationer, Myndigheter, Stiftelser och Företag</p>
-          <p className="text-white/80 text-sm font-medium">Vår Stiftelse - HEIMLANDR Insamlingsstiftelse</p>
-        </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <nav className="md:hidden bg-primary-600 py-2 px-4 absolute w-full shadow-lg animate-fadeIn">
+          <div className="flex flex-col space-y-1">
+            {[
+              { text: 'Hem', href: '/' },
+              { text: 'Starta stiftelse', href: '/starta-stiftelse' },
+              { text: 'Driva stiftelse', href: '/driva-stiftelse' },
+              { text: 'Juridik', href: '/juridik' },
+              { text: 'Dokument', href: '/dokument' },
+              { text: 'Verktyg', href: '/verktyg' },
+              { text: 'Kontakt', href: '/kontakt' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-4 py-3 rounded-md text-white hover:text-white hover:bg-primary-500 transition-all"
+              >
+                {item.text}
+              </Link>
+            ))}
+            
+            {/* Search in mobile menu */}
+            <div className="px-4 py-3">
+              <SearchBar />
+            </div>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
