@@ -1,11 +1,11 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
-# Redirect all routes to Next.js for handling
+# Handle all routes for SPA
 [[redirects]]
   from = "/*"
-  to = "/_next/static/chunks/pages/:splat"
+  to = "/index.html"
   status = 200
 
 # Handle 404 errors
