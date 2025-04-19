@@ -1,9 +1,59 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import FoundationTypeIcon from "@/components/FoundationTypeIcon";
+import { useState } from "react";
 
 export default function Home() {
+  const [openModal, setOpenModal] = useState<string | null>(null);
+  
+  // Additional information content for each card
+  const modalContent = {
+    definition: {
+      title: "Definition av stiftelse",
+      content: `En stiftelse är en självägande förmögenhet som avsatts för ett bestämt ändamål. Till skillnad från andra organisationsformer har stiftelser inga ägare, medlemmar eller delägare.
+
+Stiftelsen är en egen juridisk person som kan ingå avtal, äga tillgångar och ha skulder. Den styrs av stiftelseförordnandet, det dokument där stiftaren anger stiftelsens ändamål och hur förmögenheten ska förvaltas.
+
+Stiftelser regleras huvudsakligen av stiftelselagen (1994:1220) och står under tillsyn av länsstyrelsen. Stiftelser är långsiktiga och ändamålet som anges vid bildandet är i princip oföränderligt, vilket ger stabilitet men också ställer höga krav på noggrann planering vid bildandet.`
+    },
+    syften: {
+      title: "Stiftelsers syften",
+      content: `Stiftelser bildas för många olika ändamål, och dessa ändamål styr hela stiftelsens verksamhet:
+
+• Välgörenhet: Att stödja behövande grupper i samhället
+• Utbildning: Att främja utbildning genom stipendier eller forskningsstöd
+• Forskning: Att finansiera vetenskaplig forskning inom specifika områden
+• Kultur: Att bevara kulturarv eller stödja kulturella verksamheter
+• Miljö: Att främja miljöskydd och hållbar utveckling
+• Religion: Att stödja religiös verksamhet
+• Sociala ändamål: Att förbättra sociala förhållanden för specifika grupper
+
+Ändamålet måste vara tillräckligt konkret för att kunna följas, men samtidigt tillräckligt flexibelt för att fungera över lång tid. Stiftelsens styrelse eller förvaltare är skyldiga att följa ändamålet och kan inte ändra det utan särskilda skäl och tillstånd från Kammarkollegiet.`
+    },
+    forvaltning: {
+      title: "Förvaltning av stiftelser",
+      content: `Förvaltningen av en stiftelse kan ske på två sätt:
+
+1. Egen förvaltning: Stiftelsen har en styrelse som ansvarar för förvaltningen
+2. Anknuten förvaltning: En extern förvaltare (t.ex. en bank, kommun eller annan juridisk person) förvaltar stiftelsen
+
+Oavsett förvaltningsform har förvaltaren följande huvuduppgifter:
+
+• Placera stiftelsens kapital på ett säkert sätt som ger god avkastning
+• Verkställa stiftelsens ändamål genom att dela ut medel eller bedriva verksamhet
+• Sköta bokföring och årsredovisning enligt stiftelselagen och bokföringslagen
+• Anmäla stiftelsen till länsstyrelsen för tillsyn och till Skatteverket
+• Följa stiftelsens stadgar och stiftelselagen i alla beslut
+
+God förvaltning kräver både ekonomisk kompetens och förståelse för stiftelsens specifika ändamål. Förvaltaren har ett stort ansvar och kan bli personligt ersättningsskyldig vid misskötsel.`
+    }
+  };
+
+  // Function to close the modal
+  const closeModal = () => setOpenModal(null);
+
   return (
     <>
       {/* Hero Section */}
@@ -83,13 +133,16 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3 text-primary-800">Definition</h3>
                 <p className="text-gray-600">En stiftelse är en självägande förmögenhet som avsatts för ett bestämt ändamål. Stiftelsen har inga ägare och är en egen juridisk person.</p>
                 
-                {/* Subtle indicator */}
-                <div className="mt-6 flex items-center text-primary-600 font-medium">
+                {/* Clickable indicator */}
+                <button
+                  onClick={() => setOpenModal('definition')}
+                  className="mt-6 flex items-center text-primary-600 font-medium hover:text-primary-800 transition-colors"
+                >
                   <span className="text-sm">Läs mer</span>
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
             
@@ -107,13 +160,16 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3 text-accent-800">Syften</h3>
                 <p className="text-gray-600">Stiftelser bildas för olika ändamål som välgörenhet, utbildning, forskning, kulturella syften eller att stödja specifika grupper i samhället.</p>
                 
-                {/* Subtle indicator */}
-                <div className="mt-6 flex items-center text-accent-600 font-medium">
+                {/* Clickable indicator */}
+                <button
+                  onClick={() => setOpenModal('syften')}
+                  className="mt-6 flex items-center text-accent-600 font-medium hover:text-accent-800 transition-colors"
+                >
                   <span className="text-sm">Läs mer</span>
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
             
@@ -131,13 +187,16 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-3 text-primary-800">Förvaltning</h3>
                 <p className="text-gray-600">Stiftelsens styrelse eller förvaltare ansvarar för att förvalta stiftelsens tillgångar och verkställa stiftelsens ändamål enligt stiftarens vilja.</p>
                 
-                {/* Subtle indicator */}
-                <div className="mt-6 flex items-center text-primary-600 font-medium">
+                {/* Clickable indicator */}
+                <button
+                  onClick={() => setOpenModal('forvaltning')}
+                  className="mt-6 flex items-center text-primary-600 font-medium hover:text-primary-800 transition-colors"
+                >
                   <span className="text-sm">Läs mer</span>
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -419,6 +478,67 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Modal */}
+      {openModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn" onClick={closeModal}>
+          <div
+            className="bg-white rounded-xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scaleIn"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-2xl font-bold text-gray-900">
+                {openModal === 'definition' && modalContent.definition.title}
+                {openModal === 'syften' && modalContent.syften.title}
+                {openModal === 'forvaltning' && modalContent.forvaltning.title}
+              </h3>
+              <button
+                onClick={closeModal}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="prose prose-lg max-w-none">
+              <div className="whitespace-pre-line">
+                {openModal === 'definition' && modalContent.definition.content}
+                {openModal === 'syften' && modalContent.syften.content}
+                {openModal === 'forvaltning' && modalContent.forvaltning.content}
+              </div>
+            </div>
+            
+            <div className="mt-6 flex justify-end">
+              <button
+                onClick={closeModal}
+                className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors"
+              >
+                Stäng
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
+
+// Add these animations to your global CSS file
+// @keyframes fadeIn {
+//   from { opacity: 0; }
+//   to { opacity: 1; }
+// }
+//
+// @keyframes scaleIn {
+//   from { transform: scale(0.95); opacity: 0; }
+//   to { transform: scale(1); opacity: 1; }
+// }
+//
+// .animate-fadeIn {
+//   animation: fadeIn 0.2s ease-out forwards;
+// }
+//
+// .animate-scaleIn {
+//   animation: scaleIn 0.2s ease-out forwards;
+// }
