@@ -1,17 +1,26 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Driva stiftelse i Sverige | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Driva stiftelse i Sverige",
   description: "Guide till förvaltning, administration och utveckling av stiftelser i Sverige. Information om styrelsearbete, bokföring, kapitalförvaltning, och rapportering.",
   keywords: "driva stiftelse, stiftelseförvaltning, stiftelsestyrelse, kapitalförvaltning, utdelning stiftelse",
-};
+  path: "/driva-stiftelse/",
+  openGraphType: "article",
+});
 
 export default function ManageFoundation() {
   return (
     <>
+      <PageSchema
+        title="Driva stiftelse i Sverige"
+        description="Guide till förvaltning, administration och utveckling av stiftelser i Sverige. Information om styrelsearbete, bokföring, kapitalförvaltning och rapportering."
+        path="/driva-stiftelse/"
+        breadcrumbs={[{ label: "Driva stiftelse" }]}
+      />
       {/* Hero Section */}
       <Hero
         title="Driva stiftelse i Sverige"

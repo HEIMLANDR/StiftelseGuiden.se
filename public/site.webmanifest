@@ -1,0 +1,16 @@
+{
+  "name": "StiftelseGuiden.se",
+  "short_name": "StiftelseGuiden",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0A7AFF",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

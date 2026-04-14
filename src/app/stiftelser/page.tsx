@@ -1,17 +1,33 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Svenska stiftelser | Guide och information | StiftelseGuiden",
+const foundationCollections = [
+  { name: "Aktiva stiftelser", url: "/stiftelser/aktiva-stiftelser/" },
+  { name: "Olika stiftelsetyper" },
+  { name: "Guide till att söka stiftelsemedel" },
+];
+
+export const metadata = createPageMetadata({
+  title: "Svenska stiftelser",
   description: "Omfattande information om svenska stiftelser. Hitta aktiva stiftelser, lär dig om olika stiftelsetyper och få tips om hur du söker stiftelsemedel.",
   keywords: "svenska stiftelser, stiftelsetyper, aktiva stiftelser, söka stiftelsemedel, stiftelseguiden",
-};
+  path: "/stiftelser/",
+});
 
 export default function FoundationsPage() {
   return (
     <>
+      <PageSchema
+        title="Svenska stiftelser"
+        description="Omfattande information om svenska stiftelser. Hitta aktiva stiftelser, lär dig om olika stiftelsetyper och få tips om hur du söker stiftelsemedel."
+        path="/stiftelser/"
+        pageType="CollectionPage"
+        breadcrumbs={[{ label: "Stiftelser" }]}
+        collectionItems={foundationCollections}
+      />
       {/* Hero Section */}
       <Hero
         title="Svenska stiftelser"

@@ -3,17 +3,33 @@ import Breadcrumb from "@/components/Breadcrumb";
 import FoundationComparison from "@/components/FoundationComparison";
 import OrganizationComparison from "@/components/OrganizationComparison";
 import CapitalCalculator from "@/components/CapitalCalculator";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Verktyg för stiftelser och organisationer | StiftelseGuiden",
+const toolCollections = [
+  { name: "Jämför stiftelsetyper" },
+  { name: "Jämför organisationsformer" },
+  { name: "Kapitalberäknare" },
+];
+
+export const metadata = createPageMetadata({
+  title: "Verktyg för stiftelser och organisationer",
   description: "Användbara verktyg för att jämföra stiftelsetyper, organisationsformer, beräkna kapital och planera din verksamhet. Kostnadsfria hjälpmedel från StiftelseGuiden.se.",
   keywords: "stiftelseverktyg, stiftelsekapital, jämföra stiftelser, jämföra organisationsformer, stiftelse vs förening, stiftelse vs aktiebolag, stiftelseberäkning, stiftelseplanering",
-};
+  path: "/verktyg/",
+});
 
 export default function ToolsPage() {
   return (
     <>
+      <PageSchema
+        title="Verktyg för stiftelser och organisationer"
+        description="Användbara verktyg för att jämföra stiftelsetyper, organisationsformer, beräkna kapital och planera din verksamhet. Kostnadsfria hjälpmedel från StiftelseGuiden.se."
+        path="/verktyg/"
+        pageType="CollectionPage"
+        breadcrumbs={[{ label: "Verktyg" }]}
+        collectionItems={toolCollections}
+      />
       {/* Hero Section */}
       <Hero
         title="Verktyg för stiftelser"

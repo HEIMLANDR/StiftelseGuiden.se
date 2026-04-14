@@ -1,17 +1,36 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Resurser för stiftelser | Guider och verktyg | StiftelseGuiden",
+const resourceCollections = [
+  { name: "Ansökningsguide", url: "/resurser/ansokningsguide/" },
+  { name: "Skatteoptimering", url: "/resurser/skatteoptimering/" },
+  { name: "Stiftelseordlista", url: "/resurser/stiftelseordlista/" },
+  { name: "Tips och trix", url: "/resurser/tips-och-trix/" },
+  { name: "Dokument & mallar", url: "/dokument/" },
+  { name: "Verktyg", url: "/verktyg/" },
+];
+
+export const metadata = createPageMetadata({
+  title: "Resurser för stiftelser",
   description: "Omfattande resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och mer. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige.",
   keywords: "stiftelseresurser, stiftelseguider, stiftelseverktyg, stiftelseordlista, ansökningsguide, skatteoptimering stiftelse, stiftelseguiden",
-};
+  path: "/resurser/",
+});
 
 export default function ResourcesPage() {
   return (
     <>
+      <PageSchema
+        title="Resurser för stiftelser"
+        description="Omfattande resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och mer. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige."
+        path="/resurser/"
+        pageType="CollectionPage"
+        breadcrumbs={[{ label: "Resurser" }]}
+        collectionItems={resourceCollections}
+      />
       {/* Hero Section */}
       <Hero
         title="Resurser för stiftelser"

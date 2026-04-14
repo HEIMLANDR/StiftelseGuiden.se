@@ -1,18 +1,61 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kontakta StiftelseGuiden | Frågor om svenska stiftelser",
+const faqItems = [
+  {
+    question: "Vad är skillnaden mellan en stiftelse och en förening?",
+    answer:
+      "En stiftelse är en självägande förmögenhet som avskilts för ett bestämt ändamål. Till skillnad från en förening har en stiftelse inga medlemmar och styrs av stiftelseförordnandet som upprättades när stiftelsen bildades.",
+  },
+  {
+    question: "Hur mycket kapital behövs för att starta en stiftelse?",
+    answer:
+      "Det finns inget lagstadgat minimikrav för stiftelsekapital, men för mindre stiftelser rekommenderas ofta ett startkapital på minst 350 000 till 400 000 kronor för att täcka administrativa kostnader och samtidigt kunna skapa avkastning för ändamålet.",
+  },
+  {
+    question: "Kan man ändra ändamålet i en befintlig stiftelse?",
+    answer:
+      "Stiftelseförordnandet är i princip oföränderligt, men ändringar kan i vissa fall tillåtas genom permutation efter tillstånd från Kammarkollegiet eller domstol.",
+  },
+  {
+    question: "Måste alla stiftelser registreras?",
+    answer:
+      "Nej. Registreringsskyldighet gäller bland annat för stiftelser som bedriver näringsverksamhet, har tillgångar över 1,5 miljoner kronor eller är bildade av stat eller kommun. Övriga kan registrera sig frivilligt.",
+  },
+  {
+    question: "Hur beskattas stiftelser?",
+    answer:
+      "Stiftelser är i princip skattskyldiga för all inkomst, men allmännyttiga stiftelser kan få inskränkt skattskyldighet och då endast beskattas för vissa inkomster från näringsverksamhet och fastigheter.",
+  },
+  {
+    question: "Hur länge kan en stiftelse existera?",
+    answer:
+      "En stiftelse kan i princip existera för evigt så länge den har tillräckliga medel för att uppfylla sitt ändamål.",
+  },
+];
+
+export const metadata = createPageMetadata({
+  title: "Kontakta StiftelseGuiden",
   description: "Har du frågor om stiftelser i Sverige? Kontakta oss på StiftelseGuiden eller besök vår partner SökaStiftelseMedel.se för professionell rådgivning.",
   keywords: "kontakt stiftelse, frågor stiftelse, stiftelseguiden kontakt, stiftelserådgivning",
-};
+  path: "/kontakt/",
+});
 
 export default function ContactPage() {
   return (
     <>
+      <PageSchema
+        title="Kontakta StiftelseGuiden"
+        description="Har du frågor om stiftelser i Sverige? Kontakta oss på StiftelseGuiden eller besök vår partner SökaStiftelseMedel.se för professionell rådgivning."
+        path="/kontakt/"
+        pageType="ContactPage"
+        breadcrumbs={[{ label: "Kontakt" }]}
+        faq={faqItems}
+      />
       {/* Hero Section */}
       <Hero
         title="Kontakta oss"

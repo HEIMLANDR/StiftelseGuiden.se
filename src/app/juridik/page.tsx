@@ -1,17 +1,26 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Juridik för stiftelser | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Juridik för stiftelser",
   description: "Juridisk information om stiftelselagen, tillsyn, skatteregler och andra rättsliga aspekter av stiftelser i Sverige.",
   keywords: "stiftelsejuridik, stiftelselagen, stiftelsestyrelse, stiftelseskatt, tillsyn stiftelse",
-};
+  path: "/juridik/",
+  openGraphType: "article",
+});
 
 export default function LegalPage() {
   return (
     <>
+      <PageSchema
+        title="Juridik för stiftelser"
+        description="Juridisk information om stiftelselagen, tillsyn, skatteregler och andra rättsliga aspekter av stiftelser i Sverige."
+        path="/juridik/"
+        breadcrumbs={[{ label: "Juridik" }]}
+      />
       {/* Hero Section */}
       <Hero
         title="Juridiska aspekter för stiftelser"

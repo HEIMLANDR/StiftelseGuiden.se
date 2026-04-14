@@ -1,14 +1,31 @@
 import Link from 'next/link';
-import { Metadata } from 'next';
+import Breadcrumb from '@/components/Breadcrumb';
+import { PageSchema } from '@/components/SeoSchema';
+import { createPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Dokument & Mallar | StiftelseGuiden.se',
+const documentCollections = [
+  { name: 'Ansökningsblanketter' },
+  { name: 'Mallar & checklistor' },
+  { name: 'Juridiska dokument' },
+];
+
+export const metadata = createPageMetadata({
+  title: 'Dokument & mallar',
   description: 'Ladda ner ansökningsblanketter, mallar, checklistor och andra dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser.',
-};
+  path: '/dokument/',
+});
 
 export default function DokumentPage() {
   return (
-    <main className="min-h-screen">
+    <>
+      <PageSchema
+        title="Dokument & mallar"
+        description="Ladda ner ansökningsblanketter, mallar, checklistor och andra dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser."
+        path="/dokument/"
+        pageType="CollectionPage"
+        breadcrumbs={[{ label: 'Dokument' }]}
+        collectionItems={documentCollections}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 py-16 text-white">
         <div className="container-padded max-w-6xl mx-auto">
@@ -20,6 +37,8 @@ export default function DokumentPage() {
           </div>
         </div>
       </section>
+
+      <Breadcrumb items={[{ label: 'Dokument' }]} />
 
       {/* Document Categories */}
       <section className="py-16 bg-gray-50">
@@ -300,6 +319,6 @@ export default function DokumentPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

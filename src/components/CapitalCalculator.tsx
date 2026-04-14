@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface CalculationResult {
   requiredCapital: number;
@@ -22,12 +22,7 @@ export default function CapitalCalculator() {
   // Result state
   const [result, setResult] = useState<CalculationResult | null>(null);
   
-  // Calculate on input change
-  useEffect(() => {
-    calculateCapital();
-  }, [targetDistribution, expectedReturn, annualCosts, inflationRate, years]);
-  
-  const calculateCapital = () => {
+  const calculateCapital = useCallback(() => {
     // Adjust return rate for inflation
     const realReturnRate = (expectedReturn - inflationRate) / 100;
     
@@ -50,7 +45,12 @@ export default function CapitalCalculator() {
       years: yearsArray,
       capitalValues
     });
-  };
+  }, [targetDistribution, expectedReturn, annualCosts, inflationRate, years]);
+
+  // Calculate on input change
+  useEffect(() => {
+    calculateCapital();
+  }, [calculateCapital]);
   
   // Format number as SEK
   const formatCurrency = (value: number): string => {

@@ -1,17 +1,29 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Skatteoptimering för Stiftelser | Skatteregler | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Skatteoptimering för stiftelser",
   description: "Guide till skatteoptimering för stiftelser. Lär dig om skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du kan minimera skattebördan för din stiftelse på lagligt sätt.",
   keywords: "stiftelseskatt, skatteoptimering stiftelse, inskränkt skattskyldighet, stiftelsebeskattning, skatteregler stiftelser, skattefri stiftelse, stiftelseguiden",
-};
+  path: "/resurser/skatteoptimering/",
+  openGraphType: "article",
+});
 
 export default function TaxOptimizationPage() {
   return (
     <>
+      <PageSchema
+        title="Skatteoptimering för stiftelser"
+        description="Guide till skatteoptimering för stiftelser. Lär dig om skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du kan minimera skattebördan för din stiftelse på lagligt sätt."
+        path="/resurser/skatteoptimering/"
+        breadcrumbs={[
+          { label: "Resurser", href: "/resurser" },
+          { label: "Skatteoptimering" },
+        ]}
+      />
       {/* Hero Section */}
       <Hero
         title="Skatteoptimering för Stiftelser"

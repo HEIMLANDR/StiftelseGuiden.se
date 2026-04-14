@@ -1,17 +1,43 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "100 mest aktiva stiftelser i Sverige | Forskningsstiftelser | StiftelseGuiden",
+const activeFoundationHighlights = [
+  { name: "Svenska Postkodstiftelsen" },
+  { name: "ERIKS Development Partner" },
+  { name: "H&M Conscious Foundation" },
+  { name: "Kampradstiftelsen" },
+  { name: "Olof Palmes Internationella Center" },
+  { name: "Formas" },
+  { name: "Naturskyddsföreningens stiftelse" },
+  { name: "Stiftelsen Lantbruksforskning (SLF)" },
+  { name: "Knut och Alice Wallenbergs Stiftelse" },
+  { name: "Vetenskapsrådet" },
+];
+
+export const metadata = createPageMetadata({
+  title: "100 mest aktiva stiftelser i Sverige",
   description: "Omfattande lista över Sveriges 100 mest aktiva stiftelser som stödjer forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål.",
   keywords: "svenska stiftelser, aktiva stiftelser, forskningsstiftelser, utbildningsstiftelser, kulturstiftelser, innovationsstiftelser, välgörenhetsstiftelser, stiftelseguiden",
-};
+  path: "/stiftelser/aktiva-stiftelser/",
+});
 
 export default function ActiveFoundationsPage() {
   return (
     <>
+      <PageSchema
+        title="100 mest aktiva stiftelser i Sverige"
+        description="Omfattande lista över Sveriges 100 mest aktiva stiftelser som stödjer forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål."
+        path="/stiftelser/aktiva-stiftelser/"
+        pageType="CollectionPage"
+        breadcrumbs={[
+          { label: "Stiftelser", href: "/stiftelser" },
+          { label: "Aktiva stiftelser" },
+        ]}
+        collectionItems={activeFoundationHighlights}
+      />
       {/* Hero Section */}
       <Hero
         title="Sveriges 100 mest aktiva stiftelser"

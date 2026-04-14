@@ -1,17 +1,29 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ansökningsguide för stiftelser | Steg för steg | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Ansökningsguide för stiftelser",
   description: "Komplett guide för att söka stiftelsemedel. Lär dig skriva framgångsrika ansökningar, undvika vanliga misstag och maximera dina chanser att få bidrag från svenska stiftelser.",
   keywords: "stiftelseansökan, ansöka stiftelsemedel, ansökningsguide, stiftelsebidrag, ansökningsmall, ansökningstips, stiftelseguiden",
-};
+  path: "/resurser/ansokningsguide/",
+  openGraphType: "article",
+});
 
 export default function ApplicationGuidePage() {
   return (
     <>
+      <PageSchema
+        title="Ansökningsguide för stiftelser"
+        description="Komplett guide för att söka stiftelsemedel. Lär dig skriva framgångsrika ansökningar, undvika vanliga misstag och maximera dina chanser att få bidrag från svenska stiftelser."
+        path="/resurser/ansokningsguide/"
+        breadcrumbs={[
+          { label: "Resurser", href: "/resurser" },
+          { label: "Ansökningsguide" },
+        ]}
+      />
       {/* Hero Section */}
       <Hero
         title="Ansökningsguide för stiftelser"

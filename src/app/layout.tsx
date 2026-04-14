@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { SitewideSchema } from "@/components/SeoSchema";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -9,8 +11,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const siteUrl = "https://stiftelseguiden.se";
-
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -18,13 +18,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: "StiftelseGuiden.se | Sveriges mest kompletta guide om stiftelser",
+    default: SITE_NAME,
     template: "%s | StiftelseGuiden.se",
   },
-  description:
-    "Sveriges ledande resurs om stiftelser. Komplett guide om att starta, driva och förvalta stiftelser. Juridik, skatteregler, kapitalberäkning, dokumentmallar och databas med 100+ aktiva stiftelser.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "stiftelse",
     "starta stiftelse",
@@ -43,31 +43,13 @@ export const metadata: Metadata = {
     "driva stiftelse",
     "ansöka stiftelsemedel",
   ],
-  authors: [{ name: "heimlandr.io", url: "https://heimlandr.io" }],
-  creator: "heimlandr.io",
-  publisher: "StiftelseGuiden.se",
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-  openGraph: {
-    type: "website",
-    locale: "sv_SE",
-    url: siteUrl,
-    siteName: "StiftelseGuiden.se",
-    title: "StiftelseGuiden.se | Sveriges mest kompletta guide om stiftelser",
-    description:
-      "Allt du behöver veta om att starta, driva och förvalta stiftelser i Sverige. Juridik, skatt, kapitalberäkning, mallar och 100+ aktiva stiftelser.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "StiftelseGuiden.se | Sveriges mest kompletta guide om stiftelser",
-    description:
-      "Allt du behöver veta om att starta, driva och förvalta stiftelser i Sverige.",
   },
   robots: {
     index: true,
@@ -80,45 +62,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   category: "education",
-};
-
-// JSON-LD Structured Data
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: "StiftelseGuiden.se",
-      description:
-        "Sveriges mest kompletta guide om stiftelser - starta, driva och förvalta stiftelser.",
-      publisher: { "@id": `${siteUrl}/#organization` },
-      inLanguage: "sv-SE",
-    },
-    {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "StiftelseGuiden.se",
-      url: siteUrl,
-      description:
-        "Sveriges ledande informationsresurs om stiftelser, stiftelsebildning och stiftelseförvaltning.",
-      foundingDate: "2025",
-      sameAs: [],
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#webpage`,
-      url: siteUrl,
-      name: "StiftelseGuiden.se | Sveriges mest kompletta guide om stiftelser",
-      isPartOf: { "@id": `${siteUrl}/#website` },
-      about: { "@id": `${siteUrl}/#organization` },
-      description:
-        "Komplett guide om att starta, driva och förvalta stiftelser i Sverige. Juridik, skatteregler, kapitalberäkning och dokumentmallar.",
-      inLanguage: "sv-SE",
-    },
-  ],
 };
 
 export default function RootLayout({
@@ -129,10 +78,7 @@ export default function RootLayout({
   return (
     <html lang="sv" className="scroll-smooth">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <SitewideSchema />
       </head>
       <body
         className={`${inter.variable} antialiased bg-gray-50 text-primary-900 flex flex-col min-h-screen`}

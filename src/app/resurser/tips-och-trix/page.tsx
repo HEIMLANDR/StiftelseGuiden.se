@@ -1,21 +1,35 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tips och trix för stiftelser och företag | Dolda fördelar | StiftelseGuiden",
-  description: "Avancerade strategier och dolda fördelar med stiftelser och företag. Upptäck lagliga kryphål, skattefördelar och optimeringsstrategier som få känner till.",
-  keywords: "stiftelsetips, skatteplanering stiftelse, stiftelse skatteparadis, förmögenhetsplanering, stiftelse kryphål, stiftelse skattefördelar, stiftelse företag kombination, stiftelseguiden",
-};
+export const metadata = createPageMetadata({
+  title: "Tips och trix för stiftelser och företag",
+  description:
+    "Analys av gråzoner, avancerade strukturer och risker kring stiftelser och företag. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk och skattemässig rådgivning.",
+  keywords:
+    "stiftelsetips, skatteplanering stiftelse, förmögenhetsplanering, stiftelse skattefördelar, stiftelse företag kombination, stiftelseguiden",
+  path: "/resurser/tips-och-trix/",
+  openGraphType: "article",
+});
 
 export default function TipsAndTricksPage() {
   return (
     <>
+      <PageSchema
+        title="Tips och trix för stiftelser och företag"
+        description="Analys av gråzoner, avancerade strukturer och risker kring stiftelser och företag. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk och skattemässig rådgivning."
+        path="/resurser/tips-och-trix/"
+        breadcrumbs={[
+          { label: "Resurser", href: "/resurser" },
+          { label: "Tips och trix" },
+        ]}
+      />
       {/* Hero Section */}
       <Hero
         title="Tips och trix för stiftelser och företag"
-        subtitle="Avancerade strategier och dolda fördelar som få känner till"
+        subtitle="Gråzoner, avancerade strukturer och risker som kräver noggrann analys"
         size="small"
         pattern="dots"
       />
@@ -33,15 +47,16 @@ export default function TipsAndTricksPage() {
         <div className="max-w-4xl mx-auto">
           {/* Introduction */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Dolda fördelar och avancerade strategier</h2>
+            <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Gråzoner, tolkningsutrymmen och avancerade strategier</h2>
             <p className="mb-4 text-lg">
-              Stiftelser och företag erbjuder många fördelar som sällan diskuteras öppet. På denna sida utforskar vi avancerade 
-              strategier och mindre kända möjligheter som kan ge betydande fördelar för den som vet hur man navigerar i regelverket.
+              Stiftelser och företag kan i vissa situationer användas på sätt som ligger i gränslandet mellan tydligt reglerade 
+              upplägg och mer svårbedömda tolkningsfrågor. På denna sida beskriver vi sådana gråzoner öppet, utan att låtsas att 
+              rättsläget alltid är svartvitt.
             </p>
             <p className="mb-6">
-              Observera att alla strategier som presenteras här är lagliga, men de befinner sig ibland i gråzoner där 
-              regelverket är öppet för tolkning. Vi rekommenderar alltid att du konsulterar med juridiska och skattemässiga 
-              experter innan du implementerar någon av dessa strategier.
+              Informationen nedan beskriver faktiska möjligheter, men också områden där utfall kan bero på omständigheterna i det 
+              enskilda fallet, hur strukturen genomförs och hur Skatteverket eller domstolarna bedömer substans, syfte och 
+              marknadsmässighet. Konsultera alltid juridiska och skattemässiga experter innan du implementerar någon av dessa strukturer.
             </p>
             
             <div className="bg-red-50 p-6 rounded-lg border-l-4 border-l-red-400 mb-8">
@@ -105,8 +120,8 @@ export default function TipsAndTricksPage() {
                   </li>
                   <li>
                     <strong>Dubbla stiftelsestrukturer:</strong> Genom att kombinera en svensk stiftelse med en stiftelse 
-                    i ett annat land (t.ex. Liechtenstein eller Panama) kan man skapa strukturer där tillgångar och inkomster 
-                    flödar mellan jurisdiktioner på skatteeffektiva sätt.
+                    i ett annat land (t.ex. Liechtenstein eller andra jurisdiktioner med särskilda stiftelseregler) kan man skapa 
+                    strukturer där tillgångar och inkomster hanteras över flera rättsordningar på skatteeffektiva sätt.
                   </li>
                   <li>
                     <strong>Stiftelser i gränslandet:</strong> Vissa jurisdiktioner erbjuder stiftelseliknande strukturer 
@@ -321,6 +336,56 @@ export default function TipsAndTricksPage() {
               </div>
             </div>
           </section>
+
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Officiella källor att kontrollera mot</h2>
+            <p className="mb-4">
+              Om du arbetar i gråzoner bör du alltid kontrollera resonemangen mot primärkällor och aktuell praxis. Börja med dessa
+              myndighets- och lagkällor innan du går vidare med någon struktur.
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>
+                <a
+                  href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelselag-19941220_sfs-1994-1220/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  Stiftelselagen (1994:1220)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/inkomstskattelag-19991229_sfs-1999-1229/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  Inkomstskattelagen (1999:1229)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.skatteverket.se/foretag/inkomstdeklaration/inkomstdeklarationforstiftelserochideellaforeningar.4.58d555751259e4d661680006135.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  Skatteverket om deklaration och beskattning för stiftelser
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.kammarkollegiet.se/vara-tjanster/stiftelser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary-600 hover:underline"
+                >
+                  Kammarkollegiet om stiftelser och permutation
+                </a>
+              </li>
+            </ul>
+          </section>
           
           {/* Sammanfattning */}
           <section className="mb-16">
@@ -328,13 +393,14 @@ export default function TipsAndTricksPage() {
             
             <p className="mb-4">
               Stiftelser och företag erbjuder många möjligheter för skatteeffektiv förmögenhetsplanering och långsiktig 
-              förvaltning av tillgångar. Genom att kombinera olika strukturer och utnyttja de möjligheter som lagstiftningen 
-              erbjuder kan man uppnå betydande fördelar.
+              förvaltning av tillgångar. Samtidigt finns det områden där lagtext, praxis och faktisk tillämpning inte alltid 
+              går i takt, vilket skapar gråzoner som måste analyseras noggrant.
             </p>
             
             <p className="mb-4">
-              Samtidigt är det viktigt att vara medveten om riskerna och gråzonerna. Skatteplanering som går över gränsen 
-              till skatteflykt kan leda till betydande ekonomiska och juridiska konsekvenser.
+              Det är just därför dessa frågor bör beskrivas öppet: inte för att romantisera aggressiva upplägg, utan för att 
+              tydliggöra var riskerna finns, vilka faktorer som brukar bli avgörande och när en till synes laglig struktur kan 
+              angripas som skatteflykt eller skenarrangemang.
             </p>
             
             <p>

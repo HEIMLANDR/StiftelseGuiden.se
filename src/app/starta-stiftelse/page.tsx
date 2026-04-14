@@ -1,17 +1,26 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Starta en stiftelse i Sverige | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Starta en stiftelse i Sverige",
   description: "Komplett guide om hur du startar en stiftelse i Sverige, juridiska krav, beskattning och steg-för-steg process från planering till registrering.",
   keywords: "starta stiftelse, stiftelsebildning, stiftelseförordnande, stiftelsestyrelse, stiftelsekapital",
-};
+  path: "/starta-stiftelse/",
+  openGraphType: "article",
+});
 
 export default function StartFoundation() {
   return (
     <>
+      <PageSchema
+        title="Starta en stiftelse i Sverige"
+        description="Komplett guide om hur du startar en stiftelse i Sverige, juridiska krav, beskattning och steg-för-steg process från planering till registrering."
+        path="/starta-stiftelse/"
+        breadcrumbs={[{ label: "Starta stiftelse" }]}
+      />
       {/* Hero Section */}
       <Hero
         title="Starta en stiftelse i Sverige"

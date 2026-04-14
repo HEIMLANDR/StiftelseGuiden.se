@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">StiftelseGuiden ikon</title>
+  <desc id="desc">Monogram med bokstäverna SG för StiftelseGuiden</desc>
+  <rect width="128" height="128" rx="28" fill="#0A7AFF" />
+  <path d="M36 44c0-9.941 8.059-18 18-18h38v16H54a2 2 0 0 0-2 2v12h28c9.941 0 18 8.059 18 18s-8.059 18-18 18H36V76h44a2 2 0 1 0 0-4H52c-8.837 0-16-7.163-16-16V44Z" fill="#fff" />
+</svg>

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import FoundationTypeIcon from "@/components/FoundationTypeIcon";
 import { useState } from "react";
@@ -275,7 +276,15 @@ export default function HomeContent() {
             </div>
             <div className="lg:w-1/2">
               <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                <img src="/pictures/image.png" alt="SökaStiftelseMedel.se plattform" className="w-full h-auto object-cover" />
+                <Image
+                  src="/pictures/image.png"
+                  alt="SökaStiftelseMedel.se plattform"
+                  width={1069}
+                  height={376}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="w-full h-auto object-cover"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/60 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-white font-medium text-lg">Sveriges bästa verktyg och sökmotor för att hitta rätt stiftelser</p>

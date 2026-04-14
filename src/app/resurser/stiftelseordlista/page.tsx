@@ -1,17 +1,29 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
-import { Metadata } from "next";
+import { PageSchema } from "@/components/SeoSchema";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Stiftelseordlista | Termer och begrepp | StiftelseGuiden",
+export const metadata = createPageMetadata({
+  title: "Stiftelseordlista",
   description: "Omfattande ordlista med förklaringar av termer och begrepp inom stiftelsevärlden. Juridiska, ekonomiska och administrativa termer förklarade på ett enkelt sätt.",
   keywords: "stiftelseordlista, stiftelsetermer, stiftelsebegrepp, stiftelselag, stiftelseterminologi, stiftelsejuridik, stiftelseekonomi, stiftelseguiden",
-};
+  path: "/resurser/stiftelseordlista/",
+  openGraphType: "article",
+});
 
 export default function GlossaryPage() {
   return (
     <>
+      <PageSchema
+        title="Stiftelseordlista"
+        description="Omfattande ordlista med förklaringar av termer och begrepp inom stiftelsevärlden. Juridiska, ekonomiska och administrativa termer förklarade på ett enkelt sätt."
+        path="/resurser/stiftelseordlista/"
+        breadcrumbs={[
+          { label: "Resurser", href: "/resurser" },
+          { label: "Stiftelseordlista" },
+        ]}
+      />
       {/* Hero Section */}
       <Hero
         title="Stiftelseordlista"
