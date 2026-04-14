@@ -1,0 +1,11 @@
+# StiftelseGuiden.se - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://stiftelseguiden.se/sitemap.xml
+
+# Disallow admin/internal paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /form.html
