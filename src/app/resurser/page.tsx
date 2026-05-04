@@ -15,7 +15,7 @@ const resourceCollections = [
 
 export const metadata = createPageMetadata({
   title: "Resurser för stiftelser",
-  description: "Omfattande resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och mer. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige.",
+  description: "Resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och verktyg. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige.",
   keywords: "stiftelseresurser, stiftelseguider, stiftelseverktyg, stiftelseordlista, ansökningsguide, skatteoptimering stiftelse, stiftelseguiden",
   path: "/resurser/",
 });
@@ -25,7 +25,7 @@ export default function ResourcesPage() {
     <>
       <PageSchema
         title="Resurser för stiftelser"
-        description="Omfattande resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och mer. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige."
+        description="Resurser för stiftelser: ansökningsguider, ordlista, skatteoptimering och verktyg. Allt du behöver för att starta, driva och förvalta stiftelser i Sverige."
         path="/resurser/"
         pageType="CollectionPage"
         breadcrumbs={[{ label: "Resurser" }]}

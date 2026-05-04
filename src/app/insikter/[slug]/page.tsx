@@ -11,6 +11,7 @@ import {
 } from "@/lib/seo";
 import {
   absoluteImageUrl,
+  EDITORIAL_URL_PATH,
   getPost,
   getPosts,
   type NetworkrPost,
@@ -121,8 +122,10 @@ function ArticleSchema({ post }: { post: NetworkrPost }) {
     keywords: post.tags?.join(", "),
     image: { "@type": "ImageObject", url: cover },
     author: {
-      "@type": "Person",
+      "@type": "Organization",
+      "@id": `${toAbsoluteUrl(EDITORIAL_URL_PATH)}#redaktionen`,
       name: post.author.name,
+      url: toAbsoluteUrl(EDITORIAL_URL_PATH),
       ...(post.author.bio ? { description: post.author.bio } : {}),
     },
     publisher: { "@id": `${SITE_URL}/#organization` },

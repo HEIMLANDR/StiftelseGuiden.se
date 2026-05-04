@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Skatteoptimering för stiftelser",
-  description: "Guide till skatteoptimering för stiftelser. Lär dig om skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du kan minimera skattebördan för din stiftelse på lagligt sätt.",
+  description: "Guide till skatteoptimering för stiftelser: skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du sänker skattebördan lagligt.",
   keywords: "stiftelseskatt, skatteoptimering stiftelse, inskränkt skattskyldighet, stiftelsebeskattning, skatteregler stiftelser, skattefri stiftelse, stiftelseguiden",
   path: "/resurser/skatteoptimering/",
   openGraphType: "article",
@@ -17,7 +17,7 @@ export default function TaxOptimizationPage() {
     <>
       <PageSchema
         title="Skatteoptimering för stiftelser"
-        description="Guide till skatteoptimering för stiftelser. Lär dig om skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du kan minimera skattebördan för din stiftelse på lagligt sätt."
+        description="Guide till skatteoptimering för stiftelser: skatteregler, inskränkt skattskyldighet, avdragsmöjligheter och hur du sänker skattebördan lagligt."
         path="/resurser/skatteoptimering/"
         breadcrumbs={[
           { label: "Resurser", href: "/resurser" },

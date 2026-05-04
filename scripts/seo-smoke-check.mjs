@@ -19,6 +19,7 @@ const routes = [
   "/dokument/",
   "/verktyg/",
   "/insikter/",
+  "/om/redaktionen/",
   "/kontakt/",
 ];
 
@@ -31,6 +32,7 @@ const schemaExpectations = {
   "/dokument/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/verktyg/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/insikter/": ["CollectionPage", "BreadcrumbList", "ItemList"],
+  "/om/redaktionen/": ["WebPage", "BreadcrumbList", "Organization"],
   "/kontakt/": ["ContactPage", "BreadcrumbList", "FAQPage"],
 };
 

@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Ansökningsguide för stiftelser",
-  description: "Komplett guide för att söka stiftelsemedel. Lär dig skriva framgångsrika ansökningar, undvika vanliga misstag och maximera dina chanser att få bidrag från svenska stiftelser.",
+  description: "Komplett guide för att söka stiftelsemedel: skriv framgångsrika ansökningar, undvik vanliga misstag och maximera chanserna till bidrag från svenska stiftelser.",
   keywords: "stiftelseansökan, ansöka stiftelsemedel, ansökningsguide, stiftelsebidrag, ansökningsmall, ansökningstips, stiftelseguiden",
   path: "/resurser/ansokningsguide/",
   openGraphType: "article",
@@ -17,7 +17,7 @@ export default function ApplicationGuidePage() {
     <>
       <PageSchema
         title="Ansökningsguide för stiftelser"
-        description="Komplett guide för att söka stiftelsemedel. Lär dig skriva framgångsrika ansökningar, undvika vanliga misstag och maximera dina chanser att få bidrag från svenska stiftelser."
+        description="Komplett guide för att söka stiftelsemedel: skriv framgångsrika ansökningar, undvik vanliga misstag och maximera chanserna till bidrag från svenska stiftelser."
         path="/resurser/ansokningsguide/"
         breadcrumbs={[
           { label: "Resurser", href: "/resurser" },

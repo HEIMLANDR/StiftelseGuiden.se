@@ -68,6 +68,7 @@ export const SEO_ROUTES: SeoRoute[] = [
   { path: "/dokument/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/verktyg/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/insikter/", priority: 0.8, changeFrequency: "weekly" },
+  { path: "/om/redaktionen/", priority: 0.4, changeFrequency: "yearly" },
   { path: "/kontakt/", priority: 0.5, changeFrequency: "yearly" },
 ];
 

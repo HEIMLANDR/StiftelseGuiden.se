@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Tips och trix för stiftelser och företag",
   description:
-    "Analys av gråzoner, avancerade strukturer och risker kring stiftelser och företag. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk och skattemässig rådgivning.",
+    "Analys av gråzoner, avancerade strukturer och risker kring stiftelser. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk rådgivning.",
   keywords:
     "stiftelsetips, skatteplanering stiftelse, förmögenhetsplanering, stiftelse skattefördelar, stiftelse företag kombination, stiftelseguiden",
   path: "/resurser/tips-och-trix/",
@@ -19,7 +19,7 @@ export default function TipsAndTricksPage() {
     <>
       <PageSchema
         title="Tips och trix för stiftelser och företag"
-        description="Analys av gråzoner, avancerade strukturer och risker kring stiftelser och företag. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk och skattemässig rådgivning."
+        description="Analys av gråzoner, avancerade strukturer och risker kring stiftelser. Fakta, tolkningsutrymmen och områden som kräver kvalificerad juridisk rådgivning."
         path="/resurser/tips-och-trix/"
         breadcrumbs={[
           { label: "Resurser", href: "/resurser" },

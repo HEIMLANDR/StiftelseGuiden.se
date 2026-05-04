@@ -14,7 +14,7 @@ const toolCollections = [
 
 export const metadata = createPageMetadata({
   title: "Verktyg för stiftelser och organisationer",
-  description: "Användbara verktyg för att jämföra stiftelsetyper, organisationsformer, beräkna kapital och planera din verksamhet. Kostnadsfria hjälpmedel från StiftelseGuiden.se.",
+  description: "Verktyg för att jämföra stiftelsetyper och organisationsformer, beräkna kapital och planera din stiftelse. Kostnadsfria hjälpmedel från StiftelseGuiden.se.",
   keywords: "stiftelseverktyg, stiftelsekapital, jämföra stiftelser, jämföra organisationsformer, stiftelse vs förening, stiftelse vs aktiebolag, stiftelseberäkning, stiftelseplanering",
   path: "/verktyg/",
 });
@@ -24,7 +24,7 @@ export default function ToolsPage() {
     <>
       <PageSchema
         title="Verktyg för stiftelser och organisationer"
-        description="Användbara verktyg för att jämföra stiftelsetyper, organisationsformer, beräkna kapital och planera din verksamhet. Kostnadsfria hjälpmedel från StiftelseGuiden.se."
+        description="Verktyg för att jämföra stiftelsetyper och organisationsformer, beräkna kapital och planera din stiftelse. Kostnadsfria hjälpmedel från StiftelseGuiden.se."
         path="/verktyg/"
         pageType="CollectionPage"
         breadcrumbs={[{ label: "Verktyg" }]}

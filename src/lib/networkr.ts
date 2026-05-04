@@ -2,6 +2,26 @@ const API_BASE = (process.env.NETWORKR_API || "https://api.networkr.dev").replac
 const SITE_ID = process.env.NETWORKR_SITE_ID || "stiftelseguiden-se";
 const KEY = process.env.NETWORKR_KEY;
 
+// Display byline overrides — Networkr stores "StiftelseGuiden" as a brand
+// byline; we present articles as the editorial team for clearer authorship.
+export const EDITORIAL_BYLINE = "StiftelseGuiden-redaktionen";
+export const EDITORIAL_BIO =
+  "Redaktionen bakom StiftelseGuiden — Sveriges guide till stiftelser, fonder och bidrag.";
+export const EDITORIAL_URL_PATH = "/om/redaktionen/";
+
+function applyByline<T extends { author?: NetworkrAuthor }>(item: T): T {
+  if (!item?.author) return item;
+  return {
+    ...item,
+    author: {
+      ...item.author,
+      name: EDITORIAL_BYLINE,
+      bio: EDITORIAL_BIO,
+      website: item.author.website ?? null,
+    },
+  };
+}
+
 export type NetworkrAuthor = {
   name: string;
   slug: string;
@@ -84,13 +104,27 @@ export async function getPosts(): Promise<NetworkrPostSummary[]> {
   if (!postsCache) {
     postsCache = request<{ posts: NetworkrPostSummary[] }>(
       `/api/blog/${SITE_ID}/posts?limit=200`,
-    ).then((data) => data.posts);
+    ).then((data) => data.posts.map(applyByline));
   }
   return postsCache;
 }
 
 export async function getPost(slug: string): Promise<{ site: NetworkrSiteEnvelope; post: NetworkrPost }> {
-  return request(`/api/blog/${SITE_ID}/posts/${slug}`);
+  const data = await request<{ site: NetworkrSiteEnvelope; post: NetworkrPost }>(
+    `/api/blog/${SITE_ID}/posts/${slug}`,
+  );
+  const post = applyByline(data.post);
+  if (post.transparency) {
+    post.transparency = {
+      ...post.transparency,
+      author_name: EDITORIAL_BYLINE,
+      disclosure: post.transparency.disclosure.replace(
+        /\bStiftelseGuiden\b/g,
+        EDITORIAL_BYLINE,
+      ),
+    };
+  }
+  return { site: data.site, post };
 }
 
 export function absoluteImageUrl(path: string | null): string | null {

@@ -19,7 +19,7 @@ const activeFoundationHighlights = [
 
 export const metadata = createPageMetadata({
   title: "100 mest aktiva stiftelser i Sverige",
-  description: "Omfattande lista över Sveriges 100 mest aktiva stiftelser som stödjer forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål.",
+  description: "Lista över Sveriges 100 mest aktiva stiftelser inom forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål.",
   keywords: "svenska stiftelser, aktiva stiftelser, forskningsstiftelser, utbildningsstiftelser, kulturstiftelser, innovationsstiftelser, välgörenhetsstiftelser, stiftelseguiden",
   path: "/stiftelser/aktiva-stiftelser/",
 });
@@ -29,7 +29,7 @@ export default function ActiveFoundationsPage() {
     <>
       <PageSchema
         title="100 mest aktiva stiftelser i Sverige"
-        description="Omfattande lista över Sveriges 100 mest aktiva stiftelser som stödjer forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål."
+        description="Lista över Sveriges 100 mest aktiva stiftelser inom forskning, utbildning, kultur, innovation och välgörenhet. Hitta rätt stiftelse för ditt ändamål."
         path="/stiftelser/aktiva-stiftelser/"
         pageType="CollectionPage"
         breadcrumbs={[

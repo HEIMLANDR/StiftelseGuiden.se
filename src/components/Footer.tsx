@@ -54,6 +54,12 @@ export default function Footer() {
                 <Link href="/juridik" className="text-white/80 hover:text-white transition-colors hover:underline">Juridik</Link>
               </li>
               <li>
+                <Link href="/insikter" className="text-white/80 hover:text-white transition-colors hover:underline">Insikter</Link>
+              </li>
+              <li>
+                <Link href="/om/redaktionen" className="text-white/80 hover:text-white transition-colors hover:underline">Om redaktionen</Link>
+              </li>
+              <li>
                 <Link href="/kontakt" className="text-white/80 hover:text-white transition-colors hover:underline">Kontakt</Link>
               </li>
             </ul>
