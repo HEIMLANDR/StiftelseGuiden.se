@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const siteUrl = "https://stiftelseguiden.se";
@@ -18,6 +18,7 @@ const routes = [
   "/resurser/tips-och-trix/",
   "/dokument/",
   "/verktyg/",
+  "/insikter/",
   "/kontakt/",
 ];
 
@@ -29,6 +30,7 @@ const schemaExpectations = {
   "/resurser/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/dokument/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/verktyg/": ["CollectionPage", "BreadcrumbList", "ItemList"],
+  "/insikter/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/kontakt/": ["ContactPage", "BreadcrumbList", "FAQPage"],
 };
 
@@ -64,11 +66,14 @@ if (!existsSync(outDir)) {
   fail("Missing out/ build directory. Run `npm run build` first.");
 }
 
-for (const route of routes) {
+const allowedExternalImageHost = "api.networkr.dev";
+
+function checkRoute(route, options = {}) {
+  const { allowExternalImage = false, requiredSchemas = ["WebPage"] } = options;
   const htmlPath = routeToHtmlPath(route);
   if (!existsSync(htmlPath)) {
     fail(`Missing exported HTML for route ${route}: ${htmlPath}`);
-    continue;
+    return;
   }
 
   const html = readText(htmlPath);
@@ -105,8 +110,12 @@ for (const route of routes) {
     fail(`twitter:title for ${route} should include the site name`);
   }
 
-  if (!ogImage || !ogImage.startsWith(`${siteUrl}/`)) {
-    fail(`og:image for ${route} should be absolute and on the primary domain`);
+  const ogImageOk =
+    ogImage &&
+    (ogImage.startsWith(`${siteUrl}/`) ||
+      (allowExternalImage && ogImage.startsWith(`https://${allowedExternalImageHost}/`)));
+  if (!ogImageOk) {
+    fail(`og:image for ${route} should be absolute and on ${allowExternalImage ? `the primary domain or ${allowedExternalImageHost}` : "the primary domain"}`);
   }
 
   const jsonLdMatches = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gis)].map(
@@ -117,11 +126,35 @@ for (const route of routes) {
     fail(`Expected sitewide and page JSON-LD blocks for ${route}`);
   }
 
-  for (const schemaType of schemaExpectations[route] ?? ["WebPage"]) {
+  for (const schemaType of requiredSchemas) {
     if (!jsonLdMatches.some((script) => script.includes(`"@type":"${schemaType}"`))) {
       fail(`Missing JSON-LD type ${schemaType} for ${route}`);
     }
   }
+}
+
+for (const route of routes) {
+  checkRoute(route, { requiredSchemas: schemaExpectations[route] ?? ["WebPage"] });
+}
+
+// Discover and validate individual Insikter posts (slugs are dynamic).
+const insikterDir = resolve(outDir, "insikter");
+const insikterPostRoutes = [];
+if (existsSync(insikterDir)) {
+  for (const entry of readdirSync(insikterDir)) {
+    const entryPath = resolve(insikterDir, entry);
+    if (!statSync(entryPath).isDirectory()) continue;
+    const indexPath = resolve(entryPath, "index.html");
+    if (!existsSync(indexPath)) continue;
+    insikterPostRoutes.push(`/insikter/${entry}/`);
+  }
+}
+
+for (const route of insikterPostRoutes) {
+  checkRoute(route, {
+    allowExternalImage: true,
+    requiredSchemas: ["WebPage", "BreadcrumbList", "Article"],
+  });
 }
 
 const robotsPath = resolve(outDir, "robots.txt");
@@ -146,15 +179,16 @@ if (!existsSync(sitemapPath)) {
   const sitemap = readText(sitemapPath);
   const locs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((entry) => entry[1]);
 
-  for (const route of routes) {
+  for (const route of [...routes, ...insikterPostRoutes]) {
     const expectedUrl = new URL(route, `${siteUrl}/`).toString();
     if (!locs.includes(expectedUrl)) {
       fail(`Sitemap missing route ${expectedUrl}`);
     }
   }
 
-  if (locs.length !== routes.length) {
-    fail(`Sitemap route count mismatch: expected ${routes.length}, got ${locs.length}`);
+  const expectedCount = routes.length + insikterPostRoutes.length;
+  if (locs.length !== expectedCount) {
+    fail(`Sitemap route count mismatch: expected ${expectedCount}, got ${locs.length}`);
   }
 }
 
