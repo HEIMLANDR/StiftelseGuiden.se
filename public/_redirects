@@ -7,3 +7,8 @@ https://www.stiftelseguiden.se/* https://stiftelseguiden.se/:splat 301!
 
 # Redirect old URLs if needed
 # /old-page    /new-page    301
+
+# Networkr proxy delivery — /insikter served by the Networkr SSR via forced
+# 200 rewrite (same URL, this domain), zero rebuilds.
+/insikter/* https://api.networkr.dev/blog-page/stiftelseguiden-se/:splat 200!
+/insikter https://api.networkr.dev/blog-page/stiftelseguiden-se 200!
