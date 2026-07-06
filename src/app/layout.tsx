@@ -14,7 +14,7 @@ const inter = Inter({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0A7AFF",
+  themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
@@ -81,7 +81,7 @@ export default function RootLayout({
         <SitewideSchema />
       </head>
       <body
-        className={`${inter.variable} antialiased bg-gray-50 text-primary-900 flex flex-col min-h-screen`}
+        className={`${inter.variable} antialiased bg-white text-gray-700 flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">

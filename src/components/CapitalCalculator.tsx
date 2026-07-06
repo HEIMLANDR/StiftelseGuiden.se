@@ -62,8 +62,8 @@ export default function CapitalCalculator() {
   };
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 animate-fadeIn">
-      <h2 className="text-2xl font-bold mb-6 text-primary-700">Kapitalberäknare för stiftelser</h2>
+    <div className="card">
+      <h2 className="text-2xl font-semibold tracking-tight mb-6">Kapitalberäknare för stiftelser</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
         <div>
@@ -73,7 +73,7 @@ export default function CapitalCalculator() {
           
           <div className="space-y-6">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Önskad årlig utdelning
               </label>
               <div className="flex items-center">
@@ -84,7 +84,7 @@ export default function CapitalCalculator() {
                   step="10000"
                   value={targetDistribution}
                   onChange={(e) => setTargetDistribution(Number(e.target.value))}
-                  className="w-full mr-4"
+                  className="w-full mr-4 accent-primary-600"
                 />
                 <span className="text-gray-700 font-medium min-w-[120px]">
                   {formatCurrency(targetDistribution)}
@@ -93,7 +93,7 @@ export default function CapitalCalculator() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Förväntad årlig avkastning (%)
               </label>
               <div className="flex items-center">
@@ -104,7 +104,7 @@ export default function CapitalCalculator() {
                   step="0.5"
                   value={expectedReturn}
                   onChange={(e) => setExpectedReturn(Number(e.target.value))}
-                  className="w-full mr-4"
+                  className="w-full mr-4 accent-primary-600"
                 />
                 <span className="text-gray-700 font-medium min-w-[120px]">
                   {expectedReturn.toFixed(1)}%
@@ -113,7 +113,7 @@ export default function CapitalCalculator() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Årliga administrativa kostnader
               </label>
               <div className="flex items-center">
@@ -124,7 +124,7 @@ export default function CapitalCalculator() {
                   step="5000"
                   value={annualCosts}
                   onChange={(e) => setAnnualCosts(Number(e.target.value))}
-                  className="w-full mr-4"
+                  className="w-full mr-4 accent-primary-600"
                 />
                 <span className="text-gray-700 font-medium min-w-[120px]">
                   {formatCurrency(annualCosts)}
@@ -133,7 +133,7 @@ export default function CapitalCalculator() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Förväntad inflation (%)
               </label>
               <div className="flex items-center">
@@ -144,7 +144,7 @@ export default function CapitalCalculator() {
                   step="0.5"
                   value={inflationRate}
                   onChange={(e) => setInflationRate(Number(e.target.value))}
-                  className="w-full mr-4"
+                  className="w-full mr-4 accent-primary-600"
                 />
                 <span className="text-gray-700 font-medium min-w-[120px]">
                   {inflationRate.toFixed(1)}%
@@ -153,7 +153,7 @@ export default function CapitalCalculator() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Tidshorisont (år)
               </label>
               <div className="flex items-center">
@@ -164,7 +164,7 @@ export default function CapitalCalculator() {
                   step="5"
                   value={years}
                   onChange={(e) => setYears(Number(e.target.value))}
-                  className="w-full mr-4"
+                  className="w-full mr-4 accent-primary-600"
                 />
                 <span className="text-gray-700 font-medium min-w-[120px]">
                   {years} år
@@ -174,14 +174,14 @@ export default function CapitalCalculator() {
           </div>
         </div>
         
-        <div className="bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4 text-primary-700">Resultat</h3>
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+          <h3 className="text-xl font-semibold mb-4">Resultat</h3>
           
           {result && (
             <div className="space-y-6">
               <div>
                 <p className="text-sm text-gray-500 mb-1">Rekommenderat startkapital:</p>
-                <p className="text-3xl font-bold text-primary-800">
+                <p className="text-3xl font-semibold tracking-tight text-gray-900">
                   {formatCurrency(Math.ceil(result.requiredCapital / 10000) * 10000)}
                 </p>
               </div>
@@ -222,9 +222,9 @@ export default function CapitalCalculator() {
                 </ul>
               </div>
               
-              <div className="bg-primary-50 p-4 rounded-md border border-primary-100 mt-4">
-                <p className="text-sm text-primary-700">
-                  <strong>Tips:</strong> För långsiktig hållbarhet bör den reala avkastningen (efter inflation) 
+              <div className="callout callout-info mt-4">
+                <p className="text-sm text-gray-700">
+                  <strong>Tips:</strong> För långsiktig hållbarhet bör den reala avkastningen (efter inflation)
                   vara högre än den årliga utdelningen i procent av kapitalet.
                 </p>
               </div>

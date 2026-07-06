@@ -49,6 +49,46 @@ God förvaltning kräver både ekonomisk kompetens och förståelse för stiftel
   }
 };
 
+const KNOWLEDGE_CARDS = [
+  {
+    key: "definition",
+    title: "Definition",
+    icon: "M12 6v6m0 0v6m0-6h6m-6 0H6",
+    desc: "En stiftelse är en självägande förmögenhet som avsatts för ett bestämt ändamål. Stiftelsen har inga ägare och är en egen juridisk person.",
+  },
+  {
+    key: "syften",
+    title: "Syften",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+    desc: "Stiftelser bildas för olika ändamål som välgörenhet, utbildning, forskning, kulturella syften eller att stödja specifika grupper i samhället.",
+  },
+  {
+    key: "forvaltning",
+    title: "Förvaltning",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    desc: "Stiftelsens styrelse eller förvaltare ansvarar för att förvalta stiftelsens tillgångar och verkställa stiftelsens ändamål enligt stiftarens vilja.",
+  },
+] as const;
+
+const FOUNDATION_TYPES = [
+  { type: "allmännyttig" as const, name: "Allmännyttiga stiftelser", desc: "Främjar välgörande, humanitära, sociala eller kulturella ändamål.", anchor: "allmännyttiga" },
+  { type: "familje" as const, name: "Familjestiftelser", desc: "Gynnar medlemmar av en viss familj eller släkt och håller samman förmögenheter.", anchor: "familjestiftelser" },
+  { type: "näringsdrivande" as const, name: "Näringsdrivande stiftelser", desc: "Driver näringsverksamhet, direkt eller genom ägande av företag.", anchor: "näringsdrivande" },
+  { type: "insamling" as const, name: "Insamlingsstiftelser", desc: "Samlar in pengar från allmänheten för välgörenhet eller samhällsnytta.", anchor: "insamlingsstiftelser" },
+  { type: "pension" as const, name: "Pensionsstiftelser", desc: "Säkrar pensionsutfästelser till anställda och skyddar pensionskapital.", anchor: "pensionsstiftelser" },
+  { type: "vinstandel" as const, name: "Vinstandelsstiftelser", desc: "Förvaltar och fördelar vinstandelar till anställda i ett företag.", anchor: "vinstandelsstiftelser" },
+  { type: "kollektiv" as const, name: "Kollektivavtalsstiftelser", desc: "Bildas genom kollektivavtal för att främja anställdas intressen.", anchor: "kollektivavtalsstiftelser" },
+];
+
+const PROMO_FEATURES = [
+  "Sök bland 17 000+ svenska stiftelser",
+  "Massökning utifrån dina specifika kriterier",
+  "DeepSearch på upp till 90 stiftelser samtidigt",
+  "Aktivitetsstatus, hemsida och kontaktuppgifter",
+  "AI-stöd för ansökningstexter",
+  "Export till telefonlistor, namnlistor och CSV",
+];
+
 export default function HomeContent() {
   const [openModal, setOpenModal] = useState<string | null>(null);
   const closeModal = () => setOpenModal(null);
@@ -59,81 +99,48 @@ export default function HomeContent() {
       <Hero
         title="Allt du behöver veta om svenska stiftelser"
         subtitle="Din kompletta guide till att starta, driva och förvalta stiftelser i Sverige"
-        pattern="dots"
+        kicker="Oberoende informationsresurs"
+        align="center"
         size="large"
         primaryCta={{
           text: "Starta stiftelse",
-          href: "/starta-stiftelse"
+          href: "/starta-stiftelse/"
         }}
         secondaryCta={{
           text: "Sök stiftelsemedel",
           href: sokUrl("home", "hero"),
           external: true
         }}
-        imageComponent={
-          <div className="bg-primary-600/40 h-96 w-full rounded-xl shadow-lg flex items-center justify-center border border-white/10 overflow-hidden relative">
-            <div className="bg-white h-72 w-64 rounded-lg flex flex-col p-4 shadow-lg border border-gray-100">
-              <div className="flex items-center mb-3">
-                <div className="h-3 w-3 rounded-full bg-accent-500 mr-1.5"></div>
-                <div className="h-3 w-3 rounded-full bg-primary-500 mr-1.5"></div>
-                <div className="h-3 w-3 rounded-full bg-gray-300"></div>
-                <div className="ml-auto text-xs font-medium text-gray-500">Stiftelsedokument</div>
-              </div>
-              <div className="space-y-2">
-                <div className="h-5 bg-primary-100 rounded w-3/4 mx-auto"></div>
-                <div className="h-3 bg-gray-200 rounded w-full"></div>
-                <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-                <div className="h-3 bg-gray-200 rounded w-full"></div>
-                <div className="h-10 bg-gray-100 rounded-lg w-full mt-4 border border-gray-200 flex items-center justify-center">
-                  <div className="w-20 h-5 bg-primary-200 rounded"></div>
-                </div>
-                <div className="h-3 bg-gray-200 rounded w-full mt-3"></div>
-                <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-                <div className="h-3 bg-gray-200 rounded w-4/6"></div>
-                <div className="flex items-center gap-2 mt-4">
-                  <div className="h-px bg-gray-300 flex-grow"></div>
-                  <div className="italic text-xs text-gray-400">Signatur</div>
-                  <div className="h-px bg-gray-300 flex-grow"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        }
       />
 
       {/* Main Features Section */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: "#f9fafb" }}>
+      <section className="section bg-gray-50 border-y border-gray-100">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <div className="mb-16 text-center">
-            <div className="inline-block mb-3 bg-primary-50 px-3 py-1 rounded-full">
-              <span className="text-primary-600 text-sm font-medium">Stiftelsekunskap</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Vad är en stiftelse?</h2>
-            <div className="w-24 h-1 bg-accent-500 mx-auto rounded"></div>
+          <div className="mb-12 text-center">
+            <p className="kicker mb-3">Stiftelsekunskap</p>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Vad är en stiftelse?
+            </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { key: "definition", title: "Definition", color: "primary", icon: "M12 6v6m0 0v6m0-6h6m-6 0H6", desc: "En stiftelse är en självägande förmögenhet som avsatts för ett bestämt ändamål. Stiftelsen har inga ägare och är en egen juridisk person." },
-              { key: "syften", title: "Syften", color: "accent", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z", desc: "Stiftelser bildas för olika ändamål som välgörenhet, utbildning, forskning, kulturella syften eller att stödja specifika grupper i samhället." },
-              { key: "forvaltning", title: "Förvaltning", color: "primary", icon: "M13 10V3L4 14h7v7l9-11h-7z", desc: "Stiftelsens styrelse eller förvaltare ansvarar för att förvalta stiftelsens tillgångar och verkställa stiftelsens ändamål enligt stiftarens vilja." },
-            ].map((card) => (
-              <div key={card.key} className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-primary-100 relative overflow-hidden">
-                <div className={`absolute -top-10 -left-10 w-20 h-20 bg-${card.color}-50 rounded-full`}></div>
-                <div className="relative">
-                  <div className={`h-14 w-14 bg-${card.color}-50 text-${card.color}-600 rounded-xl flex items-center justify-center mb-5 border border-${card.color}-100`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={card.icon} />
-                    </svg>
-                  </div>
-                  <h3 className={`text-xl font-semibold mb-3 text-${card.color}-800`}>{card.title}</h3>
-                  <p className="text-gray-600">{card.desc}</p>
-                  <button onClick={() => setOpenModal(card.key)} className={`mt-6 flex items-center text-${card.color}-600 font-medium hover:text-${card.color}-800 transition-colors`}>
-                    <span className="text-sm">Läs mer</span>
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
+          <div className="grid md:grid-cols-3 gap-6">
+            {KNOWLEDGE_CARDS.map((card) => (
+              <div key={card.key} className="card card-hover flex flex-col">
+                <div className="h-10 w-10 rounded-lg bg-primary-50 text-primary-700 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={card.icon} />
+                  </svg>
                 </div>
+                <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{card.desc}</p>
+                <button
+                  onClick={() => setOpenModal(card.key)}
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary-700 hover:text-primary-800 transition-colors self-start"
+                >
+                  Läs mer
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
               </div>
             ))}
           </div>
@@ -141,156 +148,136 @@ export default function HomeContent() {
       </section>
 
       {/* Types of Foundations Section */}
-      <section className="section bg-grid">
-        <div className="container-padded max-w-5xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Typer av stiftelser</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 stagger-children">
-            {[
-              { type: "vinstandel" as const, name: "Vinstandelsstiftelser", desc: "Förvaltar och fördelar vinstandelar till anställda i ett företag.", color: "primary", anchor: "vinstandelsstiftelser", highlight: true },
-              { type: "allmännyttig" as const, name: "Allmännyttiga stiftelser", desc: "Främjar välgörande, humanitära, sociala, kulturella eller andra allmännyttiga ändamål.", color: "primary", anchor: "allmännyttiga" },
-              { type: "familje" as const, name: "Familjestiftelser", desc: "Gynnar medlemmar av en viss familj eller släkt och håller samman förmögenheter.", color: "accent", anchor: "familjestiftelser" },
-              { type: "näringsdrivande" as const, name: "Näringsdrivande stiftelser", desc: "Driver näringsverksamhet, direkt eller genom ägande av företag.", color: "secondary", anchor: "näringsdrivande" },
-              { type: "insamling" as const, name: "Insamlingsstiftelser", desc: "Samlar in pengar från allmänheten för välgörenhet eller samhällsnyttiga syften.", color: "primary", anchor: "insamlingsstiftelser" },
-              { type: "pension" as const, name: "Pensionsstiftelser", desc: "Säkrar pensionsutfästelser till anställda och skyddar pensionskapital.", color: "accent", anchor: "pensionsstiftelser" },
-              { type: "kollektiv" as const, name: "Kollektivavtalsstiftelser", desc: "Bildas genom kollektivavtal för att främja intressen för anställda.", color: "secondary", anchor: "kollektivavtalsstiftelser", highlight: true },
-            ].map((f) => (
-              <div key={f.type} className={`card card-hover border-l-4 border-l-${f.color}-400 hover-lift p-4 ${f.highlight ? `bg-${f.color}-50 shadow-lg` : ''}`}>
-                <div className="flex flex-col items-center text-center">
-                  <FoundationTypeIcon type={f.type} size="lg" />
-                  <h3 className={`text-lg font-semibold my-3 text-${f.color}-700`}>{f.name}</h3>
-                  <p className="text-sm mb-4">{f.desc}</p>
-                  <Link href={`/starta-stiftelse#${f.anchor}`} className={`text-${f.color}-600 font-medium hover:text-${f.color}-800 inline-flex items-center group`}>
-                    Läs mer
-                    <svg className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
+      <section className="section bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="mb-12">
+            <p className="kicker mb-3">Översikt</p>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+              Typer av stiftelser
+            </h2>
+            <p className="text-gray-600 max-w-2xl">
+              Stiftelselagen skiljer på flera stiftelseformer med olika regler för skatt,
+              tillsyn och förvaltning. Välj rätt form från början — den går sällan att ändra.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {FOUNDATION_TYPES.map((f) => (
+              <Link
+                key={f.type}
+                href={`/starta-stiftelse/#${f.anchor}`}
+                className="card card-hover p-5 flex flex-col"
+              >
+                <FoundationTypeIcon type={f.type} size="sm" className="mb-4" />
+                <h3 className="text-base font-semibold mb-1.5">{f.name}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+              </Link>
             ))}
+            <Link
+              href="/stiftelser/"
+              className="card card-hover p-5 flex flex-col justify-center items-start bg-gray-50"
+            >
+              <h3 className="text-base font-semibold mb-1.5">Jämför alla former</h3>
+              <p className="text-sm text-gray-600 mb-3">
+                Se skillnader i skatt, tillsyn och krav.
+              </p>
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-primary-700">
+                Till översikten
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Organization Comparison CTA Section */}
-      <section className="py-16 bg-white">
-        <div className="container-padded max-w-5xl">
-          <div className="bg-gradient-to-r from-accent-50 to-accent-100 rounded-xl p-8 shadow-lg relative overflow-hidden">
-            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-accent-200/30 rounded-full"></div>
-            <div className="absolute -left-24 -top-24 w-64 h-64 bg-accent-200/20 rounded-full"></div>
-            <div className="relative z-10">
-              <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="md:w-2/3">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 text-accent-800">Ska jag starta stiftelse, förening eller aktiebolag?</h2>
-                  <p className="text-accent-700 mb-6">Osäker på vilken organisationsform som passar bäst för ditt ändamål? Vårt unika jämförelseverktyg hjälper dig att förstå skillnaderna mellan stiftelser, föreningar och aktiebolag så att du kan fatta ett välgrundat beslut.</p>
-                  <a href="/verktyg#organisationsformer" className="bg-accent-600 text-white px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-accent-700 transition-colors">
-                    Testa vårt jämförelseverktyg
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </a>
-                </div>
-                <div className="md:w-1/3 flex justify-center">
-                  <div className="relative w-48 h-48 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-white rounded-full opacity-20"></div>
-                    <div className="relative z-10 flex flex-col items-center">
-                      <svg className="w-16 h-16 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                      <span className="mt-3 font-semibold text-accent-800">Jämför alternativ</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Organization Comparison Section */}
+      <section className="section bg-gray-50 border-y border-gray-100">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-12">
+            <div className="md:flex-1">
+              <p className="kicker mb-3">Jämförelseverktyg</p>
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+                Stiftelse, förening eller aktiebolag?
+              </h2>
+              <p className="text-gray-600 max-w-2xl">
+                Osäker på vilken organisationsform som passar ditt ändamål? Vårt
+                jämförelseverktyg visar skillnaderna i ägande, skatt och styrning så att du
+                kan fatta ett välgrundat beslut.
+              </p>
+            </div>
+            <div className="md:flex-none">
+              <Link href="/verktyg/#organisationsformer" className="btn btn-lg btn-primary">
+                Jämför organisationsformer
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - AI-Powered Platform */}
-      <section className="section-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden py-20">
-        <div className="absolute inset-0" aria-hidden="true">
-          <div className="absolute right-0 bottom-0 w-full h-64 bg-gradient-to-t from-indigo-900/30 to-transparent"></div>
-          <div className="absolute -right-24 -bottom-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute -left-24 -bottom-24 w-96 h-96 bg-indigo-300/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-20 left-10 w-20 h-20 bg-white/5 rounded-full"></div>
-          <div className="absolute top-40 right-20 w-32 h-32 bg-white/5 rounded-full"></div>
-          <div className="absolute bottom-40 left-1/4 w-16 h-16 bg-white/5 rounded-full"></div>
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-1/4 left-1/3 w-1/2 h-px bg-white"></div>
-            <div className="absolute top-1/3 left-1/4 w-1/3 h-px bg-white"></div>
-            <div className="absolute top-2/3 left-1/2 w-1/4 h-px bg-white"></div>
-            <div className="absolute top-1/2 left-1/5 h-1/4 w-px bg-white"></div>
-            <div className="absolute top-1/3 right-1/4 h-1/3 w-px bg-white"></div>
-          </div>
-        </div>
-        <div className="container-padded max-w-6xl mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 text-left">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
-                <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-                AI-driven plattform
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">Sveriges enda AI-drivna stiftelsesökmotor</h2>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-4">
-                <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Spara veckor av tid och tusentals kronor
-              </div>
-              <p className="text-xl mb-6 text-white/90">Vår <span className="font-bold text-white">helt unika</span> AI-drivna plattform är den enda i sitt slag och erbjuder en genväg till stiftelsekapital som inte finns någon annanstans.</p>
-              <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold mb-3 text-white">Avancerad sökning & analys</h3>
-                  <ul className="space-y-3">
-                    {["Massökning av stiftelser baserat på dina specifika kriterier", "DeepSearch på upp till 90 stiftelser samtidigt", "Stiftelseanalys: aktivitetsstatus, hemsida, e-post och kontaktuppgifter", "Senaste nyheterna om stiftelser och utlysningar"].map((t, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg className="w-5 h-5 text-accent-300 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        <span className="text-sm">{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-3 text-white">Kraftfulla verktyg</h3>
-                  <ul className="space-y-3">
-                    {["AI-korrigerade ansökningstexter för olika stiftelsers ändamål", "Projektbörsen - dela ditt projekt öppet för alla att se och stödja", "Gratis verktyg för telefonlistor, namnlistor, utskrift och CSV-export", "Bygg din stiftelse från grunden med vår akademiska stiftelse-AI"].map((t, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg className="w-5 h-5 text-accent-300 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                        <span className="text-sm">{t}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href={sokUrl("home", "promo")} target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-700 px-8 py-4 rounded-md font-bold text-lg inline-flex items-center hover:bg-white/90 transition-colors shadow-lg">
-                  Börja söka stiftelsemedel nu
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+      {/* Partner Promo Section */}
+      <section className="section-lg bg-primary-900 text-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-accent-400 mb-4">
+                Vår samarbetspartner · SökaStiftelseMedel.se
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
+                Hitta stiftelser som matchar ditt projekt
+              </h2>
+              <p className="text-lg text-primary-100 leading-relaxed mb-8">
+                En AI-driven sökmotor för stiftelsemedel med över 17 000 svenska stiftelser.
+                Sök gratis och spara veckor av manuellt letande.
+              </p>
+
+              <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+                {PROMO_FEATURES.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5 text-sm text-primary-100">
+                    <svg
+                      className="w-4 h-4 mt-0.5 flex-shrink-0 text-accent-400"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={sokUrl("home", "promo")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-lg btn-on-dark"
+                >
+                  Börja söka stiftelsemedel
                 </a>
-                <a href="https://www.sokastiftelsemedel.se/om-oss?utm_source=stiftelseguiden&utm_medium=referral&utm_campaign=home&utm_content=promo-secondary" target="_blank" rel="noopener noreferrer" className="bg-indigo-800/30 text-white border border-white/30 px-8 py-4 rounded-md font-medium text-lg inline-flex items-center hover:bg-indigo-800/50 transition-colors">
+                <a
+                  href="https://www.sokastiftelsemedel.se/om-oss?utm_source=stiftelseguiden&utm_medium=referral&utm_campaign=home&utm_content=promo-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-lg border border-white/30 text-white hover:bg-white/10 transition-colors"
+                >
                   Se alla funktioner
                 </a>
               </div>
             </div>
-            <div className="lg:w-1/2">
-              <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/pictures/image.png"
-                  alt="SökaStiftelseMedel.se plattform"
-                  width={1069}
-                  height={376}
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-white font-medium text-lg">Sveriges bästa verktyg och sökmotor för att hitta rätt stiftelser</p>
-                </div>
-              </div>
+
+            <div className="rounded-xl overflow-hidden ring-1 ring-white/15">
+              <Image
+                src="/pictures/image.png"
+                alt="SökaStiftelseMedel.se plattform"
+                width={1069}
+                height={376}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="w-full h-auto object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -298,28 +285,33 @@ export default function HomeContent() {
 
       {/* Modal */}
       {openModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 animate-fadeIn" onClick={closeModal}>
+        <div
+          className="fixed inset-0 bg-gray-900/40 flex items-center justify-center p-4 z-50 animate-fadeIn"
+          onClick={closeModal}
+        >
           <div
-            className="bg-white rounded-xl p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-scaleIn"
+            className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-hard animate-scaleIn"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-4">
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 className="text-xl md:text-2xl font-semibold tracking-tight">
                 {modalContent[openModal as keyof typeof modalContent]?.title}
               </h3>
-              <button onClick={closeModal} className="text-gray-500 hover:text-gray-700 transition-colors">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button
+                onClick={closeModal}
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 hover:text-gray-900 transition-colors"
+                aria-label="Stäng"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             </div>
-            <div className="prose prose-lg max-w-none">
-              <div className="whitespace-pre-line">
-                {modalContent[openModal as keyof typeof modalContent]?.content}
-              </div>
+            <div className="whitespace-pre-line text-gray-700 leading-relaxed">
+              {modalContent[openModal as keyof typeof modalContent]?.content}
             </div>
             <div className="mt-6 flex justify-end">
-              <button onClick={closeModal} className="px-4 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors">
+              <button onClick={closeModal} className="btn btn-primary">
                 Stäng
               </button>
             </div>

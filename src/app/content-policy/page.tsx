@@ -25,7 +25,6 @@ export default function ContentPolicyPage() {
         title="Innehållspolicy"
         subtitle="Så tar vi fram, granskar och uppdaterar innehållet på StiftelseGuiden.se"
         size="small"
-        pattern="dots"
       />
 
       <Breadcrumb items={[{ label: "Innehållspolicy" }]} />
@@ -33,7 +32,7 @@ export default function ContentPolicyPage() {
       <div className="container-padded">
         <div className="max-w-3xl">
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Vårt uppdrag</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Vårt uppdrag</h2>
             <p className="mb-4">
               StiftelseGuiden.se är en oberoende informationsresurs om svenska stiftelser. Vårt mål
               är att göra stiftelsejuridik, skatteregler och praktisk förvaltning begriplig för
@@ -42,7 +41,7 @@ export default function ContentPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Källor och faktagranskning</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Källor och faktagranskning</h2>
             <p className="mb-4">
               Innehållet bygger på officiella källor: författningstexter från Sveriges riksdag
               (bland annat stiftelselagen 1994:1220 och inkomstskattelagen 1999:1229), Skatteverkets
@@ -53,7 +52,7 @@ export default function ContentPolicyPage() {
             <p className="mb-4">
               Vi ser regelbundet över innehållet när reglerna ändras, senast med anledning av
               ändringarna i stiftelselagen som trädde i kraft den 1 januari 2025. Läs mer i vår{" "}
-              <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">
+              <Link href="/juridik/stiftelselagen/" className="text-primary-700 hover:text-primary-800 hover:underline">
                 guide till stiftelselagen
               </Link>
               .
@@ -61,11 +60,11 @@ export default function ContentPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Användning av AI-stöd</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Användning av AI-stöd</h2>
             <p className="mb-4">
               Delar av innehållet tas fram med stöd av AI-verktyg och granskas redaktionellt före
               publicering. Mer om hur vi arbetar finns på sidan{" "}
-              <Link href="/om/redaktionen/" className="text-primary-600 hover:underline">
+              <Link href="/om/redaktionen/" className="text-primary-700 hover:text-primary-800 hover:underline">
                 om redaktionen
               </Link>
               .
@@ -73,7 +72,7 @@ export default function ContentPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Inte rådgivning</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Inte rådgivning</h2>
             <p className="mb-4">
               Innehållet på StiftelseGuiden.se är allmän information och ersätter inte juridisk,
               skattemässig eller ekonomisk rådgivning. Kontakta alltid en kvalificerad rådgivare
@@ -82,7 +81,7 @@ export default function ContentPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Annonsering och partnerskap</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Annonsering och partnerskap</h2>
             <p className="mb-4">
               StiftelseGuiden.se samarbetar med SökaStiftelseMedel.se, en söktjänst för
               stiftelsemedel. Länkar till samarbetspartners är tydligt markerade. Samarbeten
@@ -91,10 +90,10 @@ export default function ContentPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Rapportera felaktigheter</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-4">Rapportera felaktigheter</h2>
             <p className="mb-4">
               Hittar du något som är fel, inaktuellt eller otydligt? Hör av dig via{" "}
-              <Link href="/kontakt/" className="text-primary-600 hover:underline">
+              <Link href="/kontakt/" className="text-primary-700 hover:text-primary-800 hover:underline">
                 kontaktsidan
               </Link>{" "}
               så rättar vi skyndsamt.

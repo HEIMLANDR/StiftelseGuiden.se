@@ -41,10 +41,10 @@ export default function ActiveFoundationsPage() {
       />
       {/* Hero Section */}
       <Hero
+        kicker="Stiftelser"
         title="Sveriges mest aktiva stiftelser"
         subtitle="Guide till stiftelser som stödjer forskning, utbildning, kultur, innovation och välgörenhet"
         size="small"
-        pattern="dots"
       />
 
       {/* Breadcrumb */}
@@ -60,26 +60,26 @@ export default function ActiveFoundationsPage() {
         <div className="max-w-5xl mx-auto">
           {/* Introduction */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Sveriges mest aktiva stiftelser</h2>
-            <p className="mb-4 text-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Sveriges mest aktiva stiftelser</h2>
+            <p className="mb-4 text-lg text-gray-600">
               Sverige har en lång och anrik tradition av filantropi, med väletablerade stiftelser som förvaltar betydande tillgångar
               och stödjer projekt inom en mängd olika sektorer. Dessa organisationer finansierar forskning, utbildning, kulturprojekt,
               hälsovårdsförbättringar, miljöinitiativ och samhällsbaserad utveckling.
             </p>
-            <p className="mb-6">
+            <p className="mb-6 text-gray-600">
               Många av dessa stiftelser stödjer inte bara etablerade institutioner utan också framväxande organisationer och individer
               med innovativa idéer. Nedan hittar du ett urval av de mest aktiva stiftelserna, sorterade efter ändamål, samt en separat
               genomgång av viktiga finansiärer som ofta förväxlas med stiftelser men som i själva verket är myndigheter eller ideella föreningar.
             </p>
 
-            <div className="bg-primary-50 p-6 rounded-lg border-l-4 border-l-primary-400 mb-8">
-              <h3 className="text-xl font-semibold mb-2 text-primary-700">Hitta rätt stiftelse för ditt ändamål</h3>
-              <p className="mb-4">
+            <div className="callout callout-info mb-8">
+              <h3 className="font-semibold text-gray-900 mb-1">Hitta rätt stiftelse för ditt ändamål</h3>
+              <p className="text-sm text-gray-700 mb-2">
                 Listan är sammanställd från offentliga källor, bland annat universitetens finansieringssidor och länsstyrelsernas stiftelseregister.
               </p>
-              <p>
+              <p className="text-sm text-gray-700">
                 För mer detaljerad information om varje stiftelse, inklusive ansökningskriterier, processer och deadlines,
-                besök <a href={sokUrl("aktiva-stiftelser", "inline")} className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>
+                besök <a href={sokUrl("aktiva-stiftelser", "inline")} className="font-medium text-primary-700 hover:text-primary-800 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>
                 där du kan söka bland tusentals stiftelser och få hjälp med att skräddarsy dina ansökningar.
               </p>
             </div>
@@ -87,155 +87,155 @@ export default function ActiveFoundationsPage() {
 
           {/* Research, Education, and Innovation Foundations */}
           <section className="mb-16" id="research-education">
-            <h2 className="text-2xl font-bold mb-6 bg-primary-50 p-3 rounded-lg">I. Forsknings-, utbildnings- och innovationsstiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">I. Forsknings-, utbildnings- och innovationsstiftelser</h2>
 
-            <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Svenska Postkodstiftelsen</h3>
-                <p className="mb-4">
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Svenska Postkodstiftelsen</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Kultur, konst, idrott, social utveckling och hållbarhetsprojekt.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Notera:</strong> Finansieras av överskott från Svenska Postkodlotteriet och har stöttat hundratals projekt i Sverige och internationellt.
                 </p>
-                <p className="text-sm text-gray-600">
-                  <strong>Detaljer via:</strong> <a href={sokUrl("aktiva-stiftelser", "inline")} className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>
+                <p className="text-sm text-gray-500">
+                  <strong>Detaljer via:</strong> <a href={sokUrl("aktiva-stiftelser", "inline")} className="text-sm font-medium text-primary-700 hover:text-primary-800 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">H&M Foundation</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">H&M Foundation</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Hållbarhet och långsiktiga samhällsutvecklingsprojekt.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Grundad med medel från familjen Stefan Persson.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Familjen Kamprads stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Familjen Kamprads stiftelse</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Forskning och utbildning som främjar entreprenörskap, miljö, hälsa och social utveckling.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Stödjer projekt som kommer många människor till del, ofta med koppling till Småland.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Stiftelsen Lantbruksforskning (SLF)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Lantbruksforskning (SLF)</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Hållbart jordbruk, klimat, livsmedelsinnovation och entreprenörskap inom jordbruk.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Bo Rydins Stiftelse för vetenskaplig forskning</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Bo Rydins Stiftelse för vetenskaplig forskning</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Allmän vetenskaplig forskning, inklusive tvärvetenskapliga studier.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Kungl. Skogs- och Lantbruksakademien (KSLA)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Kungl. Skogs- och Lantbruksakademien (KSLA)</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Forskning inom jord- och skogsbruk samt livsmedel.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Akademien förvaltar ett stort antal stiftelser som delar ut forskningsanslag, resestipendier och priser.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Stiftelsen Forska Utan Djurförsök</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Forska Utan Djurförsök</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Utveckling och främjande av alternativa forskningsmetoder.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Knut och Alice Wallenbergs Stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Knut och Alice Wallenbergs Stiftelse</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Högpotentiell forskning inom naturvetenskap, teknik och medicin.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   En av Europas största privata forskningsfinansiärer.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Stiftelsen för Strategisk Forskning (SSF)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen för Strategisk Forskning (SSF)</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Tvärvetenskaplig forskning inom teknik, naturvetenskap och medicin.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Stödjer projekt med direkta samhällsfördelar och kommersiell relevans.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Riksbankens Jubileumsfond (RJ)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Riksbankens Jubileumsfond (RJ)</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Finansiering av forskning inom humaniora och samhällsvetenskap.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Göran Gustafssons Stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Göran Gustafssons Stiftelse</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Stöd till forskare inom naturvetenskap, teknik och medicin, bland annat genom Göran Gustafssonprisen.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Sjöbergstiftelsen</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Sjöbergstiftelsen</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Cancerforskning, inklusive tidig diagnos och behandlingsinnovationer.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">STINT</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">STINT</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Internationalisering av svensk forskning och högre utbildning.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Jerringfonden</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Jerringfonden</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Barn och unga med särskilda behov – anslag till forskning, vård och utbildning.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Stiftelsen Industrifonden</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Industrifonden</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Stöd för industriell innovation och teknikstartups.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Jernkontoret</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Jernkontoret</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Forskning och utveckling inom järn- och stålindustrin.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Branschorganisation som även förvaltar forskningsstiftelser och fonder inom området.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Stiftelsen Olle Engkvist Byggmästare</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Olle Engkvist Byggmästare</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Främjande av vetenskaplig forskning genom riktade bidrag.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Magnus Bergvalls Stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Magnus Bergvalls Stiftelse</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Anslag till svenska forskare inom humaniora, medicin och naturvetenskap.
                 </p>
               </div>
@@ -244,46 +244,46 @@ export default function ActiveFoundationsPage() {
 
           {/* Health and Medical Research Foundations */}
           <section className="mb-16" id="health-medical">
-            <h2 className="text-2xl font-bold mb-6 bg-accent-50 p-3 rounded-lg">II. Hälso- och medicinforskningsstiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">II. Hälso- och medicinforskningsstiftelser</h2>
 
-            <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-accent-700">Hjärnfonden</h3>
-                <p className="mb-4">
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Hjärnfonden</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Forskning om hjärnan och neurologiska sjukdomar som Alzheimers, Parkinsons och stroke.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Hjärnfonden är en insamlingsstiftelse som delar ut forskningsanslag och stipendier.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-accent-700">Ragnar Söderbergs stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Ragnar Söderbergs stiftelse</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Forskning inom medicin, ekonomi och rättsvetenskap, med särskilt stöd till yngre forskare.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-accent-700">Erling-Perssons stiftelse</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Erling-Perssons stiftelse</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Medicinsk forskning och utbildning samt entreprenörskap.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-accent-700">Sahlgrenskastiftelsen (Sahlgrenska Foundation)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Sahlgrenskastiftelsen (Sahlgrenska Foundation)</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Stöd till medicinsk forskning i Västsverige.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-accent-700">Alzheimerfonden</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Alzheimerfonden</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Forskning om Alzheimers sjukdom och andra demenssjukdomar.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Insamlingsstiftelse som delar ut anslag till demensforskning.
                 </p>
               </div>
@@ -292,33 +292,33 @@ export default function ActiveFoundationsPage() {
 
           {/* Culture, Arts, and Heritage Foundations */}
           <section className="mb-16" id="culture-arts">
-            <h2 className="text-2xl font-bold mb-6 bg-secondary-50 p-3 rounded-lg">III. Kultur-, konst- och kulturarvsstiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">III. Kultur-, konst- och kulturarvsstiftelser</h2>
 
-            <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-secondary-700">Kulturfonden för Sverige och Finland</h3>
-                <p className="mb-4">
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Kulturfonden för Sverige och Finland</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Kulturutbyte och samarbetsprojekt mellan Sverige och Finland.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-secondary-700">Stiftelsen Natur & Kultur</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Natur & Kultur</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Bokförlag organiserat som stiftelse. Delar ut priser, stipendier och bidrag som främjar bildning, litteratur och kultur.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-secondary-700">Längmanska kulturfonden</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Längmanska kulturfonden</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Humanistiska vetenskaper, naturvetenskap, konst och litteratur samt folkbildning.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-secondary-700">Konung Gustaf VI Adolfs fond för svensk kultur</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Konung Gustaf VI Adolfs fond för svensk kultur</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Stöd till svensk humanistisk forskning och kulturminnesvård.
                 </p>
               </div>
@@ -330,40 +330,40 @@ export default function ActiveFoundationsPage() {
 
           {/* Environment and Sustainability Foundations */}
           <section className="mb-16" id="environment">
-            <h2 className="text-2xl font-bold mb-6 bg-green-50 p-3 rounded-lg">IV. Miljö- och hållbarhetsstiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">IV. Miljö- och hållbarhetsstiftelser</h2>
 
-            <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-green-700">IKEA Foundation</h3>
-                <p className="mb-4">
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">IKEA Foundation</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Barns välfärd, humanitärt bistånd och hållbarhet (global räckvidd med svenskt ursprung).
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-green-700">MISTRA (Stiftelsen för miljöstrategisk forskning)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">MISTRA (Stiftelsen för miljöstrategisk forskning)</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Omfattande miljöforskning och strategier för hållbar samhällsutveckling.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-green-700">Ekhagastiftelsen</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Ekhagastiftelsen</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Ekologiskt jordbruk, komplementärmedicin och tillhörande forskning.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-green-700">Stiftelsen Oscar och Lili Lamms Minne</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Oscar och Lili Lamms Minne</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Forskning inom naturvård (mark-, vatten- och landskapsbevarande).
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-green-700">Stiftelsen Skogssällskapet</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Skogssällskapet</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Hållbart skogsbruk och naturvård. Delar ut anslag till forskning och kunskapsutveckling om skog.
                 </p>
               </div>
@@ -372,48 +372,48 @@ export default function ActiveFoundationsPage() {
 
           {/* Corporate and Regional Philanthropic Foundations */}
           <section className="mb-16" id="corporate-regional">
-            <h2 className="text-2xl font-bold mb-6 bg-gray-50 p-3 rounded-lg">V. Företags- och regionala filantropiska stiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">V. Företags- och regionala filantropiska stiftelser</h2>
 
-            <div className="space-y-8">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-gray-700">Norrsken Foundation</h3>
-                <p className="mb-4">
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Norrsken Foundation</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   <strong>Fokus:</strong> Socialt entreprenörskap och innovativa lösningar på samhällsutmaningar.
                 </p>
-                <p className="mb-4">
+                <p className="text-sm text-gray-600">
                   Grundad av Klarna-medgrundaren Niklas Adalberth.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-gray-700">Lundin Foundation</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Lundin Foundation</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Hållbar utveckling och innovativ forskning inom energi och miljö.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-gray-700">Stiftelsen Innovatum</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Stiftelsen Innovatum</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Regional innovation och utveckling i Västsverige; driver Innovatum Science Park i Trollhättan.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-gray-700">Volvo Research and Educational Foundations (VREF)</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Volvo Research and Educational Foundations (VREF)</h3>
+                <p className="text-sm text-gray-600">
                   <strong>Fokus:</strong> Forskning om hållbara transporter och framtidens stadsmiljöer.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-3 text-gray-700">Regionala och lokala stiftelser</h3>
-                <p className="mb-4">
+              <div className="card p-5">
+                <h3 className="font-semibold text-gray-900 mb-1">Regionala och lokala stiftelser</h3>
+                <p className="text-sm text-gray-600 mb-2">
                   Utöver de nationella aktörerna finns tusentals regionala och lokala stiftelser som stödjer kulturprojekt, utbildning,
                   ekonomisk utveckling och samhällsvälfärd i sina respektive områden. Många av dem är små och saknar egen webbplats.
                 </p>
-                <p className="mb-4">
-                  Det bästa sättet att hitta dem är att söka i länsstyrelsernas gemensamma <a href="https://stiftelser.lansstyrelsen.se/" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">stiftelsedatabas</a>,
+                <p className="text-sm text-gray-600">
+                  Det bästa sättet att hitta dem är att söka i länsstyrelsernas gemensamma <a href="https://stiftelser.lansstyrelsen.se/" className="text-sm font-medium text-primary-700 hover:text-primary-800 hover:underline" target="_blank" rel="noopener noreferrer">stiftelsedatabas</a>,
                   där alla registrerade stiftelser i Sverige finns med ändamål och kontaktuppgifter.
                 </p>
               </div>
@@ -422,96 +422,96 @@ export default function ActiveFoundationsPage() {
 
           {/* Other funders that are not foundations */}
           <section className="mb-16" id="andra-finansiarer">
-            <h2 className="text-2xl font-bold mb-6 bg-primary-50 p-3 rounded-lg">Andra viktiga finansiärer (ej stiftelser)</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Andra viktiga finansiärer (ej stiftelser)</h2>
 
-            <p className="mb-8">
+            <p className="mb-8 text-gray-600">
               Flera av Sveriges mest kända forskningsfinansiärer och insamlingsorganisationer är inte stiftelser i juridisk mening,
               utan myndigheter eller ideella föreningar. De nämns ofta i samma sammanhang som stiftelserna ovan och är viktiga
               finansieringskällor – men ansökningsprocesserna och regelverken skiljer sig åt.
             </p>
 
-            <h3 className="text-xl font-bold mb-4">Statliga forskningsfinansiärer</h3>
-            <div className="space-y-6 mb-10">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Vetenskapsrådet</h4>
-                <p>
+            <h3 className="text-xl font-semibold mb-4">Statliga forskningsfinansiärer</h3>
+            <div className="space-y-4 mb-10">
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Vetenskapsrådet</h4>
+                <p className="text-sm text-gray-600">
                   Statlig myndighet och Sveriges största statliga forskningsfinansiär. Finansierar grundforskning inom alla vetenskapsområden.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Formas</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Formas</h4>
+                <p className="text-sm text-gray-600">
                   Statligt forskningsråd för hållbar utveckling. Finansierar forskning om miljö, areella näringar och samhällsbyggande.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Forte</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Forte</h4>
+                <p className="text-sm text-gray-600">
                   Statligt forskningsråd som finansierar forskning om hälsa, arbetsliv och välfärd.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Energimyndigheten</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Energimyndigheten</h4>
+                <p className="text-sm text-gray-600">
                   Statlig myndighet som finansierar forskning och innovation inom energiområdet.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Svenska institutet (SI)</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Svenska institutet (SI)</h4>
+                <p className="text-sm text-gray-600">
                   Statlig myndighet som främjar internationellt utbyte, akademiskt samarbete och kulturella kopplingar.
                 </p>
               </div>
             </div>
 
-            <h3 className="text-xl font-bold mb-4">Insamlingsorganisationer</h3>
+            <h3 className="text-xl font-semibold mb-4">Insamlingsorganisationer</h3>
             <p className="mb-6 text-sm text-gray-600">
               Organisationerna nedan är ideella föreningar, inte stiftelser. Hjärnfonden och Alzheimerfonden, som ofta nämns i samma
               sammanhang, är däremot insamlingsstiftelser och finns därför kvar i listan ovan.
             </p>
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Cancerfonden</h4>
-                <p>
+            <div className="space-y-4">
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Cancerfonden</h4>
+                <p className="text-sm text-gray-600">
                   Ideell insamlingsorganisation (förening) och en av Sveriges största finansiärer av cancerforskning.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Barncancerfonden</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Barncancerfonden</h4>
+                <p className="text-sm text-gray-600">
                   Ideell förening som finansierar forskning om barncancer och stödjer drabbade familjer.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Hjärt-Lungfonden</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Hjärt-Lungfonden</h4>
+                <p className="text-sm text-gray-600">
                   Ideell förening som samlar in pengar till forskning om hjärt- och lungsjukdomar.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Naturskyddsföreningen</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Naturskyddsföreningen</h4>
+                <p className="text-sm text-gray-600">
                   Ideell miljöorganisation (förening) som driver och finansierar natur- och miljöprojekt.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Erikshjälpen (ERIKS Development Partner)</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Erikshjälpen (ERIKS Development Partner)</h4>
+                <p className="text-sm text-gray-600">
                   Ideell förening som arbetar med barns rättigheter och internationellt utvecklingssamarbete.
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h4 className="text-lg font-semibold mb-2 text-primary-700">Olof Palmes Internationella Center</h4>
-                <p>
+              <div className="card p-5">
+                <h4 className="font-semibold text-gray-900 mb-1">Olof Palmes Internationella Center</h4>
+                <p className="text-sm text-gray-600">
                   Ideell förening – arbetarrörelsens organisation för internationellt utvecklingssamarbete och opinionsbildning.
                 </p>
               </div>
@@ -520,16 +520,16 @@ export default function ActiveFoundationsPage() {
 
           {/* Conclusion */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6 border-b border-primary-100 pb-2">Sammanfattning</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Sammanfattning</h2>
 
-            <p className="mb-4">
+            <p className="mb-4 text-gray-600">
               Denna guide presenterar ett urval av Sveriges mest aktiva bidragsgivande stiftelser inom forskning, utbildning,
               medicin, kultur, miljö och regional utveckling, samt de viktigaste finansiärerna med annan organisationsform.
               Bidragssökare, akademiker, ideella organisationer och privatpersoner kan använda den som utgångspunkt för att
               identifiera finansieringspartners som passar deras mål.
             </p>
 
-            <p className="mb-4">
+            <p className="mb-4 text-gray-600">
               För ytterligare information om varje stiftelses behörighetskriterier, ansökningsprocesser och deadlines,
               konsultera respektive stiftelses webbplats eller länsstyrelsernas stiftelsedatabas.
             </p>

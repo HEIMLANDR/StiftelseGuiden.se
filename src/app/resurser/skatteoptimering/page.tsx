@@ -30,7 +30,7 @@ export default function TaxOptimizationPage() {
         title="Skatteoptimering för Stiftelser"
         subtitle="Guide till skatteregler, inskränkt skattskyldighet och lagliga sätt att minimera skattebördan för din stiftelse"
         size="small"
-        pattern="dots"
+        kicker="Resurser"
       />
 
       {/* Breadcrumb */}
@@ -46,21 +46,21 @@ export default function TaxOptimizationPage() {
         <div className="max-w-4xl mx-auto">
           {/* Introduction */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Skatteoptimering för stiftelser</h2>
-            <p className="mb-4 text-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">Skatteoptimering för stiftelser</h2>
+            <p className="mb-4 text-lg text-gray-600">
               Stiftelser i Sverige omfattas av särskilda skatteregler som skiljer sig från beskattningen av andra juridiska personer. 
               Med rätt kunskap och planering kan stiftelser optimera sin skattesituation på lagligt sätt och därmed maximera de 
               resurser som kan användas för att främja stiftelsens ändamål.
             </p>
-            <p className="mb-6">
+            <p className="mb-6 text-gray-600">
               Denna guide ger en översikt över de viktigaste skatteaspekterna för stiftelser och presenterar lagliga strategier 
               för att minimera skattebördan. Observera att skatteregler kan ändras och att det alltid är viktigt att konsultera 
               en skatterådgivare med expertis inom stiftelseområdet för specifik rådgivning.
             </p>
             
-            <div className="bg-primary-50 p-6 rounded-lg border-l-4 border-l-primary-400 mb-8">
-              <h3 className="text-xl font-semibold mb-2 text-primary-700">Viktigt att tänka på</h3>
-              <p>
+            <div className="callout callout-info mb-8">
+              <h3 className="font-semibold text-gray-900 mb-1">Viktigt att tänka på</h3>
+              <p className="text-sm text-gray-700">
                 Skatteoptimering handlar om att använda lagliga metoder för att minimera skatt, inte om skatteflykt eller skatteundandragande. 
                 Alla åtgärder som beskrivs i denna guide är förenliga med svensk skattelagstiftning. Stiftelser har ett särskilt ansvar 
                 att förvalta sina tillgångar ansvarsfullt och i enlighet med stiftelsens ändamål och gällande lagar.
@@ -70,11 +70,11 @@ export default function TaxOptimizationPage() {
           
           {/* Grundläggande skatteregler för stiftelser */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Grundläggande skatteregler för stiftelser</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Grundläggande skatteregler för stiftelser</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Obegränsad skattskyldighet</h3>
+                <h3 className="text-xl font-semibold mb-3">Obegränsad skattskyldighet</h3>
                 <p className="mb-4">
                   Utgångspunkten i svensk skattelagstiftning är att stiftelser, liksom andra juridiska personer, har obegränsad 
                   skattskyldighet. Detta innebär att stiftelsen beskattas för alla sina inkomster, inklusive:
@@ -90,7 +90,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Inskränkt skattskyldighet</h3>
+                <h3 className="text-xl font-semibold mb-3">Inskränkt skattskyldighet</h3>
                 <p className="mb-4">
                   Vissa stiftelser kan dock kvalificera för inskränkt skattskyldighet enligt 7 kap. inkomstskattelagen. 
                   Detta innebär att stiftelsen endast beskattas för inkomst av näringsverksamhet och inkomst från fastigheter 
@@ -111,7 +111,7 @@ export default function TaxOptimizationPage() {
                   avkastningen som faktiskt används för ändamålet.
                 </p>
                 <p>
-                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 hover:underline">Familjestiftelser</Link>{" "}
+                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-700 hover:text-primary-800 hover:underline">Familjestiftelser</Link>{" "}
                   och näringsdrivande stiftelser uppfyller vanligtvis inte dessa krav och har därför
                   obegränsad skattskyldighet.
                 </p>
@@ -121,11 +121,11 @@ export default function TaxOptimizationPage() {
           
           {/* Strategier för skatteoptimering */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Strategier för skatteoptimering</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Strategier för skatteoptimering</h2>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">1. Säkerställ inskränkt skattskyldighet</h3>
+                <h3 className="text-xl font-semibold mb-3">1. Säkerställ inskränkt skattskyldighet</h3>
                 <p className="mb-4">
                   Den mest effektiva skatteoptimeringen för en stiftelse är att kvalificera för inskränkt skattskyldighet. 
                   För att uppnå detta:
@@ -136,8 +136,8 @@ export default function TaxOptimizationPage() {
                   <li>Planera utdelningar så att fullföljdskravet uppfylls (avkastningen ska användas i skälig omfattning för ändamålet, i praxis cirka 75–80 procent)</li>
                   <li>Undvik att begränsa destinatärskretsen till en alltför snäv grupp</li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="card p-5">
+                  <p className="text-sm text-gray-600">
                     <strong>Exempel:</strong> En forskningsstiftelse med inskränkt skattskyldighet har kapitalinkomster på 1 miljon kr. 
                     Utan inskränkt skattskyldighet skulle stiftelsen betala cirka 206 000 kr i skatt. Med inskränkt skattskyldighet 
                     betalar stiftelsen ingen skatt på dessa inkomster, vilket innebär att hela beloppet kan användas för att främja 
@@ -147,7 +147,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">2. Optimera kapitalförvaltningen</h3>
+                <h3 className="text-xl font-semibold mb-3">2. Optimera kapitalförvaltningen</h3>
                 <p className="mb-4">
                   Även för stiftelser med inskränkt skattskyldighet är det viktigt att optimera kapitalförvaltningen:
                 </p>
@@ -160,7 +160,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">3. Hantera fastigheter effektivt</h3>
+                <h3 className="text-xl font-semibold mb-3">3. Hantera fastigheter effektivt</h3>
                 <p className="mb-4">
                   För stiftelser som äger fastigheter:
                 </p>
@@ -172,7 +172,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">4. Optimera näringsverksamhet</h3>
+                <h3 className="text-xl font-semibold mb-3">4. Optimera näringsverksamhet</h3>
                 <p className="mb-4">
                   För stiftelser som bedriver näringsverksamhet:
                 </p>
@@ -184,7 +184,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">5. Planera utdelningar strategiskt</h3>
+                <h3 className="text-xl font-semibold mb-3">5. Planera utdelningar strategiskt</h3>
                 <p className="mb-4">
                   För stiftelser med inskränkt skattskyldighet:
                 </p>
@@ -193,8 +193,8 @@ export default function TaxOptimizationPage() {
                   <li>Balansera utdelningar mellan olika år för att hantera variationer i avkastning</li>
                   <li>Dokumentera noggrant hur utdelningar främjar stiftelsens allmännyttiga ändamål</li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="card p-5">
+                  <p className="text-sm text-gray-600">
                     <strong>Exempel:</strong> En stiftelse med inskränkt skattskyldighet har en årlig avkastning på 5 miljoner kr.
                     Enligt den tumregel som vuxit fram i praxis behöver stiftelsen använda minst omkring fyra miljoner kronor
                     (cirka 75–80 procent) för det allmännyttiga ändamålet. Bedömningen görs i första hand per år, men ett
@@ -208,11 +208,11 @@ export default function TaxOptimizationPage() {
           
           {/* Särskilda skattefrågor */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Särskilda skattefrågor</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Särskilda skattefrågor</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Mervärdesskatt (moms)</h3>
+                <h3 className="text-xl font-semibold mb-3">Mervärdesskatt (moms)</h3>
                 <p className="mb-4">
                   Stiftelser är normalt inte momsregistrerade om de inte bedriver momspliktig verksamhet. Några viktiga punkter:
                 </p>
@@ -225,7 +225,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Arbetsgivaravgifter och personalskatter</h3>
+                <h3 className="text-xl font-semibold mb-3">Arbetsgivaravgifter och personalskatter</h3>
                 <p className="mb-4">
                   Stiftelser som har anställda eller betalar ut ersättningar:
                 </p>
@@ -237,7 +237,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Gåvor och donationer</h3>
+                <h3 className="text-xl font-semibold mb-3">Gåvor och donationer</h3>
                 <p className="mb-4">
                   För gåvor och donationer gäller:
                 </p>
@@ -252,11 +252,11 @@ export default function TaxOptimizationPage() {
           
           {/* Rapportering och dokumentation */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Rapportering och dokumentation</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Rapportering och dokumentation</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Deklarationsskyldighet</h3>
+                <h3 className="text-xl font-semibold mb-3">Deklarationsskyldighet</h3>
                 <p className="mb-4">
                   Stiftelser är skyldiga att lämna inkomstdeklaration om de:
                 </p>
@@ -271,7 +271,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Dokumentation för inskränkt skattskyldighet</h3>
+                <h3 className="text-xl font-semibold mb-3">Dokumentation för inskränkt skattskyldighet</h3>
                 <p className="mb-4">
                   För att styrka rätten till inskränkt skattskyldighet bör stiftelsen dokumentera:
                 </p>
@@ -284,7 +284,7 @@ export default function TaxOptimizationPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Särskild uppgift</h3>
+                <h3 className="text-xl font-semibold mb-3">Särskild uppgift</h3>
                 <p>
                   Stiftelser som är undantagna från inkomstbeskattning ska lämna särskild uppgift till Skatteverket. 
                   Denna uppgift innehåller information om stiftelsens tillgångar, skulder, intäkter och kostnader.
@@ -295,7 +295,7 @@ export default function TaxOptimizationPage() {
           
           {/* Aktuella förändringar i skattelagstiftningen */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Aktuella förändringar i skattelagstiftningen</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Aktuella förändringar i skattelagstiftningen</h2>
             
             <p className="mb-4">
               Skattelagstiftningen förändras kontinuerligt, och det är viktigt för stiftelser att hålla sig uppdaterade 
@@ -309,22 +309,22 @@ export default function TaxOptimizationPage() {
               <li>Internationella skattefrågor för stiftelser med verksamhet eller tillgångar i flera länder</li>
             </ul>
 
-            <div className="bg-primary-50 border-l-4 border-l-primary-400 p-6 mb-6">
-              <h3 className="text-lg font-semibold mb-2 text-primary-800">Nya regler från 2025: inlämningsplikt och förseningsavgifter</h3>
-              <p className="text-primary-700">
+            <div className="callout callout-info mb-6">
+              <h3 className="font-semibold text-gray-900 mb-1">Nya regler från 2025: inlämningsplikt och förseningsavgifter</h3>
+              <p className="text-sm text-gray-700">
                 Sedan 2025 gäller skärpta regler i{" "}
-                <Link href="/juridik/stiftelselagen/" className="text-primary-800 underline hover:text-primary-900">stiftelselagen</Link>{" "}
+                <Link href="/juridik/stiftelselagen/" className="text-primary-700 hover:text-primary-800 underline">stiftelselagen</Link>{" "}
                 (SFS 2024:1114): årsredovisning och revisionsberättelse ska ha kommit in till Länsstyrelsen senast sex
                 månader efter räkenskapsårets utgång. Missas fristen tas en förseningsavgift på 7 500 kronor ut, och vid
                 mer än fyra månaders ytterligare försening tillkommer 15 000 kronor. För styrelsen är detta i praktiken
                 en ny administrativ deadline att planera in vid sidan av deklarationen. Läs mer om{" "}
-                <Link href="/juridik/#nya-regler-2025" className="text-primary-800 underline hover:text-primary-900">de nya reglerna för stiftelser 2025</Link>.
+                <Link href="/juridik/#nya-regler-2025" className="text-primary-700 hover:text-primary-800 underline">de nya reglerna för stiftelser 2025</Link>.
               </p>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg mb-6">
-              <h4 className="font-semibold mb-2">Håll dig uppdaterad</h4>
-              <p>
+            <div className="callout callout-info mb-6">
+              <h4 className="font-semibold text-gray-900 mb-1">Håll dig uppdaterad</h4>
+              <p className="text-sm text-gray-700">
                 För att hålla dig uppdaterad om förändringar i skattelagstiftningen som påverkar stiftelser, 
                 rekommenderar vi att du regelbundet besöker Skatteverkets webbplats, prenumererar på nyhetsbrev 
                 från branschorganisationer och konsulterar skatterådgivare med expertis inom stiftelseområdet.
@@ -334,7 +334,7 @@ export default function TaxOptimizationPage() {
           
           {/* Sammanfattning */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Sammanfattning</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Sammanfattning</h2>
             
             <p className="mb-4">
               Effektiv skatteoptimering för stiftelser handlar om att:

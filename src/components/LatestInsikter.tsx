@@ -40,7 +40,7 @@ export default async function LatestInsikter({
     .slice(0, limit);
 
   return (
-    <section className="bg-gray-50 border-y border-gray-200 py-12 md:py-16">
+    <section className="bg-gray-50 border-y border-gray-100 py-12 md:py-16">
       <div className="container-padded">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
@@ -62,7 +62,7 @@ export default async function LatestInsikter({
               return (
                 <article
                   key={post.id}
-                  className="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow flex flex-col"
+                  className="card card-hover p-0 overflow-hidden flex flex-col"
                 >
                   <Link href={`/insikter/${post.slug}/`} className="block">
                     {cover && (

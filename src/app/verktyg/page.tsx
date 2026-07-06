@@ -37,7 +37,7 @@ export default function ToolsPage() {
         title="Verktyg för stiftelser"
         subtitle="Praktiska hjälpmedel för att planera och förvalta din stiftelse"
         size="small"
-        pattern="dots"
+        kicker="Verktyg"
       />
 
       {/* Breadcrumb */}
@@ -50,21 +50,21 @@ export default function ToolsPage() {
       {/* Content */}
       <div className="container-padded">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Våra verktyg</h2>
-          
-          <p className="mb-6 text-lg">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Våra verktyg</h2>
+
+          <p className="mb-6 text-lg text-gray-600 max-w-2xl">
             Här hittar du praktiska verktyg som hjälper dig att planera, jämföra och beräkna olika aspekter av stiftelser. 
             Verktygen är kostnadsfria och kan användas som stöd i ditt beslutsfattande, men ersätter inte professionell rådgivning.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="card card-hover bg-white hover-lift">
-              <h3 className="text-xl font-semibold mb-4 text-primary-700">Jämför stiftelsetyper</h3>
-              <p className="mb-4">
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Jämför stiftelsetyper</h3>
+              <p className="text-gray-600 mb-4">
                 Jämför olika typer av stiftelser sida vid sida för att hitta den form som passar ditt ändamål bäst.
                 Se skillnader i skattemässig status, kapitalkrav, förvaltning och mer.
               </p>
-              <a href="#jamfor" className="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center">
+              <a href="#jamfor" className="text-primary-700 font-medium hover:text-primary-800 hover:underline inline-flex items-center">
                 Gå till verktyget
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -72,13 +72,13 @@ export default function ToolsPage() {
               </a>
             </div>
             
-            <div className="card card-hover bg-white hover-lift bg-accent-50 shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-accent-700">Jämför organisationsformer</h3>
-              <p className="mb-4">
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Jämför organisationsformer</h3>
+              <p className="text-gray-600 mb-4">
                 Osäker på om du ska starta stiftelse, förening eller aktiebolag? Jämför de olika organisationsformerna
                 och se vilken som passar bäst för ditt syfte.
               </p>
-              <a href="#organisationsformer" className="text-accent-600 font-medium hover:text-accent-700 inline-flex items-center">
+              <a href="#organisationsformer" className="text-primary-700 font-medium hover:text-primary-800 hover:underline inline-flex items-center">
                 Gå till verktyget
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -86,13 +86,13 @@ export default function ToolsPage() {
               </a>
             </div>
             
-            <div className="card card-hover bg-white hover-lift">
-              <h3 className="text-xl font-semibold mb-4 text-primary-700">Kapitalberäknare</h3>
-              <p className="mb-4">
+            <div className="card">
+              <h3 className="text-xl font-semibold mb-4">Kapitalberäknare</h3>
+              <p className="text-gray-600 mb-4">
                 Beräkna hur mycket kapital din stiftelse behöver för att uppnå dina mål för utdelning över tid.
                 Anpassa parametrar som avkastning, inflation och administrativa kostnader.
               </p>
-              <a href="#kalkylator" className="text-primary-600 font-medium hover:text-primary-700 inline-flex items-center">
+              <a href="#kalkylator" className="text-primary-700 font-medium hover:text-primary-800 hover:underline inline-flex items-center">
                 Gå till verktyget
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -103,17 +103,17 @@ export default function ToolsPage() {
         </div>
         
         <section id="jamfor" className="mb-16 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Jämför stiftelsetyper</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Jämför stiftelsetyper</h2>
           <FoundationComparison />
         </section>
         
         <section id="organisationsformer" className="mb-16 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Jämför organisationsformer</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Jämför organisationsformer</h2>
           <OrganizationComparison />
         </section>
         
         <section id="kalkylator" className="mb-16 scroll-mt-24">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Kapitalberäknare</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Kapitalberäknare</h2>
           <CapitalCalculator />
         </section>
 
@@ -125,16 +125,16 @@ export default function ToolsPage() {
           className="mb-16"
         />
 
-        <div className="bg-primary-50 rounded-lg p-6 border border-primary-100 mb-16">
-          <h3 className="text-xl font-semibold mb-4 text-primary-700">Viktigt att tänka på</h3>
-          <p className="mb-4">
-            Verktygen på denna sida är avsedda att ge en uppskattning och vägledning, men ersätter inte professionell rådgivning. 
+        <div className="callout callout-info mb-16">
+          <h3 className="font-semibold text-gray-900 mb-1">Viktigt att tänka på</h3>
+          <p className="text-sm text-gray-700 mb-4">
+            Verktygen på denna sida är avsedda att ge en uppskattning och vägledning, men ersätter inte professionell rådgivning.
             Varje stiftelse är unik och påverkas av många faktorer som inte fullt ut kan representeras i dessa verktyg.
           </p>
-          <p>
+          <p className="text-sm text-gray-700">
             Vi rekommenderar att du konsulterar juridisk och ekonomisk expertis innan du fattar viktiga beslut om din stiftelse.
             För mer information och personlig rådgivning, kontakta vår samarbetspartner{" "}
-            <a href={sokUrl("verktyg", "inline")} target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SökaStiftelseMedel.se</a>.
+            <a href={sokUrl("verktyg", "inline")} target="_blank" rel="noopener noreferrer" className="text-primary-700 font-medium hover:text-primary-800 hover:underline">SökaStiftelseMedel.se</a>.
           </p>
         </div>
       </div>

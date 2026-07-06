@@ -168,23 +168,23 @@ export default function FoundationComparison() {
   );
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 animate-fadeIn">
-      <h2 className="text-2xl font-bold mb-6 text-primary-700">Jämför stiftelsetyper</h2>
+    <div className="card">
+      <h2 className="text-2xl font-semibold tracking-tight mb-6">Jämför stiftelsetyper</h2>
       
       <div className="mb-6">
         <p className="text-gray-600 mb-4">
           Välj upp till 3 stiftelsetyper att jämföra sida vid sida för att hitta den form som passar ditt ändamål bäst.
         </p>
         
-        <div className="flex flex-wrap gap-3">
+        <div className="inline-flex flex-wrap gap-1 rounded-lg border border-gray-300 p-0.5">
           {foundationTypes.map(type => (
             <button
               key={type.id}
               onClick={() => handleTypeToggle(type.id)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
                 selectedTypes.includes(type.id)
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-primary-700 text-white rounded-md'
+                  : 'text-gray-600 hover:text-gray-900'
               }`}
               disabled={selectedTypes.length >= 3 && !selectedTypes.includes(type.id)}
             >
@@ -195,13 +195,13 @@ export default function FoundationComparison() {
       </div>
       
       {selectedFoundations.length > 0 ? (
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="py-3 px-4 text-left font-semibold text-gray-700 border-b">Egenskap</th>
+        <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Egenskap</th>
                 {selectedFoundations.map(foundation => (
-                  <th key={foundation.id} className="py-3 px-4 text-left font-semibold text-gray-700 border-b">
+                  <th key={foundation.id} className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">
                     {foundation.name}
                   </th>
                 ))}
@@ -209,54 +209,54 @@ export default function FoundationComparison() {
             </thead>
             <tbody>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Beskrivning</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Beskrivning</td>
                 {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">{foundation.description}</td>
-                ))}
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Ändamål</td>
-                {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">{foundation.purpose}</td>
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{foundation.description}</td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Skattemässig status</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Ändamål</td>
                 {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">{foundation.taxStatus}</td>
-                ))}
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Rekommenderat kapital</td>
-                {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">{foundation.minCapital}</td>
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{foundation.purpose}</td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Förvaltning</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Skattemässig status</td>
                 {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">{foundation.governance}</td>
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{foundation.taxStatus}</td>
                 ))}
               </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Fördelar</td>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Rekommenderat kapital</td>
                 {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{foundation.minCapital}</td>
+                ))}
+              </tr>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Förvaltning</td>
+                {selectedFoundations.map(foundation => (
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{foundation.governance}</td>
+                ))}
+              </tr>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Fördelar</td>
+                {selectedFoundations.map(foundation => (
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
                       {foundation.advantages.map((advantage, index) => (
-                        <li key={index} className="text-sm">{advantage}</li>
+                        <li key={index}>{advantage}</li>
                       ))}
                     </ul>
                   </td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Nackdelar</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Nackdelar</td>
                 {selectedFoundations.map(foundation => (
-                  <td key={foundation.id} className="py-3 px-4 border-b">
+                  <td key={foundation.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
                       {foundation.disadvantages.map((disadvantage, index) => (
-                        <li key={index} className="text-sm">{disadvantage}</li>
+                        <li key={index}>{disadvantage}</li>
                       ))}
                     </ul>
                   </td>

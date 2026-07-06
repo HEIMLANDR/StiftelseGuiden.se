@@ -73,7 +73,6 @@ export default function RedaktionenPage() {
         title="Om redaktionen"
         subtitle="StiftelseGuiden-redaktionen står bakom innehållet på sajten — så här arbetar vi."
         size="small"
-        pattern="dots"
       />
 
       <Breadcrumb

@@ -54,7 +54,7 @@ export default async function InsikterIndex() {
         title="Insikter"
         subtitle="Analyser, guider och praktisk vägledning om svenska stiftelser, fonder och bidrag."
         size="small"
-        pattern="dots"
+        kicker="Insikter"
       />
 
       <Breadcrumb items={[{ label: "Insikter" }]} />
@@ -70,7 +70,7 @@ export default async function InsikterIndex() {
                 return (
                   <article
                     key={post.id}
-                    className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col"
+                    className="card card-hover p-0 overflow-hidden flex flex-col"
                   >
                     <Link href={`/insikter/${post.slug}/`} className="block">
                       {cover && (
@@ -87,15 +87,15 @@ export default async function InsikterIndex() {
                       <div className="text-xs uppercase tracking-wide text-primary-600 font-semibold mb-2">
                         {post.category || "Insikt"} · {post.reading_time} min
                       </div>
-                      <h2 className="text-xl font-semibold mb-3">
+                      <h2 className="text-lg font-semibold mb-3">
                         <Link
                           href={`/insikter/${post.slug}/`}
-                          className="hover:text-primary-600 transition-colors"
+                          className="hover:text-primary-700 transition-colors"
                         >
                           {post.title}
                         </Link>
                       </h2>
-                      <p className="text-sm mb-4 flex-grow">{post.excerpt}</p>
+                      <p className="text-sm text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
                       <div className="text-xs text-gray-500 mt-auto">
                         Publicerad {formatDate(post.published_at)} · {post.author.name}
                       </div>

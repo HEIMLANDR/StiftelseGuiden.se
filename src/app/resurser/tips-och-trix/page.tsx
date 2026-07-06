@@ -32,7 +32,7 @@ export default function TipsAndTricksPage() {
         title="Tips och trix för stiftelser och företag"
         subtitle="Gråzoner, avancerade strukturer och risker som kräver noggrann analys"
         size="small"
-        pattern="dots"
+        kicker="Resurser"
       />
 
       {/* Breadcrumb */}
@@ -48,21 +48,21 @@ export default function TipsAndTricksPage() {
         <div className="max-w-4xl mx-auto">
           {/* Introduction */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Gråzoner, tolkningsutrymmen och avancerade strategier</h2>
-            <p className="mb-4 text-lg">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-4">Gråzoner, tolkningsutrymmen och avancerade strategier</h2>
+            <p className="mb-4 text-lg text-gray-600">
               Stiftelser och företag kan i vissa situationer användas på sätt som ligger i gränslandet mellan tydligt reglerade 
               upplägg och mer svårbedömda tolkningsfrågor. På denna sida beskriver vi sådana gråzoner öppet, utan att låtsas att 
               rättsläget alltid är svartvitt.
             </p>
-            <p className="mb-6">
+            <p className="mb-6 text-gray-600">
               Informationen nedan beskriver faktiska möjligheter, men också områden där utfall kan bero på omständigheterna i det 
               enskilda fallet, hur strukturen genomförs och hur Skatteverket eller domstolarna bedömer substans, syfte och 
               marknadsmässighet. Konsultera alltid juridiska och skattemässiga experter innan du implementerar någon av dessa strukturer.
             </p>
             
-            <div className="bg-red-50 p-6 rounded-lg border-l-4 border-l-red-400 mb-8">
-              <h3 className="text-xl font-semibold mb-2 text-red-700">Viktigt att tänka på</h3>
-              <p>
+            <div className="callout callout-warning mb-8">
+              <h3 className="font-semibold text-gray-900 mb-1">Viktigt att tänka på</h3>
+              <p className="text-sm text-gray-700">
                 Denna information är endast avsedd för utbildningssyfte. Skattelagstiftningen ändras kontinuerligt, och 
                 vad som är lagligt idag kan bli olagligt imorgon. Dessutom kan Skatteverket och domstolar göra olika 
                 bedömningar i enskilda fall. Använd alltid professionell rådgivning innan du implementerar avancerade 
@@ -73,13 +73,13 @@ export default function TipsAndTricksPage() {
           
           {/* Stiftelser som skatteplaneringsverktyg */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Stiftelser som skatteplaneringsverktyg</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Stiftelser som skatteplaneringsverktyg</h2>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">1. Familjestiftelser och förmögenhetsplanering</h3>
+                <h3 className="text-xl font-semibold mb-3">1. Familjestiftelser och förmögenhetsplanering</h3>
                 <p className="mb-4">
-                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 hover:underline">Familjestiftelser</Link>{" "}
+                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-700 hover:text-primary-800 hover:underline">Familjestiftelser</Link>{" "}
                   har länge använts av förmögna familjer för att bevara och skydda tillgångar över generationer.
                   Här är några mindre kända fördelar:
                 </p>
@@ -99,8 +99,8 @@ export default function TipsAndTricksPage() {
                     på livstid eller specificera detaljerade förvaltningsdirektiv.
                   </li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="card p-5">
+                  <p className="text-sm text-gray-600">
                     <strong>Exempel:</strong> En förmögen entreprenör bildar en familjestiftelse och överför aktier i sitt 
                     företag till stiftelsen. Stiftelsens ändamål är att stödja familjemedlemmars utbildning och företagande. 
                     Entreprenören sitter i stiftelsens styrelse och kan därmed fortsätta att indirekt kontrollera företaget, 
@@ -110,7 +110,7 @@ export default function TipsAndTricksPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">2. Internationella stiftelsestrukturer</h3>
+                <h3 className="text-xl font-semibold mb-3">2. Internationella stiftelsestrukturer</h3>
                 <p className="mb-4">
                   Genom att kombinera svenska stiftelser med internationella strukturer kan man uppnå betydande skattefördelar:
                 </p>
@@ -131,8 +131,8 @@ export default function TipsAndTricksPage() {
                     för skatteplanering i gråzonen.
                   </li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="callout callout-warning">
+                  <p className="text-sm text-gray-700">
                     <strong>Observera:</strong> Internationella stiftelsestrukturer är komplexa och kräver noggrann planering 
                     för att undvika att klassificeras som skatteflykt enligt CFC-reglerna eller lagen mot skatteflykt. 
                     Skatteverket granskar sådana strukturer noggrant.
@@ -141,7 +141,7 @@ export default function TipsAndTricksPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">3. Allmännyttiga stiftelser med privata fördelar</h3>
+                <h3 className="text-xl font-semibold mb-3">3. Allmännyttiga stiftelser med privata fördelar</h3>
                 <p className="mb-4">
                   Allmännyttiga stiftelser kan under vissa omständigheter kombineras med privata fördelar:
                 </p>
@@ -166,11 +166,11 @@ export default function TipsAndTricksPage() {
           
           {/* Kombinationer av stiftelser och företag */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Kombinationer av stiftelser och företag</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Kombinationer av stiftelser och företag</h2>
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">1. Stiftelse som ägare till företag</h3>
+                <h3 className="text-xl font-semibold mb-3">1. Stiftelse som ägare till företag</h3>
                 <p className="mb-4">
                   Att låta en stiftelse äga ett företag kan ge flera fördelar:
                 </p>
@@ -188,8 +188,8 @@ export default function TipsAndTricksPage() {
                     och operativa dotterbolag kan man skapa strukturer där vinster och tillgångar flödar på skatteeffektiva sätt.
                   </li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="card p-5">
+                  <p className="text-sm text-gray-600">
                     <strong>Exempel:</strong> Inom Wallenbergsfären kontrollerar Knut och Alice Wallenbergs Stiftelse
                     investmentbolaget Investor AB, som i sin tur är storägare i många svenska storbolag. IKEA ägs via
                     stiftelseliknande strukturer, bland annat den nederländska Stichting INGKA Foundation. Båda är
@@ -199,7 +199,7 @@ export default function TipsAndTricksPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">2. Parallella strukturer</h3>
+                <h3 className="text-xl font-semibold mb-3">2. Parallella strukturer</h3>
                 <p className="mb-4">
                   Genom att skapa parallella strukturer med både stiftelser och företag kan man optimera både kontroll och skatteeffektivitet:
                 </p>
@@ -221,7 +221,7 @@ export default function TipsAndTricksPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">3. Stiftelser för immateriella rättigheter</h3>
+                <h3 className="text-xl font-semibold mb-3">3. Stiftelser för immateriella rättigheter</h3>
                 <p className="mb-4">
                   En särskilt effektiv strategi är att placera immateriella rättigheter i stiftelser:
                 </p>
@@ -240,8 +240,8 @@ export default function TipsAndTricksPage() {
                     dotterbolag kan man skapa strukturer där royaltyflöden optimeras ur ett skatteperspektiv.
                   </li>
                 </ul>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <p className="text-sm italic">
+                <div className="callout callout-warning">
+                  <p className="text-sm text-gray-700">
                     <strong>Observera:</strong> Sedan införandet av BEPS (Base Erosion and Profit Shifting) och andra 
                     internationella initiativ mot skatteplanering har möjligheterna att använda IP-strukturer för 
                     aggressiv skatteplanering begränsats, men lagliga möjligheter finns fortfarande.
@@ -253,11 +253,11 @@ export default function TipsAndTricksPage() {
           
           {/* Gråzoner och vad man bör se upp med */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Gråzoner och vad man bör se upp med</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Gråzoner och vad man bör se upp med</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Riskområden att vara medveten om</h3>
+                <h3 className="text-xl font-semibold mb-3">Riskområden att vara medveten om</h3>
                 <p className="mb-4">
                   Följande områden befinner sig ofta i gråzoner och bör hanteras med särskild försiktighet:
                 </p>
@@ -284,7 +284,7 @@ export default function TipsAndTricksPage() {
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Skatteverkets fokusområden</h3>
+                <h3 className="text-xl font-semibold mb-3">Skatteverkets fokusområden</h3>
                 <p className="mb-4">
                   Skatteverket fokuserar särskilt på följande områden när det gäller stiftelser och skatteplanering:
                 </p>
@@ -311,7 +311,7 @@ export default function TipsAndTricksPage() {
                   på att årsredovisning och revisionsberättelse kommer in till Länsstyrelsen inom sex månader, förseningsavgifter
                   på 7 500 kronor och uppåt samt en skyldighet för revisorer att agera vid misstänkt ekonomisk brottslighet.
                   Läs mer om{" "}
-                  <Link href="/juridik/#nya-regler-2025" className="text-primary-600 hover:underline">de nya reglerna för stiftelser 2025</Link>.
+                  <Link href="/juridik/#nya-regler-2025" className="text-primary-700 hover:text-primary-800 hover:underline">de nya reglerna för stiftelser 2025</Link>.
                 </p>
               </div>
             </div>
@@ -319,11 +319,11 @@ export default function TipsAndTricksPage() {
           
           {/* Framtida trender och möjligheter */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Framtida trender och möjligheter</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Framtida trender och möjligheter</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold mb-3 text-primary-700">Nya möjligheter att hålla ögonen på</h3>
+                <h3 className="text-xl font-semibold mb-3">Nya möjligheter att hålla ögonen på</h3>
                 <p className="mb-4">
                   Följande områden kan erbjuda nya möjligheter för skatteeffektiv förmögenhetsplanering med stiftelser:
                 </p>
@@ -350,12 +350,12 @@ export default function TipsAndTricksPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Officiella källor att kontrollera mot</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Officiella källor att kontrollera mot</h2>
             <p className="mb-4">
               Om du arbetar i gråzoner bör du alltid kontrollera resonemangen mot primärkällor och aktuell praxis. Börja med dessa
               myndighets- och lagkällor innan du går vidare med någon struktur. En pedagogisk genomgång av lagen kapitel för
               kapitel hittar du i vår guide till{" "}
-              <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">stiftelselagen</Link>.
+              <Link href="/juridik/stiftelselagen/" className="text-primary-700 hover:text-primary-800 hover:underline">stiftelselagen</Link>.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
@@ -363,7 +363,7 @@ export default function TipsAndTricksPage() {
                   href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelselag-19941220_sfs-1994-1220/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:underline"
+                  className="text-primary-700 hover:text-primary-800 hover:underline"
                 >
                   Stiftelselagen (1994:1220)
                 </a>
@@ -373,7 +373,7 @@ export default function TipsAndTricksPage() {
                   href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/inkomstskattelag-19991229_sfs-1999-1229/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:underline"
+                  className="text-primary-700 hover:text-primary-800 hover:underline"
                 >
                   Inkomstskattelagen (1999:1229)
                 </a>
@@ -383,7 +383,7 @@ export default function TipsAndTricksPage() {
                   href="https://www.skatteverket.se/foretag/inkomstdeklaration/inkomstdeklarationforstiftelserochideellaforeningar.4.58d555751259e4d661680006135.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:underline"
+                  className="text-primary-700 hover:text-primary-800 hover:underline"
                 >
                   Skatteverket om deklaration och beskattning för stiftelser
                 </a>
@@ -393,7 +393,7 @@ export default function TipsAndTricksPage() {
                   href="https://www.kammarkollegiet.se/vara-tjanster/stiftelser"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:underline"
+                  className="text-primary-700 hover:text-primary-800 hover:underline"
                 >
                   Kammarkollegiet om stiftelser och permutation
                 </a>
@@ -403,7 +403,7 @@ export default function TipsAndTricksPage() {
           
           {/* Sammanfattning */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-6">Sammanfattning</h2>
+            <h2 className="text-2xl font-semibold tracking-tight mb-6">Sammanfattning</h2>
             
             <p className="mb-4">
               Stiftelser och företag erbjuder många möjligheter för skatteeffektiv förmögenhetsplanering och långsiktig 

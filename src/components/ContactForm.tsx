@@ -83,7 +83,7 @@ export default function ContactForm() {
   return (
     <>
       {formStatus.submitted && (
-        <div className={`p-4 mb-6 rounded-md ${formStatus.success ? 'bg-success-50 text-success-600 border border-success-100' : 'bg-error-50 text-error-600 border border-error-100'}`}>
+        <div className={`callout mb-6 text-sm text-gray-700 ${formStatus.success ? 'callout-success' : 'callout-error'}`}>
           {formStatus.message}
         </div>
       )}
@@ -104,7 +104,7 @@ export default function ContactForm() {
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-primary-800 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
               Namn <span className="text-error-500">*</span>
             </label>
             <input
@@ -113,12 +113,12 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100"
               placeholder="Ditt namn"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-primary-800 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
               E-post <span className="text-error-500">*</span>
             </label>
             <input
@@ -127,14 +127,14 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100"
               placeholder="din.email@exempel.se"
             />
           </div>
         </div>
         
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-primary-800 mb-1">
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
             Ämne
           </label>
           <select
@@ -142,7 +142,7 @@ export default function ContactForm() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white"
+            className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 bg-white focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100"
           >
             <option value="">Välj ett ämne</option>
             <option value="starta-stiftelse">Starta stiftelse</option>
@@ -154,7 +154,7 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-primary-800 mb-1">
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
             Meddelande <span className="text-error-500">*</span>
           </label>
           <textarea
@@ -163,7 +163,7 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={6}
-            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+            className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100"
             placeholder="Skriv ditt meddelande här..."
           ></textarea>
         </div>
@@ -171,7 +171,7 @@ export default function ContactForm() {
         <div>
           <button
             type="submit"
-            className="bg-primary-600 text-white px-6 py-3 rounded-md font-medium hover:bg-primary-700 transition-colors"
+            className="btn btn-primary"
           >
             Skicka meddelande
           </button>

@@ -78,13 +78,9 @@ module.exports = {
         mono: ['Consolas', 'monospace'],
       },
       boxShadow: {
-        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-        'medium': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03)',
-        'hard': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-      },
-      borderRadius: {
-        'xl': '1rem',
-        '2xl': '2rem',
+        'soft': '0 1px 2px 0 rgb(15 23 42 / 0.04)',
+        'medium': '0 4px 12px -2px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.04)',
+        'hard': '0 16px 40px -8px rgb(15 23 42 / 0.16)',
       },
     },
   },

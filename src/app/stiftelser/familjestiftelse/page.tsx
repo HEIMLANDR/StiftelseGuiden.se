@@ -58,10 +58,10 @@ export default function FamiljestiftelsePage() {
       />
 
       <Hero
+        kicker="Stiftelser"
         title="Familjestiftelse – så fungerar den"
         subtitle="Regler, beskattning och för- och nackdelar när stiftelsens ändamål är att gynna en familj eller bestämda personer"
         size="small"
-        pattern="dots"
       />
 
       <Breadcrumb
@@ -73,34 +73,34 @@ export default function FamiljestiftelsePage() {
 
       <div className="container-padded">
         {/* Table of Contents */}
-        <div className="card bg-gray-50 mb-12">
-          <h2 className="text-xl font-bold mb-4">Innehåll</h2>
-          <ul className="space-y-2 text-primary-600">
-            <li><a href="#vad-ar" className="hover:underline hover:text-primary-700">Vad är en familjestiftelse?</a></li>
-            <li><a href="#bilda" className="hover:underline hover:text-primary-700">Så bildas en familjestiftelse</a></li>
-            <li><a href="#skatt" className="hover:underline hover:text-primary-700">Beskattning av familjestiftelser</a></li>
-            <li><a href="#anvandning" className="hover:underline hover:text-primary-700">När passar en familjestiftelse?</a></li>
-            <li><a href="#jamforelse" className="hover:underline hover:text-primary-700">Familjestiftelse vs allmännyttig stiftelse</a></li>
-            <li><a href="#vanliga-fragor" className="hover:underline hover:text-primary-700">Vanliga frågor</a></li>
+        <div className="card mb-12">
+          <h2 className="text-xl font-semibold mb-4">Innehåll</h2>
+          <ul className="space-y-2">
+            <li><a href="#vad-ar" className="text-primary-700 hover:text-primary-800 hover:underline">Vad är en familjestiftelse?</a></li>
+            <li><a href="#bilda" className="text-primary-700 hover:text-primary-800 hover:underline">Så bildas en familjestiftelse</a></li>
+            <li><a href="#skatt" className="text-primary-700 hover:text-primary-800 hover:underline">Beskattning av familjestiftelser</a></li>
+            <li><a href="#anvandning" className="text-primary-700 hover:text-primary-800 hover:underline">När passar en familjestiftelse?</a></li>
+            <li><a href="#jamforelse" className="text-primary-700 hover:text-primary-800 hover:underline">Familjestiftelse vs allmännyttig stiftelse</a></li>
+            <li><a href="#vanliga-fragor" className="text-primary-700 hover:text-primary-800 hover:underline">Vanliga frågor</a></li>
           </ul>
         </div>
 
         <section id="vad-ar" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             Vad är en familjestiftelse?
           </h2>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             En familjestiftelse är en stiftelse vars ändamål är att gynna medlemmar av en viss
             familj, vissa släktled eller andra bestämda fysiska personer – till exempel att bekosta
             utbildning för stiftarens efterkommande eller ge ekonomiskt stöd till familjemedlemmar.
             Juridiskt är den en vanlig stiftelse enligt{" "}
-            <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">
+            <Link href="/juridik/stiftelselagen/" className="text-primary-700 hover:text-primary-800 hover:underline">
               stiftelselagen (1994:1220)
             </Link>
             : egendom avskiljs genom ett stiftelseförordnande för att varaktigt förvaltas för det
             bestämda ändamålet, utan ägare och utan medlemmar.
           </p>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             Det som skiljer familjestiftelsen från andra stiftelser är framför allt två saker:
             skattereglerna – familjestiftelser beskattas fullt ut – och undantaget från
             registrering i länsstyrelsens stiftelseregister.
@@ -108,41 +108,41 @@ export default function FamiljestiftelsePage() {
         </section>
 
         <section id="bilda" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             Så bildas en familjestiftelse
           </h2>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             En familjestiftelse bildas på samma sätt som andra stiftelser: genom ett skriftligt
             stiftelseförordnande (till exempel gåvobrev eller testamente) där egendom avskiljs för
             ändamålet, och genom att någon åtar sig att förvalta egendomen. Hela processen
             beskriver vi steg för steg i guiden{" "}
-            <Link href="/starta-stiftelse/" className="text-primary-600 hover:underline">
+            <Link href="/starta-stiftelse/" className="text-primary-700 hover:text-primary-800 hover:underline">
               starta stiftelse
             </Link>
             . Några punkter är särskilt viktiga just för familjestiftelser:
           </p>
           <div className="space-y-4 mb-8">
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Destinatärkretsen ska vara tydlig</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Destinatärkretsen ska vara tydlig</h3>
+              <p className="text-sm text-gray-600">
                 Förordnandet bör tydligt ange vilka som kan få medel (t.ex. &quot;stiftarens
                 bröstarvingar och deras avkomlingar&quot;), vad medlen får användas till och hur
                 utbetalningar ska beslutas. Otydliga skrivningar skapar konflikter och kan i värsta
                 fall göra förordnandet overkställbart.
               </p>
             </div>
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Ingen registrering hos länsstyrelsen – men Skatteverket och Bolagsverket</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Ingen registrering hos länsstyrelsen – men Skatteverket och Bolagsverket</h3>
+              <p className="text-sm text-gray-600">
                 En stiftelse vars tillgångar endast får användas till förmån för bestämda fysiska
                 personer är undantagen från registreringsskyldigheten i stiftelseregistret. Den
                 ansöker i stället om organisationsnummer hos Skatteverket – och måste liksom alla
                 stiftelser anmäla verklig huvudman till Bolagsverket.
               </p>
             </div>
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Beslutet är oåterkalleligt</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Beslutet är oåterkalleligt</h3>
+              <p className="text-sm text-gray-600">
                 Egendomen som avskiljs tillhör stiftelsen för alltid. Stiftaren kan inte ta
                 tillbaka kapitalet, och ändamålet kan bara ändras genom permutation hos
                 Kammarkollegiet – vilket kräver synnerliga skäl.
@@ -152,48 +152,48 @@ export default function FamiljestiftelsePage() {
         </section>
 
         <section id="skatt" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             Beskattning av familjestiftelser
           </h2>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             Skatten är den viktigaste skillnaden mot allmännyttiga stiftelser. Eftersom en
             familjestiftelse gynnar bestämda personer uppfyller den inte ändamålskravet i 7 kap.
             inkomstskattelagen och kan aldrig bli inskränkt skattskyldig:
           </p>
           <div className="space-y-4 mb-8">
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Stiftelsens skatt</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Stiftelsens skatt</h3>
+              <p className="text-sm text-gray-600">
                 Familjestiftelsen är oinskränkt skattskyldig och betalar 20,6 % statlig
                 inkomstskatt på sina skattepliktiga inkomster – räntor, utdelningar, kapitalvinster
                 och eventuell näringsverksamhet. Någon schablonbeskattning av förmögenheten
                 förekommer inte.
               </p>
             </div>
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Mottagarnas skatt</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Mottagarnas skatt</h3>
+              <p className="text-sm text-gray-600">
                 Utbetalningar från en familjestiftelse behandlas som periodiskt understöd och
                 beskattas som inkomst av tjänst hos mottagaren – det gäller även
                 engångsutbetalningar. Mottagaren betalar alltså sin marginalskatt på beloppet.
               </p>
             </div>
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-2 text-primary-700">Stiftelsens avdragsrätt</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="card">
+              <h3 className="text-lg font-semibold mb-2">Stiftelsens avdragsrätt</h3>
+              <p className="text-sm text-gray-600">
                 Stiftelsen får normalt göra avdrag för periodiskt understöd – men bara för
                 utbetalningar till mottagare som har fyllt 18 år och som inte längre går i skola
                 eller studerar. Stöd till minderåriga eller studerande familjemedlemmar är därmed
                 inte avdragsgillt för stiftelsen.
               </p>
             </div>
-            <div className="card bg-warning-50 border border-warning-100">
-              <h3 className="text-lg font-semibold mb-2 text-primary-900">Dubbel skatteeffekt i praktiken</h3>
-              <p className="text-gray-700 text-sm">
+            <div className="callout callout-warning">
+              <h3 className="font-semibold text-gray-900 mb-1">Dubbel skatteeffekt i praktiken</h3>
+              <p className="text-sm text-gray-700">
                 Kombinationen av stiftelsens inkomstskatt och tjänstebeskattningen hos mottagarna
                 gör att det totala skatteuttaget kan bli högt. Kalkylera alltid helheten – och läs
                 gärna vår genomgång av{" "}
-                <Link href="/resurser/skatteoptimering/" className="text-primary-600 hover:underline">
+                <Link href="/resurser/skatteoptimering/" className="text-primary-700 hover:text-primary-800 hover:underline">
                   skatteregler för stiftelser
                 </Link>{" "}
                 – innan du väljer strukturen.
@@ -203,22 +203,32 @@ export default function FamiljestiftelsePage() {
         </section>
 
         <section id="anvandning" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             När passar en familjestiftelse?
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-3 text-success-600">Styrkor</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <div className="card">
+              <div className="flex items-center gap-2 mb-3">
+                <svg className="w-5 h-5 text-success-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <h3 className="text-lg font-semibold">Styrkor</h3>
+              </div>
+              <ul className="list-disc list-inside space-y-2 text-sm text-gray-600">
                 <li>Håller ihop en förmögenhet över generationer – kapitalet kan inte skingras genom arv eller skilsmässor</li>
                 <li>Långsiktigt, förutsägbart stöd till familjemedlemmar enligt stiftarens vilja</li>
                 <li>Skydd mot enskilda familjemedlemmars borgenärer och impulsbeslut</li>
                 <li>Professionell förvaltning kan säkras genom förordnandets föreskrifter</li>
               </ul>
             </div>
-            <div className="card bg-white">
-              <h3 className="text-lg font-semibold mb-3 text-error-600">Svagheter</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm">
+            <div className="card">
+              <div className="flex items-center gap-2 mb-3">
+                <svg className="w-5 h-5 text-error-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <h3 className="text-lg font-semibold">Svagheter</h3>
+              </div>
+              <ul className="list-disc list-inside space-y-2 text-sm text-gray-600">
                 <li>Oåterkalleligt – stiftaren avstår kapitalet för alltid</li>
                 <li>Full beskattning av stiftelsen plus tjänstebeskattning hos mottagarna</li>
                 <li>Ingen flexibilitet: ändamålet kan bara ändras genom permutation med synnerliga skäl</li>
@@ -234,54 +244,54 @@ export default function FamiljestiftelsePage() {
         </section>
 
         <section id="jamforelse" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             Familjestiftelse vs allmännyttig stiftelse
           </h2>
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full bg-white rounded-lg overflow-hidden">
-              <thead className="bg-primary-600 text-white">
+          <div className="overflow-x-auto rounded-xl border border-gray-200 mb-6">
+            <table className="w-full text-sm">
+              <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold"></th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold">Familjestiftelse</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold">Allmännyttig stiftelse</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500"></th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Familjestiftelse</th>
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Allmännyttig stiftelse</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-sm text-gray-700">
+              <tbody>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-primary-900">Ändamål</td>
-                  <td className="px-4 py-3">Bestämda personer/familj</td>
-                  <td className="px-4 py-3">Allmännyttigt (forskning, utbildning, hjälpverksamhet m.m.)</td>
+                  <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Ändamål</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Bestämda personer/familj</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Allmännyttigt (forskning, utbildning, hjälpverksamhet m.m.)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-primary-900">Skattskyldighet</td>
-                  <td className="px-4 py-3">Oinskränkt – 20,6 % på alla skattepliktiga inkomster</td>
-                  <td className="px-4 py-3">Kan bli inskränkt skattskyldig – kapitalinkomster skattefria</td>
+                  <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Skattskyldighet</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Oinskränkt – 20,6 % på alla skattepliktiga inkomster</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Kan bli inskränkt skattskyldig – kapitalinkomster skattefria</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-primary-900">Mottagarens skatt</td>
-                  <td className="px-4 py-3">Inkomst av tjänst (periodiskt understöd)</td>
-                  <td className="px-4 py-3">Stipendier för utbildning är normalt skattefria</td>
+                  <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Mottagarens skatt</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Inkomst av tjänst (periodiskt understöd)</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Stipendier för utbildning är normalt skattefria</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-primary-900">Registrering</td>
-                  <td className="px-4 py-3">Undantagen stiftelseregistret; org.nr via Skatteverket</td>
-                  <td className="px-4 py-3">Registreras hos länsstyrelsen inom sex månader</td>
+                  <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Registrering</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Undantagen stiftelseregistret; org.nr via Skatteverket</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Registreras hos länsstyrelsen inom sex månader</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 font-medium text-primary-900">Verklig huvudman</td>
-                  <td className="px-4 py-3">Ska anmälas till Bolagsverket</td>
-                  <td className="px-4 py-3">Ska anmälas till Bolagsverket</td>
+                  <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Verklig huvudman</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Ska anmälas till Bolagsverket</td>
+                  <td className="px-4 py-3 border-t border-gray-100 text-gray-700">Ska anmälas till Bolagsverket</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="mb-6">
+          <p className="mb-6 text-gray-600">
             Vill du jämföra fler stiftelsetyper sida vid sida kan du använda vårt{" "}
-            <Link href="/verktyg/" className="text-primary-600 hover:underline">
+            <Link href="/verktyg/" className="text-primary-700 hover:text-primary-800 hover:underline">
               interaktiva jämförelseverktyg
             </Link>{" "}
             eller läsa översikten över{" "}
-            <Link href="/stiftelser/" className="text-primary-600 hover:underline">
+            <Link href="/stiftelser/" className="text-primary-700 hover:text-primary-800 hover:underline">
               olika typer av stiftelser
             </Link>
             .
@@ -289,14 +299,14 @@ export default function FamiljestiftelsePage() {
         </section>
 
         <section id="vanliga-fragor" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">
             Vanliga frågor om familjestiftelser
           </h2>
           <div className="space-y-4">
             {faqItems.map((item) => (
-              <div key={item.question} className="card bg-white">
-                <h3 className="text-lg font-semibold mb-2 text-primary-900">{item.question}</h3>
-                <p className="text-gray-700 text-sm">{item.answer}</p>
+              <div key={item.question} className="card">
+                <h3 className="text-lg font-semibold mb-2">{item.question}</h3>
+                <p className="text-sm text-gray-600">{item.answer}</p>
               </div>
             ))}
           </div>

@@ -200,7 +200,7 @@ export default async function InsiktPage({ params }: { params: Promise<Params> }
             <img
               src={cover}
               alt={post.title}
-              className="w-full rounded-xl shadow-md mb-8"
+              className="w-full rounded-xl border border-gray-200 mb-8"
             />
           )}
 
@@ -272,7 +272,7 @@ export default async function InsiktPage({ params }: { params: Promise<Params> }
                   <li key={rel.slug}>
                     <Link
                       href={`/insikter/${rel.slug}/`}
-                      className="text-primary-600 hover:underline font-medium"
+                      className="text-primary-700 hover:text-primary-800 hover:underline font-medium"
                     >
                       {rel.title}
                     </Link>

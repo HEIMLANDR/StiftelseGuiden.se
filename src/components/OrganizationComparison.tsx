@@ -117,23 +117,23 @@ export default function OrganizationComparison() {
   );
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 animate-fadeIn">
-      <h2 className="text-2xl font-bold mb-6 text-primary-700">Jämför organisationsformer</h2>
+    <div className="card">
+      <h2 className="text-2xl font-semibold tracking-tight mb-6">Jämför organisationsformer</h2>
       
       <div className="mb-6">
         <p className="text-gray-600 mb-4">
           Välj upp till 3 organisationsformer att jämföra sida vid sida för att hitta den form som passar ditt ändamål bäst.
         </p>
         
-        <div className="flex flex-wrap gap-3">
+        <div className="inline-flex flex-wrap gap-1 rounded-lg border border-gray-300 p-0.5">
           {organizationTypes.map(type => (
             <button
               key={type.id}
               onClick={() => handleTypeToggle(type.id)}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
                 selectedTypes.includes(type.id)
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-primary-700 text-white rounded-md'
+                  : 'text-gray-600 hover:text-gray-900'
               }`}
               disabled={selectedTypes.length >= 3 && !selectedTypes.includes(type.id)}
             >
@@ -144,13 +144,13 @@ export default function OrganizationComparison() {
       </div>
       
       {selectedOrganizations.length > 0 ? (
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="bg-gray-50">
-                <th className="py-3 px-4 text-left font-semibold text-gray-700 border-b">Egenskap</th>
+        <div className="overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">Egenskap</th>
                 {selectedOrganizations.map(org => (
-                  <th key={org.id} className="py-3 px-4 text-left font-semibold text-gray-700 border-b">
+                  <th key={org.id} className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500">
                     {org.name}
                   </th>
                 ))}
@@ -158,66 +158,66 @@ export default function OrganizationComparison() {
             </thead>
             <tbody>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Beskrivning</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Beskrivning</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">{org.description}</td>
-                ))}
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Ändamål</td>
-                {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">{org.purpose}</td>
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{org.description}</td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Skattemässig status</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Ändamål</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">{org.taxStatus}</td>
-                ))}
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Kapitalkrav</td>
-                {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">{org.minCapital}</td>
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{org.purpose}</td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Styrning</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Skattemässig status</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">{org.governance}</td>
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{org.taxStatus}</td>
                 ))}
               </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Fördelar</td>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Kapitalkrav</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{org.minCapital}</td>
+                ))}
+              </tr>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Styrning</td>
+                {selectedOrganizations.map(org => (
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">{org.governance}</td>
+                ))}
+              </tr>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Fördelar</td>
+                {selectedOrganizations.map(org => (
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
                       {org.advantages.map((advantage, index) => (
-                        <li key={index} className="text-sm">{advantage}</li>
+                        <li key={index}>{advantage}</li>
                       ))}
                     </ul>
                   </td>
                 ))}
               </tr>
               <tr>
-                <td className="py-3 px-4 font-medium border-b">Nackdelar</td>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Nackdelar</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
                       {org.disadvantages.map((disadvantage, index) => (
-                        <li key={index} className="text-sm">{disadvantage}</li>
+                        <li key={index}>{disadvantage}</li>
                       ))}
                     </ul>
                   </td>
                 ))}
               </tr>
-              <tr className="bg-gray-50">
-                <td className="py-3 px-4 font-medium border-b">Passar bäst för</td>
+              <tr>
+                <td className="px-4 py-3 border-t border-gray-100 font-medium text-gray-900">Passar bäst för</td>
                 {selectedOrganizations.map(org => (
-                  <td key={org.id} className="py-3 px-4 border-b">
+                  <td key={org.id} className="px-4 py-3 border-t border-gray-100 text-gray-700">
                     <ul className="list-disc list-inside space-y-1">
                       {org.bestFor.map((bestFor, index) => (
-                        <li key={index} className="text-sm">{bestFor}</li>
+                        <li key={index}>{bestFor}</li>
                       ))}
                     </ul>
                   </td>
