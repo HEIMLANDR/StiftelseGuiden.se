@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import { SitewideSchema } from "@/components/SeoSchema";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import Header from "@/components/Header";
@@ -9,6 +9,12 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+// Display-serif för rubriknivåerna h1/h2 (se globals.css).
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
 });
 
 export const viewport: Viewport = {
@@ -81,7 +87,7 @@ export default function RootLayout({
         <SitewideSchema />
       </head>
       <body
-        className={`${inter.variable} antialiased bg-white text-gray-700 flex flex-col min-h-screen`}
+        className={`${inter.variable} ${sourceSerif.variable} antialiased bg-white text-gray-700 flex flex-col min-h-screen`}
       >
         <Header />
         <main className="flex-grow">

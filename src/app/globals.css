@@ -30,6 +30,13 @@
     letter-spacing: -0.025em;
   }
 
+  /* Displaynivåerna sätts i serif; h3–h6 förblir Inter (gränssnittsrubriker). */
+  h1,
+  h2 {
+    font-family: var(--font-source-serif), Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
   h1 {
     font-size: 1.875rem; /* text-3xl */
   }

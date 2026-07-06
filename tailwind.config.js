@@ -75,6 +75,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-source-serif)', 'Georgia', 'serif'],
         mono: ['Consolas', 'monospace'],
       },
       boxShadow: {

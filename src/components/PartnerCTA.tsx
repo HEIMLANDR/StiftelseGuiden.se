@@ -74,7 +74,7 @@ export default function PartnerCTA({
         <p className="text-xs font-semibold uppercase tracking-wider text-primary-200 mb-3">
           Vår samarbetspartner · {PARTNER_NAME}
         </p>
-        <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-4">
+        <h3 className="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-white mb-4">
           {heading}
         </h3>
         <p className="text-primary-100 mb-8 md:text-lg leading-relaxed">{body}</p>
