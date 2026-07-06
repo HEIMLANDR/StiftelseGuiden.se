@@ -6,8 +6,8 @@ export const SITE_URL =
 export const SITE_NAME = "StiftelseGuiden.se";
 export const SITE_DESCRIPTION =
   "Sveriges ledande resurs om stiftelser. Komplett guide om att starta, driva och förvalta stiftelser i Sverige.";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/pictures/image.png`;
-export const LAST_MAJOR_UPDATE = "2026-04-14";
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og.png`;
+export const LAST_MAJOR_UPDATE = "2026-07-06";
 
 export type BreadcrumbItem = {
   label: string;
@@ -128,8 +128,8 @@ export function createPageMetadata({
       images: [
         {
           url: DEFAULT_OG_IMAGE,
-          width: 1069,
-          height: 376,
+          width: 1200,
+          height: 630,
           alt: socialTitle,
         },
       ],

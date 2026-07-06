@@ -218,6 +218,17 @@ if (!existsSync(redirectsPath)) {
   }
 }
 
+// AEO-tillgångar: llms.txt och den delade OG-bilden ska följa med i bygget.
+const llmsPath = resolve(outDir, "llms.txt");
+if (!existsSync(llmsPath)) {
+  fail("Missing out/llms.txt");
+} else {
+  assertIncludes(readText(llmsPath), "# StiftelseGuiden.se", "llms.txt");
+}
+if (!existsSync(resolve(outDir, "og.png"))) {
+  fail("Missing out/og.png");
+}
+
 if (failures.length > 0) {
   console.error("SEO smoke test failed:\n");
   for (const failure of failures) {

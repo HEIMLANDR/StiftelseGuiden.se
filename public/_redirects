@@ -3,6 +3,9 @@
 # Redirect domain aliases to primary domain
 https://www.stiftelseguiden.se/* https://stiftelseguiden.se/:splat 301!
 
+# Common misspelling of the llms.txt convention
+/llm.txt /llms.txt 301
+
 # Let static pages and Netlify 404 handling respond with correct status codes
 
 # Redirect old URLs if needed

@@ -1,0 +1,46 @@
+# StiftelseGuiden.se
+
+> Oberoende svensk informationsresurs om stiftelser: att starta, driva och förvalta stiftelser i Sverige. Guider om stiftelselagen (1994:1220), skatteregler, tillsyn och praktisk förvaltning, med de nya reglerna som trädde i kraft 1 januari 2025 (SFS 2024:1114).
+
+Innehållet bygger på officiella källor — författningstexter från Sveriges riksdag, Skatteverkets rättsliga vägledning samt information från länsstyrelserna, Kammarkollegiet och Bolagsverket. Informationen är vägledande och ersätter inte juridisk, skattemässig eller ekonomisk rådgivning. Webbplatsen drivs i samarbete med söktjänsten SökaStiftelseMedel.se; samarbetslänkar är tydligt markerade.
+
+## Guider
+
+- [Starta stiftelse](https://stiftelseguiden.se/starta-stiftelse/): Steg-för-steg-guide till stiftelsebildning — stiftelseförordnande, kapital, registrering hos länsstyrelsen och vad det kostar (registrering är avgiftsfri)
+- [Driva stiftelse](https://stiftelseguiden.se/driva-stiftelse/): Styrelsearbete, kapitalförvaltning, bokföring och årsredovisning, inklusive kraven som gäller från 2025
+- [Stiftelselagen – komplett guide](https://stiftelseguiden.se/juridik/stiftelselagen/): Lagen kapitel för kapitel, de sex tillsynslänsstyrelserna och nya regler 2025 med förseningsavgifter
+- [Familjestiftelse](https://stiftelseguiden.se/stiftelser/familjestiftelse/): Beskattning (oinskränkt skattskyldig, utdelningar beskattas som periodiskt understöd), registreringsundantag och jämförelse med allmännyttiga stiftelser
+- [Juridik för stiftelser](https://stiftelseguiden.se/juridik/): Tillsyn, permutation via Kammarkollegiet, beskattning och avveckling
+- [Typer av stiftelser](https://stiftelseguiden.se/stiftelser/): Allmännyttiga, familje-, näringsdrivande, insamlings-, pensions-, vinstandels- och kollektivavtalsstiftelser
+- [Aktiva stiftelser i Sverige](https://stiftelseguiden.se/stiftelser/aktiva-stiftelser/): Verifierad lista över större svenska bidragsgivande stiftelser
+- [Ansökningsguide](https://stiftelseguiden.se/resurser/ansokningsguide/): Så söker du stiftelsemedel — process, budget och vanliga misstag
+- [Skatt och stiftelser](https://stiftelseguiden.se/resurser/skatteoptimering/): Inskränkt och oinskränkt skattskyldighet, fullföljdskravet och 2025 års regler
+- [Stiftelseordlista](https://stiftelseguiden.se/resurser/stiftelseordlista/): Centrala begrepp från avkastningsstiftelse till ändamålsbestämmelse
+
+## Verktyg och dokument
+
+- [Verktyg](https://stiftelseguiden.se/verktyg/): Kapitalkalkylator och jämförelse av organisationsformer (stiftelse, förening, aktiebolag)
+- [Dokument](https://stiftelseguiden.se/dokument/): Länkar till officiella författningar och mallar
+
+## Aktuellt
+
+- [Insikter](https://stiftelseguiden.se/insikter): Löpande artiklar och analyser om stiftelser, fonder och bidrag
+
+## Nyckelfakta (verifierade 2026)
+
+- Stiftelser regleras av stiftelselagen (1994:1220); registrering hos länsstyrelsen är avgiftsfri och obligatorisk inom sex månader, med undantag för de flesta familjestiftelser
+- Tillsyn utövas av sex länsstyrelser: Stockholm, Östergötland, Skåne, Västra Götaland, Örebro och Norrbotten
+- Sedan 1 januari 2025 (SFS 2024:1114) ska årsredovisning ges in till länsstyrelsen inom sex månader från räkenskapsårets utgång; förseningsavgift 7 500 kr, därefter ytterligare 15 000 kr
+- Bolagsskattesatsen för skattskyldiga stiftelser är 20,6 %; allmännyttiga stiftelser kan bli inskränkt skattskyldiga om de uppfyller ändamåls-, verksamhets- och fullföljdskraven (praxis: cirka 75–80 % av avkastningen ska användas för ändamålet)
+- Ändring av stiftelseförordnandet (permutation) prövas av Kammarkollegiet; ansökningsavgift 12 200 kr (3 300 kr för vissa mindre ändringar)
+- Det finns ingen lagstadgad minimigräns för stiftelsekapital; en vanlig tumregel i praxis är 350 000–400 000 kr för att avkastningen ska kunna bära ändamålet
+
+## Om webbplatsen
+
+- [Om redaktionen](https://stiftelseguiden.se/om/redaktionen/): Hur innehållet tas fram och faktagranskas
+- [Innehållspolicy](https://stiftelseguiden.se/content-policy/): Källor, AI-stöd och hur felaktigheter rapporteras
+- [Kontakt](https://stiftelseguiden.se/kontakt/)
+
+## Optional
+
+- [SökaStiftelseMedel.se](https://www.sokastiftelsemedel.se/): Samarbetspartner — söktjänst med över 17 000 svenska stiftelser för den som söker stiftelsemedel
