@@ -11,6 +11,8 @@ const routes = [
   "/stiftelser/",
   "/stiftelser/aktiva-stiftelser/",
   "/juridik/",
+  "/juridik/stiftelselagen/",
+  "/stiftelser/familjestiftelse/",
   "/resurser/",
   "/resurser/ansokningsguide/",
   "/resurser/skatteoptimering/",
@@ -20,12 +22,16 @@ const routes = [
   "/verktyg/",
   "/insikter/",
   "/om/redaktionen/",
+  "/content-policy/",
   "/kontakt/",
 ];
 
 const schemaExpectations = {
   "/": ["WebPage"],
   "/starta-stiftelse/": ["WebPage", "BreadcrumbList"],
+  "/juridik/stiftelselagen/": ["WebPage", "BreadcrumbList", "FAQPage"],
+  "/stiftelser/familjestiftelse/": ["WebPage", "BreadcrumbList", "FAQPage"],
+  "/content-policy/": ["WebPage", "BreadcrumbList"],
   "/stiftelser/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/stiftelser/aktiva-stiftelser/": ["CollectionPage", "BreadcrumbList", "ItemList"],
   "/resurser/": ["CollectionPage", "BreadcrumbList", "ItemList"],
@@ -182,7 +188,10 @@ if (!existsSync(sitemapPath)) {
   const locs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((entry) => entry[1]);
 
   for (const route of [...routes, ...insikterPostRoutes]) {
-    const expectedUrl = new URL(route, `${siteUrl}/`).toString();
+    const url = new URL(route, `${siteUrl}/`).toString();
+    // /insikter serveras av Networkr-proxyn som kanoniserar utan avslutande snedstreck,
+    // och sitemapen speglar det.
+    const expectedUrl = route.startsWith("/insikter") ? url.replace(/\/$/, "") : url;
     if (!locs.includes(expectedUrl)) {
       fail(`Sitemap missing route ${expectedUrl}`);
     }

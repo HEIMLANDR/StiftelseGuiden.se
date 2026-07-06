@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Starta en stiftelse i Sverige",
-  description: "Komplett guide om hur du startar en stiftelse i Sverige, juridiska krav, beskattning och steg-för-steg process från planering till registrering.",
+  description: "Komplett guide om hur du startar en stiftelse i Sverige: juridiska krav, kostnader, beskattning och steg-för-steg process från planering till registrering.",
   keywords: "starta stiftelse, stiftelsebildning, stiftelseförordnande, stiftelsestyrelse, stiftelsekapital",
   path: "/starta-stiftelse/",
   openGraphType: "article",
@@ -17,7 +18,7 @@ export default function StartFoundation() {
     <>
       <PageSchema
         title="Starta en stiftelse i Sverige"
-        description="Komplett guide om hur du startar en stiftelse i Sverige, juridiska krav, beskattning och steg-för-steg process från planering till registrering."
+        description="Komplett guide om hur du startar en stiftelse i Sverige: juridiska krav, kostnader, beskattning och steg-för-steg process från planering till registrering."
         path="/starta-stiftelse/"
         breadcrumbs={[{ label: "Starta stiftelse" }]}
       />
@@ -83,6 +84,14 @@ export default function StartFoundation() {
               </a>
             </li>
             <li>
+              <a href="#kostnad" className="hover:underline hover:text-primary-700 inline-flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+                Vad kostar det?
+              </a>
+            </li>
+            <li>
               <a href="#skattefrågor" className="hover:underline hover:text-primary-700 inline-flex items-center">
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
@@ -123,8 +132,9 @@ export default function StartFoundation() {
               Samla stiftelsekapital
             </h3>
             <p className="ml-11">
-              Stiftelser kräver ett kapital för att kunna genomföra sina ändamål. För mindre stiftelser rekommenderas minst
-              350 000 - 400 000 kr för att täcka administrativa kostnader och samtidigt kunna generera avkastning för utdelning.
+              Stiftelser kräver ett kapital för att kunna genomföra sina ändamål. Något lagstadgat minimibelopp finns inte,
+              men en vanlig tumregel bland rådgivare är minst 350 000 - 400 000 kr för att stiftelsen ska kunna täcka sina
+              administrativa kostnader och samtidigt generera avkastning för utdelning under lång tid.
             </p>
             <div className="ml-11 mt-4 bg-gray-50 p-4 rounded-lg">
               <h4 className="font-medium text-primary-700 mb-2">Vanliga former av stiftelsekapital:</h4>
@@ -187,17 +197,19 @@ export default function StartFoundation() {
               Registrera stiftelsen
             </h3>
             <p className="ml-11">
-              Stiftelser med tillgångar överstigande 1,5 miljoner kronor måste registreras hos Länsstyrelsen. Även mindre stiftelser
-              kan registreras frivilligt. Registrering ger stiftelsen rättskapacitet och möjlighet att agera som juridisk person.
+              I princip alla stiftelser ska anmälas för registrering i stiftelseregistret hos Länsstyrelsen inom sex månader
+              från bildandet. Undantaget är stiftelser vars tillgångar enligt stiftelseförordnandet endast får användas till
+              förmån för bestämda fysiska personer - typiskt sett familjestiftelser. De registreras inte hos Länsstyrelsen
+              utan ansöker i stället om organisationsnummer hos Skatteverket.
             </p>
             <div className="ml-11 mt-4 bg-gray-50 p-4 rounded-lg">
               <h4 className="font-medium text-primary-700 mb-2">Registreringsprocessen:</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
-                <li>Ansökan skickas till Länsstyrelsen i det län där stiftelsen har sitt säte</li>
+                <li>Ansökan skickas till den länsstyrelse som handlägger stiftelseärenden för det län där stiftelsen har sitt säte</li>
                 <li>Bifoga stiftelseförordnande och stadgar</li>
                 <li>Ange styrelsens sammansättning eller förvaltare</li>
-                <li>Betala registreringsavgift (ca 1000 kr)</li>
-                <li>Handläggningstid: ca 2-4 månader</li>
+                <li>Registreringen är avgiftsfri - ingen registreringsavgift tas ut</li>
+                <li>Handläggningstiden varierar mellan länsstyrelserna</li>
               </ul>
             </div>
           </div>
@@ -297,37 +309,17 @@ export default function StartFoundation() {
           <div className="bg-secondary-50 border-l-4 border-l-secondary-400 p-6 mb-8">
             <h4 className="font-semibold text-secondary-800 mb-2">Viktig juridisk information</h4>
             <p className="text-secondary-700">
-              För att en giltig stiftelse ska uppstå krävs att alla tre rekvisit är uppfyllda. Saknas något av dem kan 
-              stiftelsen inte bildas enligt stiftelselagen (1994:1220).
+              För att en giltig stiftelse ska uppstå krävs att alla tre rekvisit är uppfyllda. Saknas något av dem kan
+              stiftelsen inte bildas enligt stiftelselagen (1994:1220). Vill du fördjupa dig i lagens krav finns{" "}
+              <Link href="/juridik/stiftelselagen/" className="underline font-medium hover:text-secondary-900">
+                vår kompletta guide till stiftelselagen
+              </Link>.
             </p>
           </div>
         </section>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-            <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-          </div>
-          
-          <div className="relative z-10 text-center">
-            <h3 className="text-2xl font-bold mb-4">Behöver du professionell hjälp?</h3>
-            <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-              Besök vår partner för experthjälp med stiftelsebildning, juridisk rådgivning och förvaltning av stiftelser
-            </p>
-            <a 
-              href="https://www.sokastiftelsemedel.se" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-            >
-              Besök SökaStiftelseMedel.se
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-        </div>
+        <PartnerCTA campaign="starta-stiftelse" placement="mid" className="mb-16" />
 
         <section id="stiftelseförordnande" className="mb-16">
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Stiftelseförordnandet</h2>
@@ -396,10 +388,13 @@ export default function StartFoundation() {
           </p>
           
           <div className="bg-accent-50 border-l-4 border-accent-400 p-6 mb-8">
-            <h4 className="font-medium text-accent-800 mb-2">Rekommenderad storlek på stiftelsekapital</h4>
+            <h4 className="font-medium text-accent-800 mb-2">Tumregel för stiftelsekapitalets storlek</h4>
             <p className="text-accent-700">
-              För mindre stiftelser rekommenderas ett startkapital på minst 350 000 - 400 000 kr för att täcka administrativa
-              kostnader och samtidigt kunna generera tillräcklig avkastning för utdelning enligt stiftelsens ändamål.
+              Det finns varken något lagstadgat minimikapital eller någon officiell beloppsgräns från Länsstyrelsen. En vanlig
+              tumregel bland rådgivare är dock ett startkapital på minst 350 000 - 400 000 kr, för att stiftelsen ska kunna
+              täcka sina administrativa kostnader och samtidigt generera tillräcklig avkastning för att varaktigt främja sitt
+              ändamål. Vill du räkna på hur långt ett visst kapital räcker kan du använda kapitalberäknaren bland{" "}
+              <Link href="/verktyg/" className="underline font-medium hover:text-accent-900">våra verktyg för stiftelser</Link>.
             </p>
           </div>
           
@@ -424,11 +419,12 @@ export default function StartFoundation() {
             <div className="card card-hover bg-white">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Exempel: Kulturstiftelse</h3>
               <p className="mb-4">
-                <span className="font-medium">Stiftelsen Kulturarv Sverige</span> bildades 2018 med ett startkapital på
-                500 000 kr. Stiftelsens ändamål är att främja bevarandet av svenskt kulturarv.
+                Följande exempel är fiktivt och illustrerar ett typiskt upplägg. Tänk dig att{" "}
+                <span className="font-medium">Stiftelsen Kulturarv Sverige</span> bildas med ett startkapital på
+                500 000 kr och med ändamålet att främja bevarandet av svenskt kulturarv.
               </p>
               <p className="mb-4">
-                Kapitalet placerades enligt följande:
+                Kapitalet placeras enligt följande:
               </p>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>60% i en diversifierad aktieportfölj</li>
@@ -436,7 +432,7 @@ export default function StartFoundation() {
                 <li>10% i likvida medel</li>
               </ul>
               <p className="mt-4 text-sm text-gray-600">
-                Denna fördelning har gett en genomsnittlig årlig avkastning på 5-7%, vilket möjliggör utdelning av
+                Med en antagen genomsnittlig årlig avkastning på 5-7% skulle en sådan fördelning möjliggöra utdelning av
                 ca 25 000 kr årligen till kulturbevarande projekt.
               </p>
             </div>
@@ -445,15 +441,19 @@ export default function StartFoundation() {
         
         <section id="praktiska-exempel" className="mb-16">
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Praktiska exempel</h2>
-          
+
+          <p className="mb-6">
+            Följande exempel är fiktiva och illustrerar typiska upplägg för olika typer av stiftelser.
+          </p>
+
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h3 className="text-xl font-semibold mb-4 flex items-center text-primary-700">
               <span className="flex h-8 w-8 rounded-full bg-primary-100 text-primary-600 mr-3 items-center justify-center font-semibold">1</span>
-              Familjestiftelse
+              Exempel: Familjestiftelse
             </h3>
             <p className="ml-11 mb-4">
-              <span className="font-medium">Andersson Familjestiftelse</span> bildades av entreprenören Erik Andersson för att
-              säkerställa ekonomiskt stöd till hans efterkommande för utbildning och vid sjukdom.
+              I detta fiktiva exempel bildar en entreprenör <span className="font-medium">Andersson Familjestiftelse</span> för
+              att säkerställa ekonomiskt stöd till sina efterkommande för utbildning och vid sjukdom.
             </p>
             <div className="ml-11 bg-gray-50 p-4 rounded-lg">
               <h4 className="font-medium text-primary-700 mb-2">Nyckelkomponenter:</h4>
@@ -461,19 +461,19 @@ export default function StartFoundation() {
                 <li>Startkapital: 2 miljoner kronor</li>
                 <li>Förvaltning: Egen styrelse bestående av familjemedlemmar och en extern jurist</li>
                 <li>Utdelning: Årliga stipendier för högskolestudier och stöd vid sjukdom</li>
-                <li>Skattekonsekvenser: Familjestiftelser har inte inskränkt skattskyldighet</li>
+                <li>Skattekonsekvenser: Oinskränkt skattskyldighet - stiftelsen betalar 20,6% statlig inkomstskatt och utbetalningarna beskattas som periodiskt understöd hos mottagarna</li>
               </ul>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h3 className="text-xl font-semibold mb-4 flex items-center text-primary-700">
               <span className="flex h-8 w-8 rounded-full bg-primary-100 text-primary-600 mr-3 items-center justify-center font-semibold">2</span>
-              Allmännyttig stiftelse
+              Exempel: Allmännyttig stiftelse
             </h3>
             <p className="ml-11 mb-4">
-              <span className="font-medium">Stiftelsen Framtidens Forskare</span> bildades av ett läkemedelsföretag för att stödja
-              medicinsk forskning inom neurologi.
+              I detta fiktiva exempel bildar ett läkemedelsföretag <span className="font-medium">Stiftelsen Framtidens
+              Forskare</span> för att stödja medicinsk forskning inom neurologi.
             </p>
             <div className="ml-11 bg-gray-50 p-4 rounded-lg">
               <h4 className="font-medium text-primary-700 mb-2">Nyckelkomponenter:</h4>
@@ -491,26 +491,27 @@ export default function StartFoundation() {
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Registrering & Tillsyn</h2>
           
           <p className="mb-6">
-            Stiftelser i Sverige står under tillsyn av Länsstyrelsen och måste i vissa fall registreras i stiftelseregistret.
-            Registrering och tillsyn säkerställer att stiftelsen förvaltas enligt stiftelselagen och stiftarens intentioner.
+            Stiftelser i Sverige står under tillsyn av Länsstyrelsen och ska som huvudregel registreras i stiftelseregistret.
+            Sedan den 1 januari 2025 är stiftelseärenden koncentrerade till sex länsstyrelser: Stockholm, Östergötland, Skåne,
+            Västra Götaland, Örebro och Norrbotten. Registrering och tillsyn säkerställer att stiftelsen förvaltas enligt
+            stiftelselagen och stiftarens intentioner.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="card card-hover bg-white">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Registreringsplikt</h3>
               <p className="mb-4">
-                Följande stiftelser måste registreras hos Länsstyrelsen:
+                Huvudregeln är att alla stiftelser ska registreras i stiftelseregistret hos Länsstyrelsen inom sex månader
+                från bildandet. Det enda undantaget är stiftelser vars tillgångar enligt stiftelseförordnandet endast får
+                användas till förmån för bestämda fysiska personer - typiskt sett familjestiftelser. De registreras inte hos
+                Länsstyrelsen utan ansöker i stället om organisationsnummer hos Skatteverket.
               </p>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
-                <li>Stiftelser med tillgångar överstigande 1,5 miljoner kronor</li>
-                <li>Näringsdrivande stiftelser</li>
-                <li>Insamlingsstiftelser</li>
-                <li>Kollektivavtalsstiftelser</li>
-                <li>Pensionsstiftelser</li>
-              </ul>
+              <p className="mb-4">
+                Beloppsgränsen på 1,5 miljoner kronor styr alltså inte registreringsplikten, utan bokföringsskyldigheten:
+                stiftelser med tillgångar som överstiger 1,5 miljoner kr är bokföringsskyldiga och ska upprätta årsredovisning.
+              </p>
               <p className="mt-4 text-sm text-gray-600">
-                Även stiftelser som inte har registreringsplikt kan välja att registrera sig frivilligt, vilket ger
-                stiftelsen rättskapacitet och möjlighet att agera som juridisk person.
+                Alla stiftelser - även familjestiftelser - ska dessutom anmäla verklig huvudman till Bolagsverket.
               </p>
             </div>
             
@@ -543,16 +544,134 @@ export default function StartFoundation() {
               <li>Bestyrkt kopia av stiftelseförordnandet</li>
               <li>Stadgar (om sådana finns utöver stiftelseförordnandet)</li>
               <li>Protokoll som visar styrelsens sammansättning eller vem som är förvaltare</li>
-              <li>Bevis på att stiftelsen har ett organisationsnummer (ansöks hos Skatteverket)</li>
-              <li>Kvitto på betald registreringsavgift (ca 1000 kr)</li>
             </ol>
+            <p className="mt-4 text-gray-700">
+              Registreringen är avgiftsfri, och stiftelsen tilldelas ett organisationsnummer i samband med att den förs in i
+              stiftelseregistret. Familjestiftelser, som inte registreras hos Länsstyrelsen, ansöker i stället om
+              organisationsnummer hos Skatteverket.
+            </p>
             <p className="mt-4 text-sm text-gray-600">
-              Handläggningstiden för registrering är normalt 2-4 månader. Under denna tid kan Länsstyrelsen begära
+              Handläggningstiden varierar mellan länsstyrelserna. Under handläggningen kan Länsstyrelsen begära
               kompletteringar om ansökan är ofullständig.
             </p>
           </div>
+
+          <div className="bg-secondary-50 border-l-4 border-l-secondary-400 p-6 mb-8">
+            <h4 className="font-semibold text-secondary-800 mb-2">Nya regler från 2025: årsredovisningen ska ges in</h4>
+            <p className="text-secondary-700">
+              Sedan den 1 januari 2025 (SFS 2024:1114) ska årsredovisningsskyldiga stiftelser ge in årsredovisning och
+              revisionsberättelse till Länsstyrelsen inom sex månader från räkenskapsårets utgång. Den som missar fristen
+              får betala en förseningsavgift på 7 500 kr, och ytterligare 15 000 kr tillkommer om handlingarna är mer än
+              fyra månader försenade. Läs mer om styrelsens löpande skyldigheter i vår guide om att{" "}
+              <Link href="/driva-stiftelse/" className="underline font-medium hover:text-secondary-900">driva en stiftelse</Link>.
+            </p>
+          </div>
         </section>
-        
+
+        <section id="kostnad" className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Vad kostar det att starta en stiftelse?</h2>
+
+          <p className="mb-6">
+            Själva registreringen är gratis - Länsstyrelsen tar inte ut någon registreringsavgift när stiftelsen förs in i
+            stiftelseregistret. De kostnader som ändå uppstår handlar i stället om kapitalet som ska avsättas, eventuell
+            rådgivning vid bildandet samt de årliga avgifter och arvoden som följer med driften.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="card card-hover bg-white">
+              <h3 className="text-xl font-semibold mb-4 text-primary-700">Engångskostnader vid bildandet</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>
+                  <span className="font-medium">Registrering hos Länsstyrelsen</span> - gratis, ingen avgift tas ut
+                </li>
+                <li>
+                  <span className="font-medium">Juridisk rådgivning</span> - att låta en jurist upprätta stiftelseförordnande
+                  och stadgar är ofta den största engångskostnaden; en bra utgångspunkt är vår översikt av{" "}
+                  <Link href="/juridik/" className="text-primary-600 underline hover:text-primary-700">juridiken kring stiftelser</Link>
+                </li>
+                <li>
+                  <span className="font-medium">Bankkostnader</span> - eventuella avgifter för att öppna konto och depå i
+                  stiftelsens namn
+                </li>
+              </ul>
+            </div>
+
+            <div className="card card-hover bg-white">
+              <h3 className="text-xl font-semibold mb-4 text-primary-700">Löpande kostnader</h3>
+              <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <li>
+                  <span className="font-medium">Revisor</span> - en stiftelse ska alltid ha minst en revisor, och en
+                  auktoriserad eller godkänd revisor krävs om stiftelsen är skyldig att upprätta årsredovisning
+                </li>
+                <li>
+                  <span className="font-medium">Förvaltning</span> - kostnader för kapitalförvaltning, bokföring och
+                  administration
+                </li>
+                <li>
+                  <span className="font-medium">Årliga avgifter till Länsstyrelsen</span> - tillsynsavgift och
+                  registerhållningsavgift enligt tabellen nedan
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-primary-700">Årliga avgifter enligt stiftelseförordningen (1995:1280)</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-gray-700">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="py-2 pr-4 font-semibold">Avgift</th>
+                    <th className="py-2 pr-4 font-semibold">Gäller för</th>
+                    <th className="py-2 font-semibold">Belopp per år</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 pr-4">Tillsynsavgift</td>
+                    <td className="py-2 pr-4">Näringsdrivande stiftelser</td>
+                    <td className="py-2">600 kr</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 pr-4">Tillsynsavgift</td>
+                    <td className="py-2 pr-4">Övriga stiftelser under full tillsyn</td>
+                    <td className="py-2">400 kr</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 pr-4">Tillsynsavgift</td>
+                    <td className="py-2 pr-4">Stiftelser under begränsad tillsyn</td>
+                    <td className="py-2">200 kr</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 pr-4">Registerhållningsavgift</td>
+                    <td className="py-2 pr-4">Näringsdrivande stiftelser</td>
+                    <td className="py-2">600 kr</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-2 pr-4">Registerhållningsavgift</td>
+                    <td className="py-2 pr-4">Övriga stiftelser med tillgångar över 1,5 miljoner kr</td>
+                    <td className="py-2">425 kr</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 pr-4">Registerhållningsavgift</td>
+                    <td className="py-2 pr-4">Övriga stiftelser</td>
+                    <td className="py-2">200 kr</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="bg-accent-50 border-l-4 border-accent-400 p-6 mb-8">
+            <h4 className="font-medium text-accent-800 mb-2">Glöm inte kapitalet</h4>
+            <p className="text-accent-700">
+              Den största ekonomiska insatsen är stiftelsekapitalet i sig. Något lagstadgat minimibelopp finns inte, men en
+              vanlig tumregel bland rådgivare är minst 350 000 - 400 000 kr för att avkastningen varaktigt ska räcka till
+              både administration och utdelningar enligt ändamålet.
+            </p>
+          </div>
+        </section>
+
         <section id="skattefrågor" className="mb-16">
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Skattefrågor</h2>
           
@@ -568,8 +687,8 @@ export default function StartFoundation() {
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li><span className="font-medium">Ändamålskravet</span> - Stiftelsen måste ha ett eller flera allmännyttiga ändamål som t.ex. främjande av vetenskap, utbildning, kultur eller sociala hjälpinsatser</li>
-              <li><span className="font-medium">Verksamhetskravet</span> - Stiftelsen måste uteslutande eller så gott som uteslutande bedriva verksamhet som främjar det allmännyttiga ändamålet</li>
-              <li><span className="font-medium">Fullföljdskravet</span> - Stiftelsen måste använda minst 80% av sin avkastning för det allmännyttiga ändamålet (sett över en period av 5 år)</li>
+              <li><span className="font-medium">Verksamhetskravet</span> - Stiftelsen måste uteslutande eller så gott som uteslutande (i praxis ca 90-95% eller mer) bedriva verksamhet som främjar det allmännyttiga ändamålet</li>
+              <li><span className="font-medium">Fullföljdskravet</span> - Stiftelsen ska använda sin avkastning i skälig omfattning för det allmännyttiga ändamålet, vilket i praxis brukar innebära ca 75-80% av avkastningen. Bedömningen görs i första hand per år, men det finns viss möjlighet att se till flera år i följd</li>
               <li><span className="font-medium">Öppenhetskravet</span> - Stiftelsen får inte begränsa kretsen av destinatärer till en alltför snäv grupp</li>
             </ul>
             <div className="mt-4 bg-accent-50 p-4 rounded-lg">
@@ -593,15 +712,19 @@ export default function StartFoundation() {
                 <li>En bestämd personkrets som kan identifieras utifrån släktskap</li>
               </ul>
               <p className="mt-4 text-sm text-gray-600">
-                Familjestiftelser beskattas med 21,4% på alla inkomster och måste även betala en årlig schablonintäkt
-                på 1,5% av förmögenhetens värde.
+                Familjestiftelser betalar 20,6% statlig inkomstskatt på sina skattepliktiga inkomster. Utbetalningar till
+                destinatärerna beskattas som periodiskt understöd (inkomst av tjänst) hos mottagaren, och stiftelsen har
+                avdragsrätt endast för periodiskt understöd till mottagare som har fyllt 18 år och avslutat sin utbildning.
+                Läs mer i vår{" "}
+                <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 underline hover:text-primary-700">guide om familjestiftelser</Link>.
               </p>
             </div>
             
             <div className="card card-hover bg-white">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Deklarationsskyldighet</h3>
               <p className="mb-4">
-                Alla stiftelser måste registrera sig hos Skatteverket och få ett organisationsnummer.
+                Alla stiftelser ska ha ett organisationsnummer - registrerade stiftelser tilldelas det i samband med
+                registreringen hos Länsstyrelsen, medan familjestiftelser ansöker hos Skatteverket.
                 Deklarationsskyldigheten varierar beroende på stiftelsens status:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700">
@@ -610,7 +733,8 @@ export default function StartFoundation() {
                 <li><span className="font-medium">Näringsdrivande stiftelser</span> - Måste lämna inkomstdeklaration varje år oavsett skattemässig status</li>
               </ul>
               <p className="mt-4 text-sm text-gray-600">
-                Deklarationen ska lämnas in senast den 1 juli året efter räkenskapsåret.
+                Tidpunkten för att lämna deklarationen beror på när stiftelsens räkenskapsår slutar - aktuella datum
+                finns hos Skatteverket.
               </p>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
+import PartnerCTA from "@/components/PartnerCTA";
 import Link from "next/link";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
@@ -258,30 +259,12 @@ export default function FoundationsPage() {
           </section>
           
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h3 className="text-2xl font-bold mb-4">Hitta rätt stiftelse för ditt ändamål</h3>
-              <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-                SökaStiftelseMedel.se erbjuder en unik AI-driven plattform som hjälper dig att hitta rätt stiftelser för ditt ändamål 
-                och skräddarsy dina ansökningar för att maximera dina chanser att få stöd.
-              </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-              >
-                Sök bland tusentals stiftelser
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
+          <div className="mb-16">
+            <PartnerCTA
+              campaign="stiftelser"
+              placement="bottom"
+              heading="Hitta rätt stiftelse för ditt ändamål"
+            />
           </div>
         </div>
       </div>

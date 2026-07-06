@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -123,8 +124,9 @@ export default function GlossaryPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-primary-700">Familjestiftelse</h3>
                   <p>
-                    En stiftelse vars ändamål är att gynna medlemmar av en viss familj eller släkt. Familjestiftelser 
+                    En stiftelse vars ändamål är att gynna medlemmar av en viss familj eller släkt. Familjestiftelser
                     har inte rätt till skattelättnader och beskattas fullt ut för sina inkomster.
+                    Läs mer i vår guide om <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 hover:underline">familjestiftelser</Link>.
                   </p>
                 </div>
                 
@@ -183,8 +185,8 @@ export default function GlossaryPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-primary-700">Kammarkollegiet</h3>
                   <p>
-                    Statlig myndighet som bland annat prövar ansökningar om permutation (ändring av stiftelseförordnande) 
-                    och registrerar stiftelser som bedriver näringsverksamhet.
+                    Kammarkollegiet är en statlig myndighet som bland annat prövar ansökningar om permutation
+                    (ändring av stiftelsers föreskrifter, t.ex. ändamål). Registrering av stiftelser sköts av länsstyrelserna.
                   </p>
                 </div>
               </div>
@@ -251,8 +253,9 @@ export default function GlossaryPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-primary-700">Stiftelselagen</h3>
                   <p>
-                    Den lag (1994:1220) som reglerar stiftelser i Sverige. Lagen innehåller bestämmelser om bildande, 
+                    Den lag (1994:1220) som reglerar stiftelser i Sverige. Lagen innehåller bestämmelser om bildande,
                     förvaltning, tillsyn, bokföring och revision av stiftelser.
+                    Läs mer i <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">vår guide till stiftelselagen</Link>.
                   </p>
                 </div>
               </div>
@@ -323,13 +326,13 @@ export default function GlossaryPage() {
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <a href="/dokument/stiftelselagen.pdf" target="_blank" className="text-primary-600 hover:underline">Stiftelselagen (1994:1220)</a>
+                    <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelselag-19941220_sfs-1994-1220/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Stiftelselagen (1994:1220) hos Riksdagen</a>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <a href="/dokument/stiftelseförordningen.pdf" target="_blank" className="text-primary-600 hover:underline">Stiftelseförordningen (1995:1280)</a>
+                    <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelseforordning-19951280_sfs-1995-1280/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Stiftelseförordningen (1995:1280) hos Riksdagen</a>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -339,52 +342,11 @@ export default function GlossaryPage() {
                   </li>
                 </ul>
               </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold mb-3 text-primary-700">Hitta stiftelser</h3>
-                <p className="mb-4">
-                  För att hitta stiftelser som matchar ditt ändamål, använd vår samarbetspartner SökaStiftelseMedel.se:
-                </p>
-                <a 
-                  href="https://www.sokastiftelsemedel.se" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-primary-600 text-white px-4 py-2 rounded-md font-medium inline-flex items-center hover:bg-primary-700 transition-colors"
-                >
-                  Besök SökaStiftelseMedel.se
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
             </div>
           </section>
-          
-          {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h3 className="text-2xl font-bold mb-4">Behöver du hjälp med stiftelsefrågor?</h3>
-              <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-                SökaStiftelseMedel.se erbjuder professionell hjälp med att hitta rätt stiftelser och skräddarsy dina ansökningar för att maximera dina chanser att få stöd.
-              </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-              >
-                Besök SökaStiftelseMedel.se
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
+
+          {/* Partner CTA */}
+          <PartnerCTA campaign="stiftelseordlista" placement="bottom" className="mb-16" />
         </div>
       </div>
     </>

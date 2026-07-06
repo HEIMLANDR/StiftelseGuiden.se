@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import FoundationTypeIcon from "@/components/FoundationTypeIcon";
+import { sokUrl } from "@/lib/partner";
 import { useState } from "react";
 
 // Modal content data
@@ -66,7 +67,7 @@ export default function HomeContent() {
         }}
         secondaryCta={{
           text: "Sök stiftelsemedel",
-          href: "https://www.sokastiftelsemedel.se",
+          href: sokUrl("home", "hero"),
           external: true
         }}
         imageComponent={
@@ -265,11 +266,11 @@ export default function HomeContent() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://www.sokastiftelsemedel.se" target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-700 px-8 py-4 rounded-md font-bold text-lg inline-flex items-center hover:bg-white/90 transition-colors shadow-lg">
+                <a href={sokUrl("home", "promo")} target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-700 px-8 py-4 rounded-md font-bold text-lg inline-flex items-center hover:bg-white/90 transition-colors shadow-lg">
                   Börja söka stiftelsemedel nu
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </a>
-                <a href="https://www.sokastiftelsemedel.se/om-oss" target="_blank" rel="noopener noreferrer" className="bg-indigo-800/30 text-white border border-white/30 px-8 py-4 rounded-md font-medium text-lg inline-flex items-center hover:bg-indigo-800/50 transition-colors">
+                <a href="https://www.sokastiftelsemedel.se/om-oss?utm_source=stiftelseguiden&utm_medium=referral&utm_campaign=home&utm_content=promo-secondary" target="_blank" rel="noopener noreferrer" className="bg-indigo-800/30 text-white border border-white/30 px-8 py-4 rounded-md font-medium text-lg inline-flex items-center hover:bg-indigo-800/50 transition-colors">
                   Se alla funktioner
                 </a>
               </div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -81,8 +82,9 @@ export default function ManageFoundation() {
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Styrelsearbete i stiftelser</h2>
           
           <p className="mb-6">
-            Styrelsen har det övergripande ansvaret för stiftelsens förvaltning och ska se till att stiftelsens ändamål 
-            uppfylls och att stiftelsens tillgångar förvaltas väl. Styrelsearbetet regleras både av stiftelselagen och 
+            Styrelsen har det övergripande ansvaret för stiftelsens förvaltning och ska se till att stiftelsens ändamål
+            uppfylls och att stiftelsens tillgångar förvaltas väl. Styrelsearbetet regleras både av{" "}
+            <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">stiftelselagen</Link> och
             av stiftelsens förordnande.
           </p>
           
@@ -186,29 +188,8 @@ export default function ManageFoundation() {
         </section>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-            <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-          </div>
-          
-          <div className="relative z-10 text-center">
-            <h3 className="text-2xl font-bold mb-4">Behöver du hjälp med stiftelseförvaltning?</h3>
-            <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-              Besök vår partner för professionell hjälp med kapitalförvaltning, administration och juridisk rådgivning för stiftelser
-            </p>
-            <a 
-              href="https://www.sokastiftelsemedel.se" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-            >
-              Besök SökaStiftelseMedel.se
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
+        <div className="mb-16">
+          <PartnerCTA campaign="driva-stiftelse" placement="mid" />
         </div>
 
         <section id="rapportering" className="mb-16">
@@ -233,12 +214,26 @@ export default function ManageFoundation() {
           <div className="bg-warning-50 border-l-4 border-warning-400 p-6 mb-8">
             <h4 className="font-semibold text-warning-800 mb-2">Viktiga tidsfrister</h4>
             <p className="text-warning-700 mb-3">
-              Bokföringsskyldiga stiftelser ska upprätta årsredovisning inom sex månader efter räkenskapsårets utgång. 
-              Årsredovisningen ska lämnas till stiftelsens revisor senast fyra månader efter räkenskapsårets utgång.
+              Bokföringsskyldiga stiftelser ska upprätta årsredovisningen och lämna den till stiftelsens revisor senast
+              fyra månader efter räkenskapsårets utgång. Sedan 2025 gäller dessutom att årsredovisningen tillsammans med
+              revisionsberättelsen ska ha kommit in till Länsstyrelsen senast sex månader efter räkenskapsårets utgång.
             </p>
             <p className="text-warning-700">
-              Även stiftelser som inte är bokföringsskyldiga måste föra räkenskaper över betalningar och upprätta en 
+              Även stiftelser som inte är bokföringsskyldiga måste föra räkenskaper över betalningar och upprätta en
               sammanställning över stiftelsens räkenskaper för varje räkenskapsår.
+            </p>
+          </div>
+
+          <div className="bg-red-50 border-l-4 border-l-red-400 p-6 mb-8">
+            <h4 className="font-semibold text-red-800 mb-2">Nytt från 2025: inlämningsplikt med förseningsavgifter</h4>
+            <p className="text-red-700">
+              Genom nya regler i stiftelselagen (SFS 2024:1114) ska årsredovisning och revisionsberättelse ha kommit in
+              till Länsstyrelsen senast sex månader efter räkenskapsårets utgång. Missas fristen tas en förseningsavgift
+              på 7 500 kronor ut, och vid mer än fyra månaders ytterligare försening tillkommer 15 000 kronor. Detta är
+              en ny skyldighet som många styrelser missar. Läs mer om{" "}
+              <Link href="/juridik/#nya-regler-2025" className="text-red-800 underline hover:text-red-900">
+                de nya reglerna för stiftelser 2025
+              </Link>.
             </p>
           </div>
         </section>
@@ -248,7 +243,9 @@ export default function ManageFoundation() {
           
           <p className="mb-6">
             Utdelning av stiftelsens medel ska ske i enlighet med stiftelsens ändamål som det är formulerat i stiftelseförordnandet.
-            Styrelsen måste säkerställa att utdelningen uppfyller ändamålet och att den följer god stiftelsesed.
+            Styrelsen måste säkerställa att utdelningen uppfyller ändamålet och att den följer god stiftelsesed. För allmännyttiga
+            stiftelser påverkar utdelningsnivån dessutom skattestatusen genom fullföljdskravet – läs mer i vår guide om{" "}
+            <Link href="/resurser/skatteoptimering/" className="text-primary-600 hover:underline">skatteoptimering för stiftelser</Link>.
           </p>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -280,13 +277,16 @@ export default function ManageFoundation() {
         </section>
         
         <section id="framgangsexempel" className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Framgångsrika stiftelser</h2>
-          
+          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Typexempel på framgångsrik förvaltning</h2>
+
           <p className="mb-6">
-            Här presenterar vi några exempel på stiftelser som lyckats särskilt väl med sin förvaltning och verksamhet.
-            Dessa kan tjäna som inspiration och ge praktiska insikter i framgångsrik stiftelseförvaltning.
+            Exemplen nedan är illustrativa typfall, inte beskrivningar av verkliga, namngivna stiftelser. De bygger på
+            vanliga mönster i väl fungerande stiftelser och visar hur styrelsearbete, kapitalförvaltning och
+            utdelningsprocesser kan samspela i praktiken. Funderar du på att bilda en egen stiftelse hittar du hela
+            processen i vår guide om att{" "}
+            <Link href="/starta-stiftelse/" className="text-primary-600 hover:underline">starta stiftelse</Link>.
           </p>
-          
+
           <div className="bg-white rounded-lg shadow-md p-6 mb-8 animate-fadeInUp">
             <div className="flex items-start gap-4">
               <div className="h-12 w-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -295,36 +295,28 @@ export default function ManageFoundation() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-primary-700">Stiftelsen Innovativa Sverige</h3>
-                <p className="text-sm text-gray-500 mb-4">Grundad 2005 | Kapital: 120 miljoner kr | Fokus: Teknisk innovation</p>
-                
+                <h3 className="text-xl font-semibold mb-2 text-primary-700">Exempel: forskningsstiftelse med fokus på innovation</h3>
+                <p className="text-sm text-gray-500 mb-4">Illustrativt typexempel | Kapital: ca 120 miljoner kr</p>
+
                 <p className="mb-4">
-                  Stiftelsen Innovativa Sverige har under de senaste 15 åren utvecklats till en av landets mest framgångsrika
-                  stiftelser inom sitt område. Genom en kombination av strategisk kapitalförvaltning och effektiva utdelningsprocesser
-                  har stiftelsen kunnat stödja över 200 innovationsprojekt.
+                  Tänk dig en forskningsstiftelse med omkring 120 miljoner kronor i kapital som under många år byggt upp
+                  en effektiv organisation. Genom en kombination av strategisk kapitalförvaltning och strukturerade
+                  utdelningsprocesser kan en sådan stiftelse stödja ett stort antal innovationsprojekt över tid.
                 </p>
-                
+
                 <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <h4 className="font-medium text-primary-700 mb-2">Framgångsfaktorer:</h4>
+                  <h4 className="font-medium text-primary-700 mb-2">Typiska framgångsfaktorer:</h4>
                   <ul className="list-disc list-inside space-y-1 text-gray-700">
-                    <li>Diversifierad investeringsportfölj med 60% aktier, 30% räntebärande papper och 10% alternativa investeringar</li>
-                    <li>Professionell styrelse med kompletterande kompetenser inom teknik, ekonomi och juridik</li>
+                    <li>Diversifierad investeringsportfölj, till exempel 60% aktier, 30% räntebärande papper och 10% alternativa investeringar</li>
+                    <li>Styrelse med kompletterande kompetenser inom teknik, ekonomi och juridik</li>
                     <li>Digitaliserad ansöknings- och uppföljningsprocess</li>
                     <li>Aktivt nätverkande med universitet och näringsliv</li>
                   </ul>
                 </div>
-                
-                <div className="border-l-4 border-l-primary-400 pl-4">
-                  <p className="italic text-gray-700">
-                    "Vår framgång bygger på en kombination av långsiktig kapitalförvaltning och ett genuint engagemang för
-                    innovation. Vi ser oss inte bara som finansiärer utan som aktiva partners i de projekt vi stödjer."
-                  </p>
-                  <p className="text-sm text-gray-500 mt-2">— Maria Bergström, Styrelseordförande</p>
-                </div>
               </div>
             </div>
           </div>
-          
+
           <div className="bg-white rounded-lg shadow-md p-6 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-start gap-4">
               <div className="h-12 w-12 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -333,32 +325,33 @@ export default function ManageFoundation() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 text-accent-700">Kulturarvet</h3>
-                <p className="text-sm text-gray-500 mb-4">Grundad 1978 | Kapital: 85 miljoner kr | Fokus: Kulturbevarande</p>
-                
+                <h3 className="text-xl font-semibold mb-2 text-accent-700">Exempel: kulturstiftelse som ställer om förvaltningen</h3>
+                <p className="text-sm text-gray-500 mb-4">Illustrativt typexempel | Kapital: ca 85 miljoner kr</p>
+
                 <p className="mb-4">
-                  Stiftelsen Kulturarvet har under fyra decennier arbetat med att bevara och tillgängliggöra svenskt kulturarv.
-                  Trots utmaningar med låga räntor och förändrade förutsättningar har stiftelsen lyckats öka sitt kapital samtidigt
-                  som man utökat sin verksamhet.
+                  Ett annat typfall är en äldre kulturstiftelse med cirka 85 miljoner kronor i kapital som under en period
+                  av låg avkastning behöver ställa om sin förvaltning för att kunna fortsätta dela ut medel i samma
+                  omfattning som tidigare.
                 </p>
-                
+
                 <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <h4 className="font-medium text-accent-700 mb-2">Strategisk omställning:</h4>
+                  <h4 className="font-medium text-accent-700 mb-2">Möjlig strategisk omställning:</h4>
                   <p className="mb-2">
-                    När avkastningen på traditionella placeringar sjönk 2015-2018 genomförde stiftelsen en strategisk omställning:
+                    När avkastningen på traditionella placeringar sjunker kan en sådan stiftelse exempelvis:
                   </p>
                   <ul className="list-disc list-inside space-y-1 text-gray-700">
-                    <li>Ombalanserade portföljen med ökat fokus på utdelande aktier</li>
-                    <li>Utvecklade kompletterande intäktsströmmar genom publikationer och utbildningar</li>
-                    <li>Etablerade samarbeten med andra kulturinstitutioner för kostnadsdelning</li>
-                    <li>Implementerade effektivare administrativa processer</li>
+                    <li>Ombalansera portföljen med ökat fokus på utdelande aktier</li>
+                    <li>Utveckla kompletterande intäktsströmmar genom publikationer och utbildningar</li>
+                    <li>Etablera samarbeten med andra kulturinstitutioner för kostnadsdelning</li>
+                    <li>Effektivisera de administrativa processerna</li>
                   </ul>
                 </div>
-                
+
                 <p className="text-gray-700">
-                  Resultatet blev att stiftelsen kunde öka sina årliga utdelningar med 15% under en femårsperiod,
-                  trots det utmanande ränteläget. Idag stödjer Kulturarvet över 30 projekt årligen och har etablerat
-                  sig som en central aktör inom svenskt kulturbevarande.
+                  I ett sådant scenario kan stiftelsen gradvis stärka sin utdelningskapacitet trots ett utmanande
+                  marknadsläge. Omställningen förutsätter dock att styrelsen dokumenterar sina beslut och håller sig inom
+                  ramarna i stiftelseförordnandet och{" "}
+                  <Link href="/juridik/" className="text-primary-600 hover:underline">de juridiska regler som gäller för stiftelser</Link>.
                 </p>
               </div>
             </div>

@@ -4,6 +4,19 @@ import { useState } from 'react';
 import Link from 'next/link';
 import SearchBar from './SearchBar';
 
+const NAV_ITEMS = [
+  { text: 'Hem', href: '/' },
+  { text: 'Starta stiftelse', href: '/starta-stiftelse/' },
+  { text: 'Driva stiftelse', href: '/driva-stiftelse/' },
+  { text: 'Stiftelser', href: '/stiftelser/' },
+  { text: 'Juridik', href: '/juridik/' },
+  { text: 'Resurser', href: '/resurser/' },
+  { text: 'Insikter', href: '/insikter' },
+  { text: 'Dokument', href: '/dokument/' },
+  { text: 'Verktyg', href: '/verktyg/' },
+  { text: 'Kontakt', href: '/kontakt/' },
+];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -24,18 +37,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-1">
-              {[
-                { text: 'Hem', href: '/' },
-                { text: 'Starta stiftelse', href: '/starta-stiftelse' },
-                { text: 'Driva stiftelse', href: '/driva-stiftelse' },
-                { text: 'Stiftelser', href: '/stiftelser' },
-                { text: 'Juridik', href: '/juridik' },
-                { text: 'Resurser', href: '/resurser' },
-                { text: 'Insikter', href: '/insikter' },
-                { text: 'Dokument', href: '/dokument' },
-                { text: 'Verktyg', href: '/verktyg' },
-                { text: 'Kontakt', href: '/kontakt' },
-              ].map((item) => (
+              {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -78,18 +80,7 @@ export default function Header() {
       {mobileMenuOpen && (
         <nav className="md:hidden bg-primary-600 py-2 px-4 absolute w-full shadow-lg animate-fadeIn">
           <div className="flex flex-col space-y-1">
-            {[
-              { text: 'Hem', href: '/' },
-              { text: 'Starta stiftelse', href: '/starta-stiftelse' },
-              { text: 'Driva stiftelse', href: '/driva-stiftelse' },
-              { text: 'Stiftelser', href: '/stiftelser' },
-              { text: 'Juridik', href: '/juridik' },
-              { text: 'Resurser', href: '/resurser' },
-              { text: 'Insikter', href: '/insikter' },
-              { text: 'Dokument', href: '/dokument' },
-              { text: 'Verktyg', href: '/verktyg' },
-              { text: 'Kontakt', href: '/kontakt' },
-            ].map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -100,12 +101,18 @@ export default function TaxOptimizationPage() {
                 </p>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
                   <li>Ändamålskravet: Stiftelsen ska ha ett eller flera allmännyttiga ändamål, såsom att främja vård och uppfostran av barn, lämna bidrag för undervisning eller utbildning, främja vetenskaplig forskning, etc.</li>
-                  <li>Verksamhetskravet: Stiftelsen ska i sin verksamhet uteslutande eller så gott som uteslutande tillgodose det allmännyttiga ändamålet.</li>
-                  <li>Fullföljdskravet: Stiftelsen ska använda minst 80% av sina intäkter (efter avdrag för förvaltningskostnader) för det allmännyttiga ändamålet, sett över en period av cirka fem år.</li>
+                  <li>Verksamhetskravet (7 kap. 5 § inkomstskattelagen): Stiftelsen ska i den verksamhet som bedrivs uteslutande eller så gott som uteslutande – i praxis 90–95 procent eller mer – tillgodose det allmännyttiga ändamålet.</li>
+                  <li>Fullföljdskravet (7 kap. 6 § inkomstskattelagen): Stiftelsen ska använda sin avkastning i skälig omfattning för det allmännyttiga ändamålet, i praxis cirka 75–80 procent av avkastningen. Bedömningen görs i första hand per år, men med möjlighet till en flerårsbedömning.</li>
                   <li>Öppenhetskravet: Stiftelsen får inte begränsa kretsen av destinatärer till en alltför snäv krets av personer.</li>
                 </ul>
+                <p className="mb-4">
+                  Verksamhetskravet och fullföljdskravet blandas ofta ihop, men är två skilda krav: verksamhetskravet
+                  handlar om vad stiftelsens verksamhet går ut på, medan fullföljdskravet handlar om hur stor del av
+                  avkastningen som faktiskt används för ändamålet.
+                </p>
                 <p>
-                  Familjestiftelser och näringsdrivande stiftelser uppfyller vanligtvis inte dessa krav och har därför 
+                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 hover:underline">Familjestiftelser</Link>{" "}
+                  och näringsdrivande stiftelser uppfyller vanligtvis inte dessa krav och har därför
                   obegränsad skattskyldighet.
                 </p>
               </div>
@@ -126,7 +133,7 @@ export default function TaxOptimizationPage() {
                 <ul className="list-disc pl-6 mb-4 space-y-2">
                   <li>Formulera stiftelsens ändamål tydligt i stadgarna så att det framgår att det är allmännyttigt</li>
                   <li>Dokumentera noggrant hur stiftelsens verksamhet främjar det allmännyttiga ändamålet</li>
-                  <li>Planera utdelningar så att fullföljdskravet uppfylls över tid (minst 80% av avkastningen)</li>
+                  <li>Planera utdelningar så att fullföljdskravet uppfylls (avkastningen ska användas i skälig omfattning för ändamålet, i praxis cirka 75–80 procent)</li>
                   <li>Undvik att begränsa destinatärskretsen till en alltför snäv grupp</li>
                 </ul>
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -182,16 +189,17 @@ export default function TaxOptimizationPage() {
                   För stiftelser med inskränkt skattskyldighet:
                 </p>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
-                  <li>Planera utdelningar så att fullföljdskravet uppfylls över tid (minst 80% av avkastningen över en femårsperiod)</li>
+                  <li>Planera utdelningarna så att fullföljdskravet uppfylls – avkastningen ska användas i skälig omfattning för ändamålet, i praxis cirka 75–80 procent, i första hand bedömt per år</li>
                   <li>Balansera utdelningar mellan olika år för att hantera variationer i avkastning</li>
                   <li>Dokumentera noggrant hur utdelningar främjar stiftelsens allmännyttiga ändamål</li>
                 </ul>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-sm italic">
-                    <strong>Exempel:</strong> En stiftelse med inskränkt skattskyldighet har en genomsnittlig årlig avkastning på 5 miljoner kr. 
-                    För att uppfylla fullföljdskravet behöver stiftelsen dela ut minst 4 miljoner kr (80%) över en femårsperiod. 
-                    Stiftelsen kan välja att dela ut mindre under år med lägre avkastning och mer under år med högre avkastning, 
-                    så länge det genomsnittliga fullföljdskravet uppfylls.
+                    <strong>Exempel:</strong> En stiftelse med inskränkt skattskyldighet har en årlig avkastning på 5 miljoner kr.
+                    Enligt den tumregel som vuxit fram i praxis behöver stiftelsen använda minst omkring fyra miljoner kronor
+                    (cirka 75–80 procent) för det allmännyttiga ändamålet. Bedömningen görs i första hand per år, men ett
+                    enstaka år med lägre utdelning kan vägas upp av högre utdelning närliggande år, eftersom det finns utrymme
+                    för en flerårsbedömning.
                   </p>
                 </div>
               </div>
@@ -300,7 +308,20 @@ export default function TaxOptimizationPage() {
               <li>Förändringar i reglerna för näringsverksamhet bedriven av stiftelser</li>
               <li>Internationella skattefrågor för stiftelser med verksamhet eller tillgångar i flera länder</li>
             </ul>
-            
+
+            <div className="bg-primary-50 border-l-4 border-l-primary-400 p-6 mb-6">
+              <h3 className="text-lg font-semibold mb-2 text-primary-800">Nya regler från 2025: inlämningsplikt och förseningsavgifter</h3>
+              <p className="text-primary-700">
+                Sedan 2025 gäller skärpta regler i{" "}
+                <Link href="/juridik/stiftelselagen/" className="text-primary-800 underline hover:text-primary-900">stiftelselagen</Link>{" "}
+                (SFS 2024:1114): årsredovisning och revisionsberättelse ska ha kommit in till Länsstyrelsen senast sex
+                månader efter räkenskapsårets utgång. Missas fristen tas en förseningsavgift på 7 500 kronor ut, och vid
+                mer än fyra månaders ytterligare försening tillkommer 15 000 kronor. För styrelsen är detta i praktiken
+                en ny administrativ deadline att planera in vid sidan av deklarationen. Läs mer om{" "}
+                <Link href="/juridik/#nya-regler-2025" className="text-primary-800 underline hover:text-primary-900">de nya reglerna för stiftelser 2025</Link>.
+              </p>
+            </div>
+
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <h4 className="font-semibold mb-2">Håll dig uppdaterad</h4>
               <p>
@@ -334,29 +355,8 @@ export default function TaxOptimizationPage() {
           </section>
           
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h3 className="text-2xl font-bold mb-4">Behöver du professionell hjälp med skattefrågor?</h3>
-              <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-                SökaStiftelseMedel.se kan hjälpa dig att hitta rätt skatterådgivare med expertis inom stiftelseområdet.
-              </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-              >
-                Kontakta oss för skatterådgivning
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
+          <div className="mb-16">
+            <PartnerCTA campaign="skatteoptimering" placement="bottom" />
           </div>
         </div>
       </div>

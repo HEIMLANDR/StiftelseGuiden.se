@@ -3,8 +3,10 @@ import Breadcrumb from "@/components/Breadcrumb";
 import FoundationComparison from "@/components/FoundationComparison";
 import OrganizationComparison from "@/components/OrganizationComparison";
 import CapitalCalculator from "@/components/CapitalCalculator";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
+import { sokUrl } from "@/lib/partner";
 
 const toolCollections = [
   { name: "Jämför stiftelsetyper" },
@@ -114,7 +116,15 @@ export default function ToolsPage() {
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Kapitalberäknare</h2>
           <CapitalCalculator />
         </section>
-        
+
+        <PartnerCTA
+          campaign="verktyg"
+          placement="after-calculator"
+          heading="Nu vet du hur mycket kapital som behövs – hitta stiftelser som delar ut medel"
+          body="Sök gratis bland över 17 000 svenska stiftelser och hitta finansiering som matchar ditt ändamål."
+          className="mb-16"
+        />
+
         <div className="bg-primary-50 rounded-lg p-6 border border-primary-100 mb-16">
           <h3 className="text-xl font-semibold mb-4 text-primary-700">Viktigt att tänka på</h3>
           <p className="mb-4">
@@ -122,8 +132,9 @@ export default function ToolsPage() {
             Varje stiftelse är unik och påverkas av många faktorer som inte fullt ut kan representeras i dessa verktyg.
           </p>
           <p>
-            Vi rekommenderar att du konsulterar juridisk och ekonomisk expertis innan du fattar viktiga beslut om din stiftelse. 
-            För mer information och personlig rådgivning, kontakta vår samarbetspartner SökaStiftelseMedel.se.
+            Vi rekommenderar att du konsulterar juridisk och ekonomisk expertis innan du fattar viktiga beslut om din stiftelse.
+            För mer information och personlig rådgivning, kontakta vår samarbetspartner{" "}
+            <a href={sokUrl("verktyg", "inline")} target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium hover:underline">SökaStiftelseMedel.se</a>.
           </p>
         </div>
       </div>

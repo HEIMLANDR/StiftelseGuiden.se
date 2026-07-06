@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
+import PartnerCTA from '@/components/PartnerCTA';
 import { PageSchema } from '@/components/SeoSchema';
 import { createPageMetadata } from '@/lib/seo';
 
@@ -11,7 +12,7 @@ const documentCollections = [
 
 export const metadata = createPageMetadata({
   title: 'Dokument & mallar',
-  description: 'Ladda ner ansökningsblanketter, mallar, checklistor och andra dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser.',
+  description: 'Ansökningsblanketter, mallar, checklistor och juridiska dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser.',
   path: '/dokument/',
 });
 
@@ -20,7 +21,7 @@ export default function DokumentPage() {
     <>
       <PageSchema
         title="Dokument & mallar"
-        description="Ladda ner ansökningsblanketter, mallar, checklistor och andra dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser."
+        description="Ansökningsblanketter, mallar, checklistor och juridiska dokument för stiftelser. Allt du behöver för att starta, driva och ansöka om medel från stiftelser."
         path="/dokument/"
         pageType="CollectionPage"
         breadcrumbs={[{ label: 'Dokument' }]}
@@ -113,22 +114,7 @@ export default function DokumentPage() {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Allmän ansökningsblankett för stiftelser</h3>
                     <p className="text-gray-600 mb-3">Standardiserad ansökningsblankett som kan användas för de flesta allmännyttiga stiftelser.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">PDF • 2 sidor</span>
-                      <span>Senast uppdaterad: 2024-03-15</span>
-                    </div>
-                    <a
-                      href="/dokument/allmän-ansökningsblankett.pdf.html"
-                      className="inline-flex items-center px-4 py-2 border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="allmän-ansökningsblankett.pdf"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Ladda ner
-                    </a>
+                    <p className="text-sm text-gray-500 italic">Blanketten är under uppdatering och publiceras inom kort.</p>
                   </div>
                 </div>
               </div>
@@ -146,22 +132,7 @@ export default function DokumentPage() {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Ansökan om forskningsmedel</h3>
                     <p className="text-gray-600 mb-3">Specialiserad blankett för ansökan om forskningsmedel från forskningsstiftelser.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">PDF • 4 sidor</span>
-                      <span>Senast uppdaterad: 2024-02-10</span>
-                    </div>
-                    <a
-                      href="/dokument/forskningsmedel-ansökan.pdf.html"
-                      className="inline-flex items-center px-4 py-2 border border-primary-600 text-primary-600 rounded-md hover:bg-primary-50 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="forskningsmedel-ansökan.pdf"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Ladda ner
-                    </a>
+                    <p className="text-sm text-gray-500 italic">Blanketten är under uppdatering och publiceras inom kort.</p>
                   </div>
                 </div>
               </div>
@@ -188,22 +159,7 @@ export default function DokumentPage() {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Mall för stadgar - Allmännyttig stiftelse</h3>
                     <p className="text-gray-600 mb-3">Komplett mall för stadgar vid bildande av en allmännyttig stiftelse.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">DOCX • 8 sidor</span>
-                      <span>Senast uppdaterad: 2024-02-15</span>
-                    </div>
-                    <a
-                      href="/dokument/mall-stadgar-allmännyttig.docx.html"
-                      className="inline-flex items-center px-4 py-2 border border-accent-600 text-accent-600 rounded-md hover:bg-accent-50 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="mall-stadgar-allmännyttig.docx"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Ladda ner
-                    </a>
+                    <p className="text-sm text-gray-500 italic">Mallen är under uppdatering och publiceras inom kort.</p>
                   </div>
                 </div>
               </div>
@@ -221,22 +177,7 @@ export default function DokumentPage() {
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Checklista för ansökningsprocessen</h3>
                     <p className="text-gray-600 mb-3">Komplett checklista för att säkerställa att din ansökan är korrekt och komplett.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">PDF • 2 sidor</span>
-                      <span>Senast uppdaterad: 2024-03-20</span>
-                    </div>
-                    <a
-                      href="/dokument/checklista-ansökan.pdf.html"
-                      className="inline-flex items-center px-4 py-2 border border-accent-600 text-accent-600 rounded-md hover:bg-accent-50 transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      download="checklista-ansökan.pdf"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      Ladda ner
-                    </a>
+                    <p className="text-sm text-gray-500 italic">Checklistan är under uppdatering och publiceras inom kort.</p>
                   </div>
                 </div>
               </div>
@@ -262,23 +203,23 @@ export default function DokumentPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Stiftelselagen (1994:1220)</h3>
-                    <p className="text-gray-600 mb-3">Den kompletta stiftelselagen med alla bestämmelser som reglerar stiftelser i Sverige.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">PDF • 32 sidor</span>
-                      <span>Senast uppdaterad: 2023-07-01</span>
-                    </div>
+                    <p className="text-gray-600 mb-3">Den kompletta stiftelselagen med alla bestämmelser som reglerar stiftelser i Sverige. Den officiella lagtexten finns alltid i sin senaste lydelse hos Riksdagen.</p>
                     <a
-                      href="/dokument/stiftelselagen.pdf.html"
+                      href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelselag-19941220_sfs-1994-1220/"
                       className="inline-flex items-center px-4 py-2 border border-secondary-600 text-secondary-600 rounded-md hover:bg-secondary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
-                      download="stiftelselagen.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                      Ladda ner
+                      Läs hos Riksdagen
                     </a>
+                    <p className="mt-3 text-sm">
+                      <Link href="/juridik/stiftelselagen/" className="text-secondary-600 font-medium hover:text-secondary-800 hover:underline">
+                        Vår guide till stiftelselagen
+                      </Link>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -295,28 +236,30 @@ export default function DokumentPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold mb-1">Stiftelseförordningen (1995:1280)</h3>
-                    <p className="text-gray-600 mb-3">Förordning med kompletterande bestämmelser till stiftelselagen.</p>
-                    <div className="flex items-center text-sm text-gray-500 mb-4">
-                      <span className="mr-3">PDF • 12 sidor</span>
-                      <span>Senast uppdaterad: 2023-07-01</span>
-                    </div>
+                    <p className="text-gray-600 mb-3">Förordning med kompletterande bestämmelser till stiftelselagen. Den officiella författningstexten finns alltid i sin senaste lydelse hos Riksdagen.</p>
                     <a
-                      href="/dokument/stiftelseförordningen.pdf.html"
+                      href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/stiftelseforordning-19951280_sfs-1995-1280/"
                       className="inline-flex items-center px-4 py-2 border border-secondary-600 text-secondary-600 rounded-md hover:bg-secondary-50 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
-                      download="stiftelseförordningen.pdf"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
-                      Ladda ner
+                      Läs hos Riksdagen
                     </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Partner CTA */}
+      <section className="pb-16">
+        <div className="container-padded max-w-6xl mx-auto">
+          <PartnerCTA campaign="dokument" placement="bottom" />
         </div>
       </section>
     </>

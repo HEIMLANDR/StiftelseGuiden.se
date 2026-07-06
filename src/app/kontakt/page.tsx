@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import ContactForm from "@/components/ContactForm";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
+import { sokUrl } from "@/lib/partner";
 
 const faqItems = [
   {
@@ -14,22 +15,22 @@ const faqItems = [
   {
     question: "Hur mycket kapital behövs för att starta en stiftelse?",
     answer:
-      "Det finns inget lagstadgat minimikrav för stiftelsekapital, men för mindre stiftelser rekommenderas ofta ett startkapital på minst 350 000 till 400 000 kronor för att täcka administrativa kostnader och samtidigt kunna skapa avkastning för ändamålet.",
+      "Det finns inget lagstadgat minimikapital och ingen officiell siffra från myndigheterna. En vanlig informell tumregel bland rådgivare är dock ett startkapital på omkring 350 000 till 400 000 kronor, så att avkastningen räcker till både administrativa kostnader och utdelning för ändamålet.",
   },
   {
     question: "Kan man ändra ändamålet i en befintlig stiftelse?",
     answer:
-      "Stiftelseförordnandet är i princip oföränderligt, men ändringar kan i vissa fall tillåtas genom permutation efter tillstånd från Kammarkollegiet eller domstol.",
+      "Stiftelseförordnandet är i princip oföränderligt, men ändringar kan i vissa fall tillåtas genom permutation. Ändring av själva ändamålet kräver synnerliga skäl och prövas av Kammarkollegiet, medan Länsstyrelsen beslutar om övriga ändringar. Kammarkollegiets ansökningsavgift är 12 200 kronor (3 300 kronor för små stiftelser).",
   },
   {
     question: "Måste alla stiftelser registreras?",
     answer:
-      "Nej. Registreringsskyldighet gäller bland annat för stiftelser som bedriver näringsverksamhet, har tillgångar över 1,5 miljoner kronor eller är bildade av stat eller kommun. Övriga kan registrera sig frivilligt.",
+      "Ja, med ett undantag. Alla stiftelser ska registreras hos Länsstyrelsen inom sex månader från bildandet. Undantaget är stiftelser vars tillgångar enligt förordnandet endast får användas för bestämda fysiska personer, typiskt familjestiftelser, som i stället får organisationsnummer från Skatteverket. Registreringen är avgiftsfri, men årliga tillsyns- och registerhållningsavgifter tillkommer.",
   },
   {
     question: "Hur beskattas stiftelser?",
     answer:
-      "Stiftelser är i princip skattskyldiga för all inkomst, men allmännyttiga stiftelser kan få inskränkt skattskyldighet och då endast beskattas för vissa inkomster från näringsverksamhet och fastigheter.",
+      "Stiftelser är i princip skattskyldiga för all inkomst med 20,6 procent statlig inkomstskatt, men allmännyttiga stiftelser kan få inskränkt skattskyldighet och beskattas då endast för vissa inkomster från näringsverksamhet och fastigheter. Familjestiftelser är alltid oinskränkt skattskyldiga.",
   },
   {
     question: "Hur länge kan en stiftelse existera?",
@@ -112,10 +113,10 @@ export default function ContactPage() {
               <p className="mb-4 text-accent-600">
                 För mer omfattande hjälp med stiftelser, besök vår samarbetspartner som erbjuder professionell rådgivning.
               </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={sokUrl("kontakt", "sidebar")}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-accent-500 text-white px-4 py-2 rounded-md font-medium hover:bg-accent-600 transition-colors inline-flex items-center"
               >
                 Besök SökaStiftelseMedel.se
@@ -143,37 +144,44 @@ export default function ContactPage() {
             <div className="card card-hover bg-white hover-lift">
               <h3 className="text-xl font-semibold mb-2 text-primary-700">Hur mycket kapital behövs för att starta en stiftelse?</h3>
               <p>
-                Det finns inget lagstadgat minimikrav för stiftelsekapital. Dock rekommenderas för mindre stiftelser
-                ett startkapital på minst 350 000 - 400 000 kr för att täcka administrativa kostnader och samtidigt
-                generera tillräcklig avkastning för utdelning enligt stiftelsens ändamål.
+                Det finns inget lagstadgat minimikapital för stiftelser och ingen officiell siffra från myndigheterna.
+                En vanlig informell tumregel bland rådgivare är dock ett startkapital på omkring 350 000 - 400 000 kr,
+                så att avkastningen räcker till både administrativa kostnader och utdelning enligt stiftelsens ändamål.
               </p>
             </div>
             
             <div className="card card-hover bg-white hover-lift">
               <h3 className="text-xl font-semibold mb-2 text-primary-700">Kan man ändra ändamålet i en befintlig stiftelse?</h3>
               <p>
-                Stiftelseförordnandet är i princip oföränderligt, men i vissa fall kan ändringar i ändamålet tillåtas
-                genom permutation. Detta kräver tillstånd från Kammarkollegiet eller domstol och beviljas endast om
-                föreskriften blivit omöjlig att följa, uppenbart onyttig eller strider mot stiftarens avsikt.
+                Stiftelseförordnandet är i princip oföränderligt, men i vissa fall kan ändringar tillåtas genom
+                permutation enligt 6 kap.{" "}
+                <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">stiftelselagen</Link>.
+                Ändring av själva ändamålet kräver synnerliga skäl och prövas av Kammarkollegiet, medan Länsstyrelsen
+                beslutar om övriga ändringar. Kammarkollegiets ansökningsavgift är 12 200 kronor (3 300 kronor för
+                små stiftelser).
               </p>
             </div>
             
             <div className="card card-hover bg-white hover-lift">
               <h3 className="text-xl font-semibold mb-2 text-primary-700">Måste alla stiftelser registreras?</h3>
               <p>
-                Nej, inte alla stiftelser behöver registreras. Registreringsskyldighet gäller för stiftelser som
-                bedriver näringsverksamhet, har tillgångar överstigande 1,5 miljoner kronor, eller är bildade av
-                stat eller kommun. Övriga stiftelser kan välja att registrera sig frivilligt.
+                Ja, med ett undantag. Alla stiftelser ska registreras hos Länsstyrelsen inom sex månader från det att
+                stiftelsen bildades. Undantaget är stiftelser vars tillgångar enligt stiftelseförordnandet endast får
+                användas för bestämda fysiska personer, typiskt familjestiftelser – de får i stället organisationsnummer
+                från Skatteverket. Själva registreringen är avgiftsfri, men stiftelser betalar årliga tillsyns- och
+                registerhållningsavgifter. Gränsen på 1,5 miljoner kronor styr bokföringsskyldighet och krav på
+                årsredovisning, inte registreringen.
               </p>
             </div>
             
             <div className="card card-hover bg-white hover-lift">
               <h3 className="text-xl font-semibold mb-2 text-primary-700">Hur beskattas stiftelser?</h3>
               <p>
-                Stiftelser är i princip skattskyldiga för all inkomst, men allmännyttiga stiftelser kan få
-                inskränkt skattskyldighet. Stiftelser med inskränkt skattskyldighet betalar endast skatt på
-                inkomst från näringsverksamhet och fastigheter som inte används i den allmännyttiga verksamheten.
-                Familjestiftelser kan inte få inskränkt skattskyldighet.
+                Stiftelser är i princip skattskyldiga för all inkomst med 20,6 procent statlig inkomstskatt, men
+                allmännyttiga stiftelser kan få inskränkt skattskyldighet. Stiftelser med inskränkt skattskyldighet
+                betalar endast skatt på inkomst från näringsverksamhet och fastigheter som inte används i den
+                allmännyttiga verksamheten. Familjestiftelser är alltid oinskränkt skattskyldiga, och utbetalningar
+                till förmånstagarna beskattas som periodiskt understöd hos mottagaren.
               </p>
             </div>
             

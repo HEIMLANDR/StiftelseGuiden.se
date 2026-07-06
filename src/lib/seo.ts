@@ -44,6 +44,16 @@ export const SEO_ROUTES: SeoRoute[] = [
     changeFrequency: "monthly",
   },
   { path: "/juridik/", priority: 0.8, changeFrequency: "monthly" },
+  {
+    path: "/juridik/stiftelselagen/",
+    priority: 0.9,
+    changeFrequency: "monthly",
+  },
+  {
+    path: "/stiftelser/familjestiftelse/",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
   { path: "/resurser/", priority: 0.7, changeFrequency: "monthly" },
   {
     path: "/resurser/ansokningsguide/",
@@ -69,6 +79,7 @@ export const SEO_ROUTES: SeoRoute[] = [
   { path: "/verktyg/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/insikter/", priority: 0.8, changeFrequency: "weekly" },
   { path: "/om/redaktionen/", priority: 0.4, changeFrequency: "yearly" },
+  { path: "/content-policy/", priority: 0.3, changeFrequency: "yearly" },
   { path: "/kontakt/", priority: 0.5, changeFrequency: "yearly" },
 ];
 

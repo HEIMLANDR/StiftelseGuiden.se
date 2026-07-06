@@ -51,6 +51,10 @@ export function SitewideSchema() {
             url: SITE_URL,
             description: SITE_DESCRIPTION,
             foundingDate: "2025",
+            logo: {
+              "@type": "ImageObject",
+              url: `${SITE_URL}/icon.svg`,
+            },
           },
         ],
       }}

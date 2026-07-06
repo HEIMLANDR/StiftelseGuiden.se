@@ -1,8 +1,10 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
+import { sokUrl } from "@/lib/partner";
 
 export const metadata = createPageMetadata({
   title: "Ansökningsguide för stiftelser",
@@ -56,7 +58,7 @@ export default function ApplicationGuidePage() {
             <div className="bg-primary-50 p-6 rounded-lg border-l-4 border-l-primary-400 mb-8">
               <h3 className="text-xl font-semibold mb-2 text-primary-700">Viktigt att tänka på</h3>
               <p>
-                Varje stiftelse har sina egna specifika krav och processer. Denna guide ger generella riktlinjer, men det är alltid viktigt att noggrant läsa och följa varje enskild stiftelses instruktioner. För mer specifik hjälp med att hitta rätt stiftelser och skräddarsy dina ansökningar, besök <a href="https://www.sokastiftelsemedel.se" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>.
+                Varje stiftelse har sina egna specifika krav och processer. Denna guide ger generella riktlinjer, men det är alltid viktigt att noggrant läsa och följa varje enskild stiftelses instruktioner. För mer specifik hjälp med att hitta rätt stiftelser och skräddarsy dina ansökningar, besök <a href={sokUrl("ansokningsguide", "inline")} className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a>.
               </p>
             </div>
           </section>
@@ -87,7 +89,8 @@ export default function ApplicationGuidePage() {
                 Att hitta stiftelser vars ändamål matchar ditt projekt är avgörande. Sök inte slumpmässigt utan fokusera på stiftelser där ditt projekt passar in:
               </p>
               <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Använd <a href="https://www.sokastiftelsemedel.se" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a> för att hitta stiftelser som matchar dina kriterier</li>
+                <li>Använd <a href={sokUrl("ansokningsguide", "inline")} className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">SökaStiftelseMedel.se</a> för att hitta stiftelser som matchar dina kriterier</li>
+                <li>Bläddra bland <Link href="/stiftelser/aktiva-stiftelser/" className="text-primary-600 hover:underline">aktiva stiftelser som delar ut medel</Link> för att få en överblick</li>
                 <li>Läs noggrant igenom stiftelsens stadgar och ändamål</li>
                 <li>Kontrollera tidigare beviljade ansökningar för att förstå vad stiftelsen prioriterar</li>
                 <li>Verifiera ansökningsperioder och deadlines</li>
@@ -164,17 +167,8 @@ export default function ApplicationGuidePage() {
                 </ul>
               </div>
               
-              <div className="flex justify-center my-8">
-                <a 
-                  href="/dokument/projektansökan-organisation.pdf" 
-                  target="_blank"
-                  className="bg-primary-600 text-white px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-primary-700 transition-colors"
-                >
-                  Ladda ner mall för projektansökan
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </a>
+              <div className="bg-primary-50 border border-primary-100 rounded-lg p-4 my-8 text-sm text-gray-700">
+                Vår mall för projektansökan är under uppdatering och publiceras inom kort. Se <Link href="/dokument/" className="text-primary-600 font-medium hover:underline">Dokument & mallar</Link> för aktuella resurser.
               </div>
             </div>
           </section>
@@ -212,17 +206,8 @@ export default function ApplicationGuidePage() {
                 </ul>
               </div>
               
-              <div className="flex justify-center my-8">
-                <a 
-                  href="/dokument/projektbudget-mall.xlsx" 
-                  target="_blank"
-                  className="bg-primary-600 text-white px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-primary-700 transition-colors"
-                >
-                  Ladda ner budgetmall (Excel)
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </a>
+              <div className="bg-primary-50 border border-primary-100 rounded-lg p-4 my-8 text-sm text-gray-700">
+                Vår budgetmall är under uppdatering och publiceras inom kort. Se <Link href="/dokument/" className="text-primary-600 font-medium hover:underline">Dokument & mallar</Link> för aktuella resurser.
               </div>
             </div>
           </section>
@@ -281,79 +266,45 @@ export default function ApplicationGuidePage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
                 <h3 className="text-lg font-semibold mb-3 text-primary-700">Mallar och checklistor</h3>
+                <p className="mb-4">
+                  Våra mallar och checklistor för ansökningar, forskningsmedel och stipendier är under uppdatering och publiceras inom kort.
+                </p>
+                <Link href="/dokument/" className="text-primary-600 font-medium hover:underline inline-flex items-center">
+                  Till Dokument & mallar
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </Link>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
+                <h3 className="text-lg font-semibold mb-3 text-primary-700">Fördjupa dig vidare</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <a href="/dokument/allmän-ansökningsblankett.pdf" target="_blank" className="text-primary-600 hover:underline">Allmän ansökningsblankett</a>
+                    <Link href="/resurser/stiftelseordlista/" className="text-primary-600 hover:underline">Stiftelseordlista – termer och begrepp förklarade</Link>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <a href="/dokument/forskningsmedel-ansökan.pdf" target="_blank" className="text-primary-600 hover:underline">Mall för ansökan om forskningsmedel</a>
+                    <Link href="/stiftelser/aktiva-stiftelser/" className="text-primary-600 hover:underline">Aktiva stiftelser som delar ut medel</Link>
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <a href="/dokument/stipendium-ansökan.pdf" target="_blank" className="text-primary-600 hover:underline">Mall för stipendieansökan</a>
-                  </li>
-                  <li className="flex items-start">
-                    <svg className="w-5 h-5 text-primary-600 mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    <a href="/dokument/checklista-ansökan.pdf" target="_blank" className="text-primary-600 hover:underline">Checklista för ansökningar</a>
+                    <Link href="/dokument/" className="text-primary-600 hover:underline">Dokument & mallar</Link>
                   </li>
                 </ul>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-semibold mb-3 text-primary-700">Hitta stiftelser</h3>
-                <p className="mb-4">
-                  För att hitta stiftelser som matchar ditt ändamål, använd vår samarbetspartner SökaStiftelseMedel.se:
-                </p>
-                <a 
-                  href="https://www.sokastiftelsemedel.se" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-primary-600 text-white px-4 py-2 rounded-md font-medium inline-flex items-center hover:bg-primary-700 transition-colors"
-                >
-                  Besök SökaStiftelseMedel.se
-                  <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
               </div>
             </div>
           </section>
           
-          {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h3 className="text-2xl font-bold mb-4">Behöver du hjälp med dina ansökningar?</h3>
-              <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-                SökaStiftelseMedel.se erbjuder professionell hjälp med att hitta rätt stiftelser och skräddarsy dina ansökningar för att maximera dina chanser att få stöd.
-              </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-              >
-                Få experthjälp med dina ansökningar
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
+          {/* Partner CTA */}
+          <PartnerCTA campaign="ansokningsguide" placement="bottom" className="mb-16" />
         </div>
       </div>
     </>

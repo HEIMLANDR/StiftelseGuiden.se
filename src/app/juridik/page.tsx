@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -56,6 +57,14 @@ export default function LegalPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                 </svg>
                 Tillsyn och kontroll
+              </a>
+            </li>
+            <li>
+              <a href="#nya-regler-2025" className="hover:underline hover:text-primary-700 inline-flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                </svg>
+                Nya regler för stiftelser 2025
               </a>
             </li>
             <li>
@@ -121,17 +130,41 @@ export default function LegalPage() {
           </div>
           
           <div className="bg-primary-50 border-l-4 border-l-primary-400 p-6 mb-8">
-            <h4 className="font-semibold text-primary-800 mb-2">Viktiga lagrum</h4>
+            <h4 className="font-semibold text-primary-800 mb-2">Stiftelselagens kapitel</h4>
             <p className="text-primary-700 mb-3">
-              Några särskilt viktiga delar av stiftelselagen inkluderar:
+              Stiftelselagen är indelad i elva kapitel:
             </p>
             <ul className="list-disc list-inside space-y-1 text-primary-700">
-              <li>1 kap. - Inledande bestämmelser (definitioner)</li>
+              <li>1 kap. - Inledande bestämmelser och bildande</li>
               <li>2 kap. - Förvaltning</li>
               <li>3 kap. - Bokföring och årsredovisning</li>
               <li>4 kap. - Revision</li>
+              <li>5 kap. - Skadestånd</li>
+              <li>6 kap. - Ändring av föreskrifter i ett stiftelseförordnande</li>
+              <li>7 kap. - Likvidation och upplösning</li>
+              <li>8 kap. - Stiftelses företagsnamn</li>
               <li>9 kap. - Tillsyn</li>
+              <li>10 kap. - Registrering</li>
+              <li>11 kap. - Insamlings- och kollektivavtalsstiftelser</li>
             </ul>
+          </div>
+
+          <div className="bg-white border-2 border-primary-200 rounded-lg p-6 mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h4 className="font-semibold text-primary-800 mb-1">Vill du fördjupa dig i lagen?</h4>
+              <p className="text-gray-700">
+                Vi har gått igenom stiftelselagen kapitel för kapitel - från bildande till upplösning.
+              </p>
+            </div>
+            <Link
+              href="/juridik/stiftelselagen/"
+              className="inline-flex items-center justify-center px-5 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-semibold transition-colors flex-shrink-0"
+            >
+              Läs vår kompletta guide till stiftelselagen
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </section>
         
@@ -139,40 +172,57 @@ export default function LegalPage() {
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Tillsyn och kontroll</h2>
           
           <p className="mb-6">
-            Stiftelser står under tillsyn av antingen länsstyrelsen eller Kammarkollegiet. Tillsynsmyndigheten 
-            ska se till att stiftelsens förvaltning sker i enlighet med stiftelseförordnandet och lagen.
+            Stiftelser står under tillsyn av Länsstyrelsen, som ska se till att stiftelsens förvaltning
+            sker i enlighet med stiftelseförordnandet och stiftelselagen. Sedan den 1 januari 2025 är
+            stiftelseärendena koncentrerade till sex länsstyrelser i landet. Kammarkollegiet är däremot
+            inte någon tillsynsmyndighet - dess roll är att besluta om permutation, det vill säga ändring
+            av föreskrifter i stiftelseförordnandet.
           </p>
-          
+
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
             <h3 className="text-xl font-semibold mb-4 text-primary-700">Länsstyrelsens tillsyn</h3>
             <p className="mb-4">
-              Länsstyrelsen är tillsynsmyndighet för de flesta stiftelser. Tillsynen omfattar:
+              Länsstyrelsen är tillsynsmyndighet för stiftelser. Tillsynen omfattar bland annat:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li>Kontroll av att stiftelsens ändamål fullföljs</li>
               <li>Översyn av förvaltning och räkenskaper</li>
-              <li>Godkännande av permutationer (ändringar i förordnandet)</li>
+              <li>Beslut om vissa ändringar av föreskrifter, till exempel stiftelsens namn och säte</li>
               <li>Ingripande vid missförhållanden</li>
             </ul>
+            <p className="mt-4 text-gray-700">
+              Läs mer om styrelsens löpande skyldigheter i vår guide till att{" "}
+              <Link href="/driva-stiftelse/" className="text-primary-600 hover:text-primary-700 underline">
+                driva en stiftelse
+              </Link>.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="card card-hover bg-white">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Registrering</h3>
               <p className="mb-4">
-                Stiftelser som är näringsidkande, har tillgångar överstigande 1,5 miljoner kronor, eller 
-                bildats av stat eller kommun måste registreras i stiftelseregistret hos Länsstyrelsen.
+                Alla stiftelser ska registreras i stiftelseregistret hos Länsstyrelsen inom sex månader
+                från bildandet. Undantaget är stiftelser vars tillgångar enligt stiftelseförordnandet
+                endast får användas till förmån för bestämda fysiska personer - typiskt sett
+                familjestiftelser - som i stället får sitt organisationsnummer via Skatteverket.
               </p>
               <p className="text-gray-700">
-                Registrerade stiftelser får ett organisationsnummer och uppgifter om stiftelsen blir offentliga.
+                Gränsen på 1,5 miljoner kronor i tillgångar styr inte registreringen utan om stiftelsen
+                är bokföringsskyldig och ska upprätta årsredovisning. Registrerade stiftelser får ett
+                organisationsnummer och uppgifterna om stiftelsen blir offentliga. Se vår guide till att{" "}
+                <Link href="/starta-stiftelse/" className="text-primary-600 hover:text-primary-700 underline">
+                  starta en stiftelse
+                </Link>{" "}
+                för hela processen steg för steg.
               </p>
             </div>
-            
+
             <div className="card card-hover bg-white">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Revision</h3>
               <p className="mb-4">
-                Bokföringsskyldiga stiftelser och stiftelser med tillgångar överstigande 10 prisbasbelopp 
-                ska ha minst en revisor. För vissa stiftelser krävs en auktoriserad eller godkänd revisor.
+                Varje stiftelse ska ha minst en revisor. För stiftelser som är skyldiga att upprätta
+                årsredovisning gäller dessutom att minst en revisor ska vara auktoriserad eller godkänd.
               </p>
               <p className="text-gray-700">
                 Revisorn granskar stiftelsens årsredovisning, räkenskaper och förvaltning.
@@ -181,53 +231,129 @@ export default function LegalPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-            <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-          </div>
-          
-          <div className="relative z-10 text-center">
-            <h3 className="text-2xl font-bold mb-4">Behöver du juridisk rådgivning?</h3>
-            <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-              Besök vår partner för professionell juridisk hjälp med alla frågor som rör stiftelser
+        <section id="nya-regler-2025" className="mb-16">
+          <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Nya regler för stiftelser 2025</h2>
+
+          <p className="mb-6">
+            Den 1 januari 2025 trädde flera viktiga lagändringar i kraft för stiftelser
+            (SFS 2024:1114, prop. 2023/24:151). Ändringarna skärper kraven på rapportering och
+            intern kontroll, och samtidigt koncentrerades tillsynen till färre länsstyrelser.
+            Här är det viktigaste som styrelser och förvaltare behöver känna till.
+          </p>
+
+          <div className="bg-warning-50 border-l-4 border-warning-400 p-6 mb-8">
+            <h3 className="text-lg font-semibold text-warning-800 mb-2">
+              Förseningsavgift för sent inlämnad årsredovisning
+            </h3>
+            <p className="text-warning-700 mb-3">
+              Årsredovisningen och revisionsberättelsen ska ha kommit in till Länsstyrelsen senast
+              sex månader efter räkenskapsårets utgång. En stiftelse som lämnar in för sent påförs en
+              förseningsavgift på 7 500 kronor, och vid mer än fyra månaders försening tillkommer
+              ytterligare 15 000 kronor.
             </p>
-            <a 
-              href="https://www.sokastiftelsemedel.se" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-            >
-              Besök SökaStiftelseMedel.se
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
+            <p className="text-warning-700">
+              För stiftelser med kalenderår som räkenskapsår inföll den första deadlinen den
+              30 juni 2026. Rutiner för bokslut och revision behöver därför vara på plats i god tid -
+              mer om det i vår guide till att{" "}
+              <Link href="/driva-stiftelse/" className="underline font-medium">
+                driva en stiftelse
+              </Link>.
+            </p>
           </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="card card-hover bg-white">
+              <h3 className="text-xl font-semibold mb-4 text-primary-700">Förbud mot ställföreträdarjäv</h3>
+              <p className="text-gray-700">
+                De nya reglerna innehåller ett uttryckligt förbud mot ställföreträdarjäv. Den som
+                företräder stiftelsen får inte handlägga frågor där han eller hon har ett väsentligt
+                intresse som kan strida mot stiftelsens.
+              </p>
+            </div>
+
+            <div className="card card-hover bg-white">
+              <h3 className="text-xl font-semibold mb-4 text-primary-700">Skärpt roll för revisorn</h3>
+              <p className="text-gray-700">
+                Stiftelsens revisor är numera skyldig att agera vid misstanke om ekonomisk brottslighet
+                i stiftelsen. Det stärker den externa kontrollen och ställer högre krav på samspelet
+                mellan styrelse och revisor.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-primary-700">Sex länsstyrelser hanterar stiftelseärenden</h3>
+            <p className="mb-4">
+              Sedan den 1 januari 2025 är stiftelseärendena koncentrerade till sex länsstyrelser:
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li><span className="font-medium">Stockholm</span> - Stockholms och Gotlands län</li>
+              <li><span className="font-medium">Östergötland</span> - Östergötlands, Jönköpings och Kalmar län</li>
+              <li><span className="font-medium">Skåne</span> - Skåne, Blekinge och Kronobergs län</li>
+              <li><span className="font-medium">Västra Götaland</span> - Västra Götalands och Hallands län</li>
+              <li><span className="font-medium">Örebro</span> - Örebro, Dalarnas, Gävleborgs, Värmlands, Västmanlands, Södermanlands och Uppsala län</li>
+              <li><span className="font-medium">Norrbotten</span> - Norrbottens, Västerbottens, Västernorrlands och Jämtlands län</li>
+            </ul>
+          </div>
+
+          <div className="bg-primary-50 border-l-4 border-l-primary-400 p-6">
+            <h3 className="text-lg font-semibold text-primary-800 mb-2">Anmälan om verklig huvudman</h3>
+            <p className="text-primary-700">
+              Alla stiftelser - även familjestiftelser - ska anmäla verklig huvudman till Bolagsverket.
+              Anmälan ska hållas uppdaterad när förhållandena ändras, till exempel vid byte av
+              styrelseledamöter eller förvaltare.
+            </p>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <div className="mb-16">
+          <PartnerCTA campaign="juridik" placement="mid" />
         </div>
 
         <section id="skatt" className="mb-16">
           <h2 className="text-3xl font-bold mb-6 border-b border-primary-100 pb-2">Beskattning av stiftelser</h2>
           
           <p className="mb-6">
-            Stiftelser i Sverige är i princip skattskyldiga för all inkomst, men det finns omfattande undantag 
-            för vissa typer av stiftelser och vissa typer av inkomster.
+            Stiftelser i Sverige är i princip skattskyldiga för all inkomst och betalar statlig
+            inkomstskatt med 20,6 procent. För allmännyttiga stiftelser finns dock omfattande undantag
+            genom reglerna om inskränkt skattskyldighet i 7 kap. inkomstskattelagen.
           </p>
-          
+
           <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-4 text-primary-700">Inskränkt skattskyldighet</h3>
+            <h3 className="text-xl font-semibold mb-4 text-primary-700">Inskränkt skattskyldighet - fyra krav</h3>
             <p className="mb-4">
-              Stiftelser kan kvalificera för inskränkt skattskyldighet om de uppfyller vissa villkor:
+              För att en stiftelse ska bli inskränkt skattskyldig måste fyra krav vara uppfyllda:
             </p>
             <ol className="list-decimal list-inside space-y-2 text-gray-700">
-              <li>Stiftelsens ändamål ska vara kvalificerat (t.ex. allmännyttigt)</li>
-              <li>Verksamheten ska till minst 90-95% främja det kvalificerade ändamålet</li>
-              <li>Skälig avkastning på stiftelsens kapital ska delas ut</li>
+              <li>
+                <span className="font-medium">Ändamålskravet</span> - stiftelsen ska ha ett eller flera
+                allmännyttiga ändamål
+              </li>
+              <li>
+                <span className="font-medium">Verksamhetskravet</span> (7 kap. 5 § IL) - verksamheten ska
+                uteslutande eller så gott som uteslutande främja det allmännyttiga ändamålet, i praxis
+                omkring 90-95 procent eller mer
+              </li>
+              <li>
+                <span className="font-medium">Fullföljdskravet</span> (7 kap. 6 § IL) - avkastningen ska
+                användas för ändamålet i skälig omfattning, i praxis cirka 75-80 procent av avkastningen
+                sett över en period av år
+              </li>
+              <li>
+                <span className="font-medium">Öppenhetskravet</span> - kretsen av mottagare får inte vara
+                alltför snävt bestämd
+              </li>
             </ol>
             <p className="mt-4">
-              Stiftelser med inskränkt skattskyldighet betalar endast skatt på inkomst från näringsverksamhet 
-              och fastigheter som inte används i den allmännyttiga verksamheten.
+              Verksamhetskravet och fullföljdskravet är alltså två skilda krav: det ena handlar om vad
+              verksamheten är inriktad på, det andra om hur stor del av avkastningen som faktiskt
+              används. Stiftelser med inskränkt skattskyldighet betalar endast skatt på inkomst från
+              näringsverksamhet och fastigheter som inte används i den allmännyttiga verksamheten.
+              Läs mer i vår guide om{" "}
+              <Link href="/resurser/skatteoptimering/" className="text-primary-600 hover:text-primary-700 underline">
+                skatteoptimering för stiftelser
+              </Link>.
             </p>
           </div>
           
@@ -292,7 +418,10 @@ export default function LegalPage() {
           <div className="bg-warning-50 border-l-4 border-warning-400 p-6 mb-8">
             <h4 className="font-semibold text-warning-800 mb-2">Varning om familjestiftelser</h4>
             <p className="text-warning-700">
-              Familjestiftelser kan inte få inskränkt skattskyldighet och måste därför betala skatt på all inkomst. 
+              <Link href="/stiftelser/familjestiftelse/" className="underline font-medium">
+                Familjestiftelser
+              </Link>{" "}
+              kan inte få inskränkt skattskyldighet och måste därför betala skatt på all inkomst.
               Detta inkluderar även avkastning på kapital som normalt är skattefri för allmännyttiga stiftelser.
             </p>
           </div>
@@ -310,56 +439,75 @@ export default function LegalPage() {
             <div className="card card-hover bg-white hover-lift">
               <h3 className="text-xl font-semibold mb-4 text-primary-700">Permutation</h3>
               <p className="mb-4">
-                Permutation innebär att man med tillstånd från Kammarkollegiet eller domstol får ändra, upphäva
-                eller i särskilda fall åsidosätta föreskrifter i stiftelseförordnandet.
+                Permutation innebär att man med tillstånd får ändra, upphäva eller i särskilda fall
+                åsidosätta föreskrifter i stiftelseförordnandet. Kammarkollegiet beslutar om ändring av
+                de föreskrifter som räknas upp i 6 kap. 1 § stiftelselagen, bland annat stiftelsens
+                ändamål, hur förmögenheten ska vara placerad, förvaltningsform, styrelsens
+                sammansättning, arvoden samt räkenskaper och revision. Länsstyrelsen beslutar om övriga
+                ändringar, till exempel stiftelsens namn och säte.
               </p>
               <p className="text-gray-700">
-                Permutation kan beviljas om:
+                Permutation kan beviljas om föreskriften på grund av ändrade förhållanden:
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 mt-2">
-                <li>Föreskriften inte längre kan följas</li>
-                <li>Föreskriften blivit uppenbart onyttig</li>
-                <li>Föreskriften strider mot stiftarens avsikt</li>
+                <li>Inte längre kan följas</li>
+                <li>Har blivit uppenbart onyttig</li>
+                <li>Har blivit uppenbart stridande mot stiftarens avsikter</li>
               </ul>
+              <p className="mt-4 text-gray-700">
+                För ändring av själva ändamålet krävs dessutom synnerliga skäl.
+              </p>
             </div>
-            
+
             <div className="card card-hover bg-white hover-lift">
-              <h3 className="text-xl font-semibold mb-4 text-primary-700">Processer för ändring</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary-700">Processen för ändring</h3>
               <p className="mb-4">
-                Det finns olika vägar att gå för att få en ändring godkänd:
+                Så går en ansökan om permutation hos Kammarkollegiet till:
               </p>
               <ol className="list-decimal list-inside space-y-2 text-gray-700">
-                <li>Styrelsen skickar ansökan till Kammarkollegiet</li>
+                <li>Styrelsen eller förvaltaren skickar ansökan till Kammarkollegiet</li>
                 <li>Kammarkollegiet prövar ärendet och fattar beslut</li>
-                <li>Beslutet kan överklagas till förvaltningsrätten</li>
+                <li>Besluten kan överklagas</li>
               </ol>
               <p className="mt-4 text-gray-700">
-                Processen är vanligen omfattande och kräver noggrann dokumentation för att visa att
-                kriterierna för permutation är uppfyllda.
+                Ansökningsavgiften hos Kammarkollegiet är 12 200 kronor. För små stiftelser, vars
+                tillgångar haft ett marknadsvärde under ett prisbasbelopp (59 200 kronor år 2026) vid
+                utgången av vart och ett av de tre senaste räkenskapsåren, är avgiften i stället
+                3 300 kronor. Handläggningstiden varierar, och ansökan kräver noggrann dokumentation
+                som visar att kriterierna för permutation är uppfyllda.
               </p>
             </div>
           </div>
           
           <div className="bg-white rounded-lg shadow-md p-6 mt-8 animate-fadeInUp">
-            <h3 className="text-xl font-semibold mb-4 text-primary-700">Rättsfall: Permutation i praktiken</h3>
-            <div className="border-l-4 border-l-primary-400 pl-4 mb-4">
-              <p className="italic text-gray-700 mb-2">
-                "Kammarkollegiet beslutade 2019 att godkänna en ansökan om permutation för Stiftelsen Gamla Studenters Stipendiefond,
-                där ändamålet utvidgades från att endast stödja studenter vid en specifik fakultet till att omfatta hela universitetet."
-              </p>
-              <p className="text-sm text-gray-500">— Kammarkollegiets beslut 2019-05-12, Dnr 9.2-06542-2018</p>
-            </div>
+            <h3 className="text-xl font-semibold mb-4 text-primary-700">Permutation i praktiken</h3>
             <p className="mb-4">
-              I detta fall hade antalet studenter vid den specifika fakulteten minskat drastiskt, vilket gjorde det svårt att hitta
-              kvalificerade stipendiater. Kammarkollegiet bedömde att föreskriften blivit "uppenbart onyttig" och att en utvidgning
-              av ändamålet låg i linje med stiftarens ursprungliga avsikt att stödja utbildning.
+              Behovet av permutation uppstår ofta i äldre stiftelser där tiden sprungit ifrån
+              förordnandet. Några typiska situationer:
             </p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4">
+              <li>
+                Stipendie- eller understödsbelopp som på grund av inflation blivit så små att
+                utdelningarna framstår som obetydliga
+              </li>
+              <li>
+                Ändamål som inte längre kan uppfyllas, till exempel för att den institution,
+                yrkesgrupp eller mottagarkrets som pekas ut i förordnandet inte längre finns kvar
+              </li>
+              <li>
+                Placeringsföreskrifter som blivit olämpliga eller omöjliga att följa med dagens
+                kapitalmarknad
+              </li>
+              <li>
+                En alltför snäv mottagarkrets som gör det svårt att hitta kvalificerade mottagare
+              </li>
+            </ul>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-medium text-primary-700 mb-2">Viktiga lärdomar från rättsfallet:</h4>
+              <h4 className="font-medium text-primary-700 mb-2">Att tänka på inför en ansökan:</h4>
               <ul className="list-disc list-inside space-y-1 text-gray-700">
                 <li>Dokumentera tydligt varför föreskriften inte längre kan följas</li>
                 <li>Visa hur den föreslagna ändringen ligger i linje med stiftarens ursprungliga avsikt</li>
-                <li>Inkludera statistik eller annan data som stödjer argumentationen</li>
+                <li>Underbygg argumentationen med konkreta uppgifter om stiftelsens förhållanden</li>
                 <li>Konsultera juridisk expertis med erfarenhet av stiftelserätt</li>
               </ul>
             </div>

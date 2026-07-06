@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
+import PartnerCTA from "@/components/PartnerCTA";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -78,7 +79,8 @@ export default function TipsAndTricksPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-3 text-primary-700">1. Familjestiftelser och förmögenhetsplanering</h3>
                 <p className="mb-4">
-                  Familjestiftelser har länge använts av förmögna familjer för att bevara och skydda tillgångar över generationer. 
+                  <Link href="/stiftelser/familjestiftelse/" className="text-primary-600 hover:underline">Familjestiftelser</Link>{" "}
+                  har länge använts av förmögna familjer för att bevara och skydda tillgångar över generationer.
                   Här är några mindre kända fördelar:
                 </p>
                 <ul className="list-disc pl-6 mb-4 space-y-2">
@@ -188,8 +190,10 @@ export default function TipsAndTricksPage() {
                 </ul>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-sm italic">
-                    <strong>Exempel:</strong> Flera av Sveriges största företag, som H&M, IKEA och Tetra Pak, kontrolleras 
-                    helt eller delvis av stiftelser, vilket har bidragit till deras långsiktiga framgång och skatteeffektiva struktur.
+                    <strong>Exempel:</strong> Inom Wallenbergsfären kontrollerar Knut och Alice Wallenbergs Stiftelse
+                    investmentbolaget Investor AB, som i sin tur är storägare i många svenska storbolag. IKEA ägs via
+                    stiftelseliknande strukturer, bland annat den nederländska Stichting INGKA Foundation. Båda är
+                    exempel på hur stiftelseägande kan ge långsiktig kontroll och stabilitet.
                   </p>
                 </div>
               </div>
@@ -267,9 +271,10 @@ export default function TipsAndTricksPage() {
                     granskas särskilt noga av Skatteverket. Alla sådana transaktioner måste ske på marknadsmässiga villkor.
                   </li>
                   <li>
-                    <strong>Fullföljdskravet:</strong> Allmännyttiga stiftelser måste använda minst 80% av avkastningen för 
-                    det allmännyttiga ändamålet över en femårsperiod. Kreativa tolkningar av detta krav kan leda till att 
-                    stiftelsen förlorar sin inskränkta skattskyldighet.
+                    <strong>Fullföljdskravet:</strong> Allmännyttiga stiftelser ska använda sin avkastning i skälig
+                    omfattning för det allmännyttiga ändamålet – i praxis cirka 75–80 % av avkastningen, i första hand
+                    bedömt per år med möjlighet till flerårsbedömning. Kreativa tolkningar av detta krav kan leda till
+                    att stiftelsen förlorar sin inskränkta skattskyldighet.
                   </li>
                   <li>
                     <strong>CFC-regler:</strong> Kontrollerade utländska bolag (CFC) som ägs av svenska stiftelser kan 
@@ -297,10 +302,17 @@ export default function TipsAndTricksPage() {
                     stiftelsen som inte är marknadsmässiga eller som inte är förenliga med stiftelsens ändamål.
                   </li>
                   <li>
-                    <strong>Värdeöverföringar:</strong> Transaktioner där värden förs över mellan stiftelser och närstående 
+                    <strong>Värdeöverföringar:</strong> Transaktioner där värden förs över mellan stiftelser och närstående
                     företag eller personer på sätt som inte är marknadsmässiga.
                   </li>
                 </ul>
+                <p>
+                  Utrymmet för diskreta upplägg krymper dessutom: sedan 2025 gäller skärpta regler för stiftelser, med krav
+                  på att årsredovisning och revisionsberättelse kommer in till Länsstyrelsen inom sex månader, förseningsavgifter
+                  på 7 500 kronor och uppåt samt en skyldighet för revisorer att agera vid misstänkt ekonomisk brottslighet.
+                  Läs mer om{" "}
+                  <Link href="/juridik/#nya-regler-2025" className="text-primary-600 hover:underline">de nya reglerna för stiftelser 2025</Link>.
+                </p>
               </div>
             </div>
           </section>
@@ -341,7 +353,9 @@ export default function TipsAndTricksPage() {
             <h2 className="text-2xl font-bold mb-6">Officiella källor att kontrollera mot</h2>
             <p className="mb-4">
               Om du arbetar i gråzoner bör du alltid kontrollera resonemangen mot primärkällor och aktuell praxis. Börja med dessa
-              myndighets- och lagkällor innan du går vidare med någon struktur.
+              myndighets- och lagkällor innan du går vidare med någon struktur. En pedagogisk genomgång av lagen kapitel för
+              kapitel hittar du i vår guide till{" "}
+              <Link href="/juridik/stiftelselagen/" className="text-primary-600 hover:underline">stiftelselagen</Link>.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
@@ -411,30 +425,8 @@ export default function TipsAndTricksPage() {
           </section>
           
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-8 rounded-lg mb-16 shadow-lg relative overflow-hidden">
-            <div className="absolute inset-0" aria-hidden="true">
-              <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-white/10 rounded-full"></div>
-              <div className="absolute -left-24 -top-24 w-64 h-64 bg-white/5 rounded-full"></div>
-            </div>
-            
-            <div className="relative z-10 text-center">
-              <h3 className="text-2xl font-bold mb-4">Behöver du experthjälp med avancerad skatteplanering?</h3>
-              <p className="mb-6 text-white/90 max-w-2xl mx-auto">
-                SökaStiftelseMedel.se kan koppla dig till experter inom stiftelserätt och skatteplanering som kan hjälpa 
-                dig att utforma skräddarsydda lösningar för dina specifika behov.
-              </p>
-              <a 
-                href="https://www.sokastiftelsemedel.se" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-white text-primary-700 px-6 py-3 rounded-md font-medium inline-flex items-center hover:bg-white/90 transition-colors"
-              >
-                Kontakta oss för experthjälp
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
+          <div className="mb-16">
+            <PartnerCTA campaign="tips-och-trix" placement="bottom" />
           </div>
         </div>
       </div>

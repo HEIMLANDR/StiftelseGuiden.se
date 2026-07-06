@@ -1,12 +1,13 @@
+import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
 import LatestInsikter from "@/components/LatestInsikter";
 import { PageSchema } from "@/components/SeoSchema";
 import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = createPageMetadata({
-  title: "Sveriges mest kompletta guide om stiftelser",
+const baseMetadata = createPageMetadata({
+  title: "Stiftelser i Sverige – komplett guide",
   description:
-    "Komplett guide om att starta, driva och förvalta stiftelser i Sverige — juridik, skatteregler, kapitalberäkning, dokumentmallar och 100+ aktiva stiftelser.",
+    "Komplett guide om att starta, driva och förvalta stiftelser i Sverige — stiftelselagen, skatteregler, kapitalberäkning och Sveriges mest aktiva stiftelser.",
   keywords: [
     "stiftelse",
     "starta stiftelse",
@@ -22,12 +23,18 @@ export const metadata = createPageMetadata({
   path: "/",
 });
 
+// Rotsegmentet får inte layoutens title-template, så varumärket sätts explicit här.
+export const metadata: Metadata = {
+  ...baseMetadata,
+  title: { absolute: "Stiftelser i Sverige – komplett guide | StiftelseGuiden.se" },
+};
+
 export default function Home() {
   return (
     <>
       <PageSchema
         title="StiftelseGuiden.se"
-        description="Komplett guide om att starta, driva och förvalta stiftelser i Sverige — juridik, skatteregler, kapitalberäkning, dokumentmallar och 100+ aktiva stiftelser."
+        description="Komplett guide om att starta, driva och förvalta stiftelser i Sverige — stiftelselagen, skatteregler, kapitalberäkning och Sveriges mest aktiva stiftelser."
         path="/"
       />
       <HomeContent />
